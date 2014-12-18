@@ -1,0 +1,30 @@
+#banner
+{
+    background-image: url("../images/logo.jpg");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    height: 150px;
+    padding: 0px;
+    margin: 0;
+}
+
+#banner h1
+{
+    display: none;
+}
+
+#banner h2
+{
+    background-image: url("../images/audubon.jpg");
+    background-repeat: no-repeat;
+    width: 144px;
+    height: 77px;
+    float: left;
+    margin: 73px 0 0 5px;
+}
+
+#banner h2 em
+{
+    display: none;
+}

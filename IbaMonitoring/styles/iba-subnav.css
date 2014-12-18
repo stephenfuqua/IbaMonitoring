@@ -1,0 +1,46 @@
+#subnav
+{
+    position: absolute;
+    left: 30px;
+    background-color: white;
+    border: 1px solid #c0c0c0;
+    width: 180px;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+#subnav p
+{
+    text-align: center;
+    margin: 10px;
+    padding: 0 0 5px 0;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+}
+
+#subnav ul
+{
+    list-style-image: url("../images/arrow_bg.gif");
+    line-height: 1.9em;
+    margin: 0 10px 10px 28px;
+    padding: 0;
+}
+
+#subnav li
+{
+    margin: 0;
+    padding: 0;
+}
+
+#subnav a
+{
+    display: block;
+    padding: 1px 3px 1px 3px;
+}
+
+#subnav a:hover
+{
+    color: #000;
+    background-color: #E0D799;
+}

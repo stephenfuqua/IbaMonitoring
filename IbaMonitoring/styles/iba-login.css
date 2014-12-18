@@ -1,0 +1,39 @@
+.login
+{
+    border: 1px solid #737345;
+    background-color: #E0D799;
+    margin: 5px;
+    padding: 10px 20px 10px 20px;
+}
+
+.login p
+{
+    margin: 5px;
+    padding: 0;
+}
+
+.login label
+{
+    width: 120px;
+    display: block;
+    float: left;
+}
+
+.login input[type=text]
+{
+    width: 300px;
+    border: 1px solid black;
+    padding: 1px;
+}
+
+.login input[type=button]
+{
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+#OpenIdButtons
+{
+    background: white;
+    vertical-align: middle;
+}

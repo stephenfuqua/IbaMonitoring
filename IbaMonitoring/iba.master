@@ -1,0 +1,177 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="IbaMasterPage" Codebehind="iba.master.cs" %>
+
+<%@ Register Assembly="DotNetOpenAuth" Namespace="DotNetOpenAuth.OpenId.RelyingParty"
+    TagPrefix="rp" %>
+<%@ Register Assembly="AjaxControlToolkit"
+    Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server" />
+    </title>
+    <link href="/styles/iba-site.css" rel="stylesheet" type="text/css" media="all" title="maincss" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.5.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/scripts/eventHandlers.js"></script>
+    <script type="text/javascript" src="/scripts/validators.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" />
+        <div>
+            <div id="frame">
+                <div id="banner">
+                    <h1>Mississippi River Twin Cities Landbird Monitoring Program</h1>
+                    <h2>
+                        <em>Audubon Minnesota</em></h2>
+                </div>
+                <div id="tabs">
+                    <div>
+                        <ul>
+                            <li>
+                                <asp:HyperLink ID="HomeLink" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="AboutLink" runat="server" NavigateUrl="~/about/Default.aspx">About the Program</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="SubmitObservationsLink" runat="server" NavigateUrl="~/observations/SiteConditions.aspx">Submit Observations</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="ViewLink" runat="server" NavigateUrl="~/results/Default.aspx">View Results</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="ResourcesLink" runat="server" NavigateUrl="~/resources/Default.aspx">Resources</asp:HyperLink></li>
+                        </ul>
+                    </div>
+                    <div id="search">
+                    </div>
+                </div>
+                <div id="login" runat="server" class="login" visible="false">
+                    <div runat="server" id="loginAuthenticated">
+                        <p>
+                            Logged in as:
+                        <asp:Label ID="UserNameLabel" runat="server" />
+                            <asp:LinkButton ID="UpdateAccountInformationLinkButton" runat="server" Text="Update Account Information"
+                                CausesValidation="false" CssClass="LeftRightMargin" PostBackUrl="~/account/account.aspx" />
+                            <asp:Button ID="LogoutButton" runat="server" Text="Logout" OnClick="LogoutButton_Click"
+                                CausesValidation="false" />
+                        </p>
+                    </div>
+                    <script type="text/javascript">
+                        $(setupOpenIdButtons);
+
+                        function setupOpenIdButtons() {
+                            $("#OpenIdGoogle").click(function () {
+                                setOpenId('https://www.google.com/accounts/o8/id');
+                                setOpenIdLabel('');
+                            });
+                            $("#OpenIdYahoo").click(function () {
+                                setOpenId('http://me.yahoo.com/');
+                                setOpenIdLabel('');
+                            });
+                            $("#OpenIdAol").click(function () {
+                                setOpenId('http://openid.aol.com/{username}');
+                                setOpenIdLabel('Enter AOL Username in place of <strong>{username}</strong>:');
+                            });
+                            $("#OpenIdMyOpenId").click(function () {
+                                setOpenId('http://{username}.myopenid.com/');
+                                setOpenIdLabel('Enter MyOpenID Username in place of <strong>{username}</strong>:');
+                            });
+                        }
+
+                        function setOpenIdLabel(text) {
+                            $("#OpenIdLabel").html(text);
+                        }
+
+                        function setOpenId(url) {
+                            $("#OpenIdTextBox1").val(url);
+                        }
+                    </script>
+                    <div runat="server" id="loginForm">
+                        <p>
+                            Please click your account provider in order to login or to register a new account:
+                        </p>
+                        <div id="OpenIdButtons" runat="server" style="background: white; height: 50px;">
+                            <div style="margin: 6px 10px 2px 0px; width: 75px; height: 32px; float: left;">
+                                <img alt="[Google]" src="/images.large/google.gif" id="OpenIdGoogle" width="75" height="32" />
+                            </div>
+                            <div style="margin: 17px 10px 17px 0px; width: 84px; height: 16px; float: left;">
+                                <img alt="[Yahoo]" src="/images.large/yahoo.gif" id="OpenIdYahoo" width="84" height="16" />
+                            </div>
+                            <div style="margin: 0px 10px 0px 0px; width: 50px; height: 44px; float: left;">
+                                <img alt="[AOL]" src="/images.large/aol.gif" id="OpenIdAol" height="44" width="50" />
+                            </div>
+                            <div style="margin: 8px 10px 8px 0px; width: 84px; height: 34px; float: left;">
+                                <img alt="[MyOpenID]" src="/images.large/myopenid.gif" id="OpenIdMyOpenId" width="84"
+                                    height="34" />
+                            </div>
+                            &nbsp;
+                        <div style="clear: both;">
+                            &nbsp;
+                        </div>
+                        </div>
+                        <div id="openid_input_area">
+                            <span id="OpenIdLabel"></span>
+                            <rp:OpenIdTextBox ID="OpenIdTextBox1" runat="server" ClientIDMode="Static" OnLoggedIn="OpenIdLogin1_LoggedIn1" />
+                            <br />
+                            <asp:Button ID="OpenIdLogin" runat="server" Text="Login" OnClick="OpenIdLogin_Click" />
+                        </div>
+                        <asp:Label ID="loginFailedLabel" runat="server" EnableViewState="false" Text="Login failed"
+                            Visible="false" />
+                        <asp:Label ID="loginCanceledLabel" runat="server" EnableViewState="false" Text="Login canceled"
+                            Visible="false" />
+                    </div>
+                </div>
+                <div runat="server" id="DemoSite" visible="false" style="text-align: center; background-color: #cc0000; padding: 5px 30px 5px 30px;">
+                    This version of this site is for demonstration purposes only. We will periodically
+                reset the demo database in order to clean up the fake results. Please do not input
+                real data.
+                </div>
+                <div id="main">
+                    <div id="subnav">
+                        <p>
+                            <asp:ContentPlaceHolder ID="subnavTitle" runat="server" />
+                        </p>
+                        <asp:ContentPlaceHolder ID="subnavLinks" runat="server" />
+                    </div>
+                    <div id="content">
+                        <div>
+                            <asp:ContentPlaceHolder ID="contentNav" runat="server" />
+                        </div>
+                        <h2>
+                            <asp:ContentPlaceHolder ID="contentTitle" runat="server" />
+                        </h2>
+                        <div runat="server" visible="false" id="ErrorMessage" class="Warning">
+                        </div>
+                        <div runat="server" visible="false" id="SuccessMessage" class="Success">
+                        </div>
+                        <asp:ContentPlaceHolder ID="contentBody" runat="server" />
+                    </div>
+                </div>
+                <div id="footer">
+                    <p style="text-align: center;">
+                        <img alt="Mississippi River Fund" height="50" src="/images/ms_river_fund.jpg" style="margin-right: 100px; margin-bottom: 25px"
+                            width="150" /><img alt="U.S. Fish and Wildlife Service" height="100"
+                                src="/images/usfws.gif" style="margin-right: 100px" width="84" /><img alt="National Park Service"
+                                    height="100" src="/images/park_service.gif" width="76" />
+                    </p>
+                    <p>
+                        &nbsp;
+                    </p>
+                    <p>
+                        <img style="float: right; margin: 0 0 10px 10px;" alt="Creative Commons - A-NC-SA"
+                            height="31" src="/images/cc-by-nc-sa.png" width="88" />The Mississippi River
+                    Twin Cities Important Bird Area Landbird Monitoring Program project content was
+                    created by Tania Z. Homayoun: This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License</a>
+                    </p>
+                    <p>
+                        <a href="http://ibamonitoring.codeplex.com/">Website and database code</a> copyright
+                    &copy; 2010, The University of Minnesota, under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

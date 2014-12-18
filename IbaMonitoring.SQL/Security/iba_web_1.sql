@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [iba_web]
+    WITH PASSWORD = N'j2@igzdth.ngkUylntmMorqJmsFT7_&#$!~<pwTi~u>wiybj', SID = 0x718DBBFEBE79DA4A906516655BC4E8E7, DEFAULT_DATABASE = [IBA], DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

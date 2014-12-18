@@ -1,0 +1,7 @@
+﻿CREATE PROCEDURE [dbo].[SiteVisit_Delete]
+	@Id UNIQUEIDENTIFIER 
+AS
+	SET NOCOUNT ON;
+
+	DELETE FROM dbo.SiteVisit WHERE EventId = @Id;
+RETURN 0

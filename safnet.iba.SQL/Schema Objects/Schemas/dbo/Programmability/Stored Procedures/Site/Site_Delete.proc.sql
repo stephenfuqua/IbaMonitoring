@@ -1,0 +1,7 @@
+﻿CREATE PROCEDURE [dbo].[Site_Delete]
+	@Id UNIQUEIDENTIFIER 
+AS
+	SET NOCOUNT ON;
+
+	DELETE FROM dbo.Location WHERE LocationId = @Id;
+RETURN 0

@@ -1,0 +1,683 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IbaUnitTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="IbaProgram">
+          <Key>
+            <PropertyRef Name="IbaProgramId" />
+          </Key>
+          <Property Name="IbaProgramId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProgramDescription" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="LocationId" />
+          </Key>
+          <Property Name="LocationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LocationName" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Latitude" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="Longitude" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="LocationTypeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParentLocationId" Type="uniqueidentifier" />
+          <Property Name="CodeName" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Lookup">
+          <Key>
+            <PropertyRef Name="LookupId" />
+          </Key>
+          <Property Name="LookupId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Value" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="ParentLookupId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Observation">
+          <Key>
+            <PropertyRef Name="ObservationId" />
+          </Key>
+          <Property Name="ObservationId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SpeciesId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Comments" Type="varchar" MaxLength="1000" />
+          <Property Name="ObservationTypeId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Name="PersonId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OpenId" Type="varchar" MaxLength="250" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="250" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="15" />
+          <Property Name="PersonStatus" Type="smallint" Nullable="false" />
+          <Property Name="PersonRole" Type="smallint" Nullable="false" />
+          <Property Name="HasBeenTrained" Type="bit" Nullable="false" />
+          <Property Name="HasClipboard" Type="bit" Nullable="false" />
+          <Property Name="Address1" Type="varchar" MaxLength="50" />
+          <Property Name="Address2" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="10" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PointSurvey">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SiteVisitId" Type="uniqueidentifier" />
+          <Property Name="LocationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="NoiseCode" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Season">
+          <Key>
+            <PropertyRef Name="SeasonId" />
+          </Key>
+          <Property Name="SeasonId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SeasonDescription" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IbaProgramId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StartWeek" Type="datetime" />
+          <Property Name="EndWeek" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SiteBoundary">
+          <Key>
+            <PropertyRef Name="SiteBoundaryId" />
+          </Key>
+          <Property Name="SiteBoundaryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Latitude" Type="decimal" Precision="9" Scale="6" Nullable="false" />
+          <Property Name="Longitude" Type="decimal" Precision="9" Scale="6" Nullable="false" />
+          <Property Name="VertexSequence" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SiteCondition">
+          <Key>
+            <PropertyRef Name="ConditionId" />
+          </Key>
+          <Property Name="ConditionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Temperature" Type="int" Nullable="false" />
+          <Property Name="Scale" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Wind" Type="tinyint" Nullable="false" />
+          <Property Name="Sky" Type="tinyint" Nullable="false" />
+          <Property Name="SiteVisitId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SiteVisit">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsDataEntryComplete" Type="bit" Nullable="false" />
+          <Property Name="LocationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="StartConditionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EndConditionId" Type="uniqueidentifier" />
+          <Property Name="ObserverId" Type="uniqueidentifier" />
+          <Property Name="RecorderId" Type="uniqueidentifier" />
+          <Property Name="Comments" Type="varchar" MaxLength="1000" />
+          <Property Name="StartYear" Type="int" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Species">
+          <Key>
+            <PropertyRef Name="SpeciesId" />
+          </Key>
+          <Property Name="SpeciesId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AlphaCode" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="CommonName" Type="varchar" MaxLength="100" />
+          <Property Name="ScientificName" Type="varchar" MaxLength="250" />
+          <Property Name="WarningCount" Type="int" Nullable="false" />
+          <Property Name="UseForCommunityMeasures" Type="bit" Nullable="false" />
+          <Property Name="MigrationGuild" Type="varchar" MaxLength="3" />
+          <Property Name="ConservationGuild" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'IbaMonitoring.SQL.dbo.SamplingPoint' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SamplingPoint">
+          <Key>
+            <PropertyRef Name="LocationId" />
+            <PropertyRef Name="LocationName" />
+          </Key>
+          <Property Name="LocationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LocationName" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Longitude" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="Latitude" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="ParentLocationId" Type="uniqueidentifier" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'IbaMonitoring.SQL.dbo.Site' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="LocationId" />
+            <PropertyRef Name="LocationName" />
+          </Key>
+          <Property Name="LocationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LocationName" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Longitude" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="Latitude" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="CodeName" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_Location__Lookup">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="1" />
+          <End Role="Location" Type="Self.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="LookupId" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="LocationTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Observation__Lookup">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="1" />
+          <End Role="Observation" Type="Self.Observation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="LookupId" />
+            </Principal>
+            <Dependent Role="Observation">
+              <PropertyRef Name="ObservationTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Season__IbaProgram">
+          <End Role="IbaProgram" Type="Self.IbaProgram" Multiplicity="1" />
+          <End Role="Season" Type="Self.Season" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IbaProgram">
+              <PropertyRef Name="IbaProgramId" />
+            </Principal>
+            <Dependent Role="Season">
+              <PropertyRef Name="IbaProgramId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IbaUnitTestModelStoreContainer">
+          <EntitySet Name="IbaProgram" EntityType="Self.IbaProgram" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lookup" EntityType="Self.Lookup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Observation" EntityType="Self.Observation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PointSurvey" EntityType="Self.PointSurvey" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Season" EntityType="Self.Season" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SiteBoundary" EntityType="Self.SiteBoundary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SiteCondition" EntityType="Self.SiteCondition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SiteVisit" EntityType="Self.SiteVisit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Species" EntityType="Self.Species" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SamplingPoint" EntityType="Self.SamplingPoint" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[SamplingPoint].[LocationId] AS [LocationId], 
+[SamplingPoint].[LocationName] AS [LocationName], 
+[SamplingPoint].[Longitude] AS [Longitude], 
+[SamplingPoint].[Latitude] AS [Latitude], 
+[SamplingPoint].[ParentLocationId] AS [ParentLocationId]
+FROM [dbo].[SamplingPoint] AS [SamplingPoint]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Site" EntityType="Self.Site" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Site].[LocationId] AS [LocationId], 
+[Site].[LocationName] AS [LocationName], 
+[Site].[Longitude] AS [Longitude], 
+[Site].[Latitude] AS [Latitude], 
+[Site].[CodeName] AS [CodeName]
+FROM [dbo].[Site] AS [Site]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Location__Lookup" Association="Self.FK_Location__Lookup">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="Location" EntitySet="Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Observation__Lookup" Association="Self.FK_Observation__Lookup">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="Observation" EntitySet="Observation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Season__IbaProgram" Association="Self.FK_Season__IbaProgram">
+            <End Role="IbaProgram" EntitySet="IbaProgram" />
+            <End Role="Season" EntitySet="Season" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IbaUnitTestModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="IbaUnitTestEntities">
+          <EntitySet Name="Location_ado" EntityType="IbaUnitTestModel.Location_ado" />
+          <EntitySet Name="Lookup_ado" EntityType="IbaUnitTestModel.Lookup_ado" />
+          <EntitySet Name="Observation_ado" EntityType="IbaUnitTestModel.Observation_ado" />
+          <EntitySet Name="Person_ado" EntityType="IbaUnitTestModel.Person_ado" />
+          <EntitySet Name="SiteCondition_ado" EntityType="IbaUnitTestModel.SiteCondition_ado" />
+          <EntitySet Name="Species_ado" EntityType="IbaUnitTestModel.Species_ado" />
+          <AssociationSet Name="FK_Location__Lookup" Association="IbaUnitTestModel.FK_Location__Lookup">
+            <End Role="Lookup" EntitySet="Lookup_ado" />
+            <End Role="Location" EntitySet="Location_ado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Observation__Lookup" Association="IbaUnitTestModel.FK_Observation__Lookup">
+            <End Role="Lookup" EntitySet="Lookup_ado" />
+            <End Role="Observation" EntitySet="Observation_ado" />
+          </AssociationSet>
+          <EntitySet Name="PointSurvey_ado1" EntityType="IbaUnitTestModel.PointSurvey_ado" />
+          <EntitySet Name="SiteVisit_ado1" EntityType="IbaUnitTestModel.SiteVisit_ado" />
+          <EntitySet Name="SamplingPoint_ado" EntityType="IbaUnitTestModel.SamplingPoint_ado" />
+          <EntitySet Name="Site_ado" EntityType="IbaUnitTestModel.Site_ado" />
+          <EntitySet Name="IbaPrograms" EntityType="IbaUnitTestModel.IbaProgram" />
+          <EntitySet Name="Seasons" EntityType="IbaUnitTestModel.Season" />
+          <EntitySet Name="SiteBoundaries" EntityType="IbaUnitTestModel.SiteBoundary" />
+          <AssociationSet Name="FK_Season__IbaProgram" Association="IbaUnitTestModel.FK_Season__IbaProgram">
+            <End Role="IbaProgram" EntitySet="IbaPrograms" />
+            <End Role="Season" EntitySet="Seasons" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Location_ado">
+          <Key>
+            <PropertyRef Name="LocationId" />
+          </Key>
+          <Property Type="Guid" Name="LocationId" Nullable="false" />
+          <Property Type="String" Name="LocationName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Latitude" Precision="9" Scale="6" />
+          <Property Type="Decimal" Name="Longitude" Precision="9" Scale="6" />
+          <Property Type="Guid" Name="LocationTypeId" Nullable="false" />
+          <Property Type="Guid" Name="ParentLocationId" />
+          <Property Type="String" Name="CodeName" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Lookup" Relationship="IbaUnitTestModel.FK_Location__Lookup" FromRole="Location" ToRole="Lookup" />
+        </EntityType>
+        <EntityType Name="Lookup_ado">
+          <Key>
+            <PropertyRef Name="LookupId" />
+          </Key>
+          <Property Type="Guid" Name="LookupId" Nullable="false" />
+          <Property Type="String" Name="Value" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="ParentLookupId" />
+          <NavigationProperty Name="Locations" Relationship="IbaUnitTestModel.FK_Location__Lookup" FromRole="Lookup" ToRole="Location" />
+          <NavigationProperty Name="Observations" Relationship="IbaUnitTestModel.FK_Observation__Lookup" FromRole="Lookup" ToRole="Observation" />
+        </EntityType>
+        <EntityType Name="Observation_ado">
+          <Key>
+            <PropertyRef Name="ObservationId" />
+          </Key>
+          <Property Type="Int32" Name="ObservationId" Nullable="false" />
+          <Property Type="Guid" Name="EventId" Nullable="false" />
+          <Property Type="Guid" Name="SpeciesId" Nullable="false" />
+          <Property Type="String" Name="Comments" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="ObservationTypeId" Nullable="false" />
+          <NavigationProperty Name="Lookup" Relationship="IbaUnitTestModel.FK_Observation__Lookup" FromRole="Observation" ToRole="Lookup" />
+        </EntityType>
+        <EntityType Name="Person_ado">
+          <Key>
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Type="Guid" Name="PersonId" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OpenId" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmailAddress" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNumber" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="PersonStatus" Nullable="false" />
+          <Property Type="Int16" Name="PersonRole" Nullable="false" />
+          <Property Type="String" Name="Address1" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address2" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="State" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ZipCode" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="HasBeenTrained" Nullable="false" />
+          <Property Type="Boolean" Name="HasClipboard" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SiteCondition_ado">
+          <Key>
+            <PropertyRef Name="ConditionId" />
+          </Key>
+          <Property Type="Guid" Name="ConditionId" Nullable="false" />
+          <Property Type="Int32" Name="Temperature" Nullable="false" />
+          <Property Type="String" Name="Scale" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Byte" Name="Wind" Nullable="false" />
+          <Property Type="Byte" Name="Sky" Nullable="false" />
+          <Property Type="Guid" Name="SiteVisitId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Species_ado">
+          <Key>
+            <PropertyRef Name="SpeciesId" />
+          </Key>
+          <Property Type="Guid" Name="SpeciesId" Nullable="false" />
+          <Property Type="String" Name="AlphaCode" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CommonName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ScientificName" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="WarningCount" Nullable="false" />
+          <Property Type="Boolean" Name="UseForCommunityMeasures" Nullable="false" />
+          <Property Type="String" Name="MigrationGuild" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ConservationGuild" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Location__Lookup">
+          <End Type="IbaUnitTestModel.Lookup_ado" Role="Lookup" Multiplicity="1" />
+          <End Type="IbaUnitTestModel.Location_ado" Role="Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="LookupId" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="LocationTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Observation__Lookup">
+          <End Type="IbaUnitTestModel.Lookup_ado" Role="Lookup" Multiplicity="1" />
+          <End Type="IbaUnitTestModel.Observation_ado" Role="Observation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="LookupId" />
+            </Principal>
+            <Dependent Role="Observation">
+              <PropertyRef Name="ObservationTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PointSurvey_ado">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Type="Guid" Name="EventId" Nullable="false" />
+          <Property Type="Guid" Name="LocationId" Nullable="false" />
+          <Property Type="DateTime" Name="StartTime" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="EndTime" Nullable="false" Precision="3" />
+          <Property Type="Byte" Name="NoiseCode" />
+          <Property Type="Guid" Name="SiteVisitId" />
+        </EntityType>
+        <EntityType Name="SiteVisit_ado">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Type="Guid" Name="EventId" Nullable="false" />
+          <Property Type="Boolean" Name="IsDataEntryComplete" Nullable="false" />
+          <Property Type="Guid" Name="LocationId" Nullable="false" />
+          <Property Type="DateTime" Name="StartTime" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="EndTime" Nullable="false" Precision="3" />
+          <Property Type="Guid" Name="StartConditionId" Nullable="false" />
+          <Property Type="Guid" Name="EndConditionId" />
+          <Property Type="Guid" Name="ObserverId" />
+          <Property Type="Guid" Name="RecorderId" />
+          <Property Type="String" Name="Comments" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="StartYear" a:StoreGeneratedPattern="Computed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        </EntityType>
+        <EntityType Name="SamplingPoint_ado">
+          <Key>
+            <PropertyRef Name="LocationId" />
+            <PropertyRef Name="LocationName" />
+          </Key>
+          <Property Type="Guid" Name="LocationId" Nullable="false" />
+          <Property Type="String" Name="LocationName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Longitude" Precision="9" Scale="6" />
+          <Property Type="Decimal" Name="Latitude" Precision="9" Scale="6" />
+          <Property Type="Guid" Name="ParentLocationId" />
+        </EntityType>
+        <EntityType Name="Site_ado">
+          <Key>
+            <PropertyRef Name="LocationId" />
+            <PropertyRef Name="LocationName" />
+          </Key>
+          <Property Type="Guid" Name="LocationId" Nullable="false" />
+          <Property Type="String" Name="LocationName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Longitude" Precision="9" Scale="6" />
+          <Property Type="Decimal" Name="Latitude" Precision="9" Scale="6" />
+          <Property Type="String" Name="CodeName" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IbaProgram">
+          <Key>
+            <PropertyRef Name="IbaProgramId" />
+          </Key>
+          <Property Type="Guid" Name="IbaProgramId" Nullable="false" />
+          <Property Type="String" Name="ProgramDescription" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Seasons" Relationship="IbaUnitTestModel.FK_Season__IbaProgram" FromRole="IbaProgram" ToRole="Season" />
+        </EntityType>
+        <EntityType Name="Season">
+          <Key>
+            <PropertyRef Name="SeasonId" />
+          </Key>
+          <Property Type="Guid" Name="SeasonId" Nullable="false" />
+          <Property Type="String" Name="SeasonDescription" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="IbaProgramId" Nullable="false" />
+          <Property Type="DateTime" Name="StartWeek" Precision="3" />
+          <Property Type="DateTime" Name="EndWeek" Precision="3" />
+          <NavigationProperty Name="IbaProgram" Relationship="IbaUnitTestModel.FK_Season__IbaProgram" FromRole="Season" ToRole="IbaProgram" />
+        </EntityType>
+        <EntityType Name="SiteBoundary">
+          <Key>
+            <PropertyRef Name="SiteBoundaryId" />
+          </Key>
+          <Property Type="Int32" Name="SiteBoundaryId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Guid" Name="SiteId" Nullable="false" />
+          <Property Type="Decimal" Name="Latitude" Nullable="false" Precision="9" Scale="6" />
+          <Property Type="Decimal" Name="Longitude" Nullable="false" Precision="9" Scale="6" />
+          <Property Type="Int32" Name="VertexSequence" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Season__IbaProgram">
+          <End Type="IbaUnitTestModel.IbaProgram" Role="IbaProgram" Multiplicity="1" />
+          <End Type="IbaUnitTestModel.Season" Role="Season" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IbaProgram">
+              <PropertyRef Name="IbaProgramId" />
+            </Principal>
+            <Dependent Role="Season">
+              <PropertyRef Name="IbaProgramId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IbaUnitTestModelStoreContainer" CdmEntityContainer="IbaUnitTestEntities">
+          <EntitySetMapping Name="Location_ado">
+            <EntityTypeMapping TypeName="IbaUnitTestModel.Location_ado">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="ParentLocationId" ColumnName="ParentLocationId" />
+                <ScalarProperty Name="LocationTypeId" ColumnName="LocationTypeId" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lookup_ado">
+            <EntityTypeMapping TypeName="IbaUnitTestModel.Lookup_ado">
+              <MappingFragment StoreEntitySet="Lookup">
+                <ScalarProperty Name="ParentLookupId" ColumnName="ParentLookupId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LookupId" ColumnName="LookupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Observation_ado">
+            <EntityTypeMapping TypeName="IbaUnitTestModel.Observation_ado">
+              <MappingFragment StoreEntitySet="Observation">
+                <ScalarProperty Name="ObservationTypeId" ColumnName="ObservationTypeId" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="SpeciesId" ColumnName="SpeciesId" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="ObservationId" ColumnName="ObservationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Person_ado">
+            <EntityTypeMapping TypeName="IbaUnitTestModel.Person_ado">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="HasClipboard" ColumnName="HasClipboard" />
+                <ScalarProperty Name="HasBeenTrained" ColumnName="HasBeenTrained" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="PersonRole" ColumnName="PersonRole" />
+                <ScalarProperty Name="PersonStatus" ColumnName="PersonStatus" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="OpenId" ColumnName="OpenId" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteCondition_ado">
+            <EntityTypeMapping TypeName="IbaUnitTestModel.SiteCondition_ado">
+              <MappingFragment StoreEntitySet="SiteCondition">
+                <ScalarProperty Name="SiteVisitId" ColumnName="SiteVisitId" />
+                <ScalarProperty Name="Sky" ColumnName="Sky" />
+                <ScalarProperty Name="Wind" ColumnName="Wind" />
+                <ScalarProperty Name="Scale" ColumnName="Scale" />
+                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+                <ScalarProperty Name="ConditionId" ColumnName="ConditionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Species_ado">
+            <EntityTypeMapping TypeName="IbaUnitTestModel.Species_ado">
+              <MappingFragment StoreEntitySet="Species">
+                <ScalarProperty Name="ConservationGuild" ColumnName="ConservationGuild" />
+                <ScalarProperty Name="MigrationGuild" ColumnName="MigrationGuild" />
+                <ScalarProperty Name="UseForCommunityMeasures" ColumnName="UseForCommunityMeasures" />
+                <ScalarProperty Name="WarningCount" ColumnName="WarningCount" />
+                <ScalarProperty Name="ScientificName" ColumnName="ScientificName" />
+                <ScalarProperty Name="CommonName" ColumnName="CommonName" />
+                <ScalarProperty Name="AlphaCode" ColumnName="AlphaCode" />
+                <ScalarProperty Name="SpeciesId" ColumnName="SpeciesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PointSurvey_ado1">
+            <EntityTypeMapping TypeName="IbaUnitTestModel.PointSurvey_ado">
+              <MappingFragment StoreEntitySet="PointSurvey">
+                <ScalarProperty Name="SiteVisitId" ColumnName="SiteVisitId" />
+                <ScalarProperty Name="NoiseCode" ColumnName="NoiseCode" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteVisit_ado1">
+            <EntityTypeMapping TypeName="IbaUnitTestModel.SiteVisit_ado">
+              <MappingFragment StoreEntitySet="SiteVisit">
+                <ScalarProperty Name="StartYear" ColumnName="StartYear" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="RecorderId" ColumnName="RecorderId" />
+                <ScalarProperty Name="ObserverId" ColumnName="ObserverId" />
+                <ScalarProperty Name="EndConditionId" ColumnName="EndConditionId" />
+                <ScalarProperty Name="StartConditionId" ColumnName="StartConditionId" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+                <ScalarProperty Name="IsDataEntryComplete" ColumnName="IsDataEntryComplete" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SamplingPoint_ado">
+            <EntityTypeMapping TypeName="IbaUnitTestModel.SamplingPoint_ado">
+              <MappingFragment StoreEntitySet="SamplingPoint">
+                <ScalarProperty Name="ParentLocationId" ColumnName="ParentLocationId" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Site_ado">
+            <EntityTypeMapping TypeName="IbaUnitTestModel.Site_ado">
+              <MappingFragment StoreEntitySet="Site">
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IbaPrograms">
+            <EntityTypeMapping TypeName="IbaUnitTestModel.IbaProgram">
+              <MappingFragment StoreEntitySet="IbaProgram">
+                <ScalarProperty Name="ProgramDescription" ColumnName="ProgramDescription" />
+                <ScalarProperty Name="IbaProgramId" ColumnName="IbaProgramId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seasons">
+            <EntityTypeMapping TypeName="IbaUnitTestModel.Season">
+              <MappingFragment StoreEntitySet="Season">
+                <ScalarProperty Name="EndWeek" ColumnName="EndWeek" />
+                <ScalarProperty Name="StartWeek" ColumnName="StartWeek" />
+                <ScalarProperty Name="IbaProgramId" ColumnName="IbaProgramId" />
+                <ScalarProperty Name="SeasonDescription" ColumnName="SeasonDescription" />
+                <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteBoundaries">
+            <EntityTypeMapping TypeName="IbaUnitTestModel.SiteBoundary">
+              <MappingFragment StoreEntitySet="SiteBoundary">
+                <ScalarProperty Name="VertexSequence" ColumnName="VertexSequence" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="SiteBoundaryId" ColumnName="SiteBoundaryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="True" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <edmx:Diagram Name="IBA" ZoomLevel="77">
+        <edmx:EntityTypeShape EntityType="IbaUnitTestModel.Location_ado" Width="1.5" PointX="3" PointY="1.125" Height="2.5571907552083326" />
+        <edmx:EntityTypeShape EntityType="IbaUnitTestModel.Lookup_ado" Width="1.5" PointX="0.75" PointY="2.875" Height="1.9802864583333335" />
+        <edmx:EntityTypeShape EntityType="IbaUnitTestModel.Observation_ado" Width="1.5" PointX="3" PointY="4.375" Height="2.1725878906249996" />
+        <edmx:EntityTypeShape EntityType="IbaUnitTestModel.Person_ado" Width="1.5" PointX="5.75" PointY="1" Height="4.0956022135416656" />
+        <edmx:EntityTypeShape EntityType="IbaUnitTestModel.SiteCondition_ado" Width="1.5" PointX="7.75" PointY="0.75" Height="2.172587890625" />
+        <edmx:EntityTypeShape EntityType="IbaUnitTestModel.Species_ado" Width="1.5" PointX="5.75" PointY="6.75" Height="1.9802864583333317" />
+        <edmx:EntityTypeShape EntityType="IbaUnitTestModel.Site_ado" Width="1.5" PointX="0.75" PointY="7.75" Height="1.9802864583333317" />
+        <edmx:AssociationConnector Association="IbaUnitTestModel.FK_Location__Lookup">
+          <edmx:ConnectorPoint PointX="2.25" PointY="3.2785953776041663" />
+          <edmx:ConnectorPoint PointX="3" PointY="3.2785953776041663" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="IbaUnitTestModel.FK_Observation__Lookup">
+          <edmx:ConnectorPoint PointX="2.25" PointY="4.6151432293218875" />
+          <edmx:ConnectorPoint PointX="3" PointY="4.6151432293218875" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="IbaUnitTestModel.PointSurvey_ado" Width="1.5" PointX="2.75" PointY="7.75" Height="2.1725878906249996" />
+        <edmx:EntityTypeShape EntityType="IbaUnitTestModel.SiteVisit_ado" Width="1.5" PointX="7.75" PointY="3.75" Height="2.7494921874999996" />
+        <edmx:EntityTypeShape EntityType="IbaUnitTestModel.SamplingPoint_ado" Width="1.5" PointX="8.375" PointY="7.75" Height="1.9802864583333317" />
+        <edmx:EntityTypeShape EntityType="IbaUnitTestModel.IbaProgram" Width="1.5" PointX="10.375" PointY="1.25" Height="1.5956835937500031" />
+        <edmx:EntityTypeShape EntityType="IbaUnitTestModel.Season" Width="1.5" PointX="12.625" PointY="0.875" Height="2.1725878906250031" />
+        <edmx:EntityTypeShape EntityType="IbaUnitTestModel.SiteBoundary" Width="1.5" PointX="5.375" PointY="9.75" Height="1.9802864583333388" />
+        <edmx:AssociationConnector Association="IbaUnitTestModel.FK_Season__IbaProgram">
+          <edmx:ConnectorPoint PointX="11.875" PointY="2.0478417968750016" />
+          <edmx:ConnectorPoint PointX="12.625" PointY="2.0478417968750016" />
+        </edmx:AssociationConnector>
+      </edmx:Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

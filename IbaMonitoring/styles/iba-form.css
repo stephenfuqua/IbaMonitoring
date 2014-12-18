@@ -1,0 +1,134 @@
+﻿fieldset
+{
+    margin: 0px;
+    border: 0px;
+}
+
+fieldset legend
+{
+    font-weight: bold;
+    color: #737345;
+    margin: 0;
+}
+
+fieldset label
+{
+    width: 170px;
+    float: left;
+}
+
+fieldset input[type=text]
+{
+    width: 200px;
+}
+
+fieldset input[type=button]
+{
+}
+
+fieldset p
+{
+    margin: 5px 0 5px 0;
+}
+
+.submit
+{
+    padding: 0 0 0 170px;
+}
+
+.radiolist label
+{
+    float: none;
+}
+
+.primaryActions
+{
+    font-weight: bold;
+}
+
+.secondaryActions
+{
+    float: right;
+}
+
+input.Number
+{
+    width: 30px !important;
+}
+
+
+/* FormGrid classes */
+.ListView
+{
+    border: 1px solid black;
+}
+
+.ListViewHeader
+{
+    background-color: #737345;
+    color: White;
+}
+
+.ListViewItem
+{
+    background-color: White;
+}
+
+.ListViewAlternateItem
+{
+    background-color: Silver;
+}
+
+.ListViewEditItem, .ListViewInsertItem
+{
+    background-color: #FE8735;
+}
+
+.ListViewSelectedItem
+{
+    background-color: #E0D799;
+}
+
+.ListViewHighlighted
+{
+    background-color: #FFFF00;
+}
+
+.ListView th, .ListView td
+{
+    padding: 2px 3px 2px 3px;
+}
+
+
+
+.NoWrap
+{
+    white-space: nowrap;
+}
+
+.Warning
+{
+    color: Red;
+}
+
+.Success
+{
+    color: #009933;
+}
+
+.RightMargin
+{
+    margin-right: 20px;
+}
+
+.LeftRightMargin
+{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.ReadOnly
+{
+    border-bottom: 1px inset silver;
+    padding: 1px 5px 1px 1px;
+}

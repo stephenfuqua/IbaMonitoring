@@ -1,0 +1,262 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using safnet.iba.Business.Entities;
+using safnet.iba.Data.Mappers;
+
+namespace safnet.iba.NUnit.Data.Mappers
+{
+    /// <summary>
+    /// Validates the database mapping functions of the <see cref="SiteVisitMapper"/> class.
+    /// </summary>
+    [TestClass]
+    public class tSiteVisitMapper
+    {
+        #region Public Methods
+
+        /// <summary>
+        /// Sets up each test.
+        /// </summary>
+        [TestInitialize]
+        public void SetUp()
+        {
+            DbTestHelper.ClearTable("SiteVisit");
+        }
+
+        /// <summary>
+        /// Validates that the Delete function only deletes the specified record.
+        /// </summary>
+        [TestMethod]
+        public void t_SiteVisit_Delete()
+        {
+            SiteVisit_ado setupObject = null;
+            // backdoor data setup
+            DbTestHelper.LoadAdoObjects(delegate(IbaUnitTestEntities iba)
+            {
+                setupObject = SiteVisit_ado.CreateSiteVisit_ado(DbTestHelper.TestGuid1, true, DbTestHelper.TestGuid2,
+                    DateTime.Now, DateTime.Now.AddHours(2), DbTestHelper.TestGuid3);
+                setupObject.ObserverId = DbTestHelper.TestGuid4;
+                setupObject.RecorderId = DbTestHelper.TestGuid3;
+                iba.AddToSiteVisit_ado(setupObject);
+            });
+            List<SiteVisit_ado> SiteVisitAdolist = DbTestHelper.LoadExtraneousSiteVisits();
+
+            SiteVisitMapper.Delete(new SiteVisit() { Id = setupObject.SiteVisitId.Value });
+
+            // Validate results
+            using (IbaUnitTestEntities iba = new IbaUnitTestEntities())
+            {
+                var SiteVisitQuery = from SiteVisits in iba.SiteVisit_ado select SiteVisits;
+                Assert.IsNotNull(SiteVisitQuery, "Query result is null");
+                Assert.AreEqual(SiteVisitAdolist.Count(), SiteVisitQuery.Count(), "Wrong number of results in query");
+                validateExtraSiteVisitAdos(SiteVisitAdolist, SiteVisitQuery);
+            }
+        }
+
+        /// <summary>
+        /// Validates that a new record can be saved correctly.
+        /// </summary>
+        [TestMethod]
+        public void t_SiteVisit_Save_Insert()
+        {
+            SiteVisit toInsert = new SiteVisit()
+            {
+                Id = DbTestHelper.TestGuid1,
+                EndConditions = new SiteCondition()
+                {
+                    Id = DbTestHelper.TestGuid1,
+                    SiteVisitId = DbTestHelper.TestGuid1,
+                    Sky = 0,
+                    Temperature = new Business.DataTypes.Temperature() { Units = "C", Value = 20 },
+                    Wind = 2
+                },
+                EndTimeStamp = DateTime.Now,
+                IsDataEntryComplete = true,
+                LocationId = DbTestHelper.TestGuid4,
+                ObserverId = DbTestHelper.TestGuid3,
+                RecorderId = DbTestHelper.TestGuid2,
+                StartConditions = new SiteCondition()
+                {
+                    Id = DbTestHelper.TestGuid2,
+                    SiteVisitId = DbTestHelper.TestGuid1,
+                    Sky = 1,
+                    Temperature = new Business.DataTypes.Temperature() { Units = "C", Value = 23 },
+                    Wind = 2
+                },
+                StartTimeStamp = DateTime.Now.AddHours(-2)
+            };
+            SiteVisitMapper.Insert(toInsert);
+
+            using (IbaUnitTestEntities iba = new IbaUnitTestEntities())
+            {
+                var SiteVisitQuery = from SiteVisits in iba.SiteVisit_ado select SiteVisits;
+                Assert.IsNotNull(SiteVisitQuery, "Query result is null");
+                Assert.AreEqual(1, SiteVisitQuery.Count(), "Wrong number of results in query");
+                SiteVisit_ado adoSiteVisit = SiteVisitQuery.First();
+                validateObjectEquality(toInsert, adoSiteVisit);
+            }
+        }
+
+        /// <summary>
+        /// Validates that update of an existing record works and doesn't update any other records.s
+        /// </summary>
+        [TestMethod]
+        public void t_SiteVisit_Save_Update()
+        {
+            SiteVisit_ado setupObject = null;
+            // backdoor data setup
+            DbTestHelper.LoadAdoObjects(delegate(IbaUnitTestEntities iba)
+            {
+                setupObject = SiteVisit_ado.CreateSiteVisit_ado(DbTestHelper.TestGuid1, true, DbTestHelper.TestGuid2,
+                    DateTime.Now, DateTime.Now.AddHours(2), DbTestHelper.TestGuid3);
+                setupObject.ObserverId = DbTestHelper.TestGuid4;
+                setupObject.RecorderId = DbTestHelper.TestGuid3;
+                iba.AddToSiteVisit_ado(setupObject);
+            });
+            List<SiteVisit_ado> extraList = DbTestHelper.LoadExtraneousSiteVisits();
+
+            // Setup object to be saved. Change everything except the Id.
+            SiteVisit toSave = new SiteVisit()
+            {
+                Id = setupObject.SiteVisitId.Value,
+                EndTimeStamp = setupObject.EndTime.AddHours(1),
+                IsDataEntryComplete = false,
+                LocationId = DbTestHelper.TestGuid4,
+                ObserverId = DbTestHelper.TestGuid3,
+                RecorderId = DbTestHelper.TestGuid2,
+                StartTimeStamp = setupObject.StartTime.AddHours(0.5)
+            };
+
+            // Execute the test
+            SiteVisitMapper.Update(toSave);
+
+            // Validate results
+            using (IbaUnitTestEntities iba = new IbaUnitTestEntities())
+            {
+                var SiteVisitQuery = from SiteVisits in iba.SiteVisit_ado select SiteVisits;
+                Assert.IsNotNull(SiteVisitQuery, "Query result is null");
+                Assert.AreEqual(extraList.Count() + 1, SiteVisitQuery.Count(), "Wrong number of results in query");
+                SiteVisit_ado adoSiteVisit = SiteVisitQuery.First(x => x.SiteVisitId == DbTestHelper.TestGuid1);
+                validateObjectEquality(toSave, adoSiteVisit);
+
+                validateExtraSiteVisitAdos(extraList, SiteVisitQuery);
+            }
+        }
+
+        /// <summary>
+        /// Validates than an exception is thrown if an empty Guid is passed to the main Select function.
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(IbaArgumentException))]
+        public void t_SiteVisit_Select_ByGuid_Empty()
+        {
+            SiteVisitMapper.Select(Guid.Empty);
+        }
+
+        /// <summary>
+        /// Validates selection of a SiteVisit object by unique identifier.
+        /// </summary>
+        [TestMethod]
+        public void t_SiteVisit_Select_ByGuid()
+        {
+            SiteVisit_ado setupObject = null;
+            // backdoor data setup
+            DbTestHelper.LoadAdoObjects(delegate(IbaUnitTestEntities iba)
+            {
+                setupObject = SiteVisit_ado.CreateSiteVisit_ado(DbTestHelper.TestGuid1, true, DbTestHelper.TestGuid2,
+                    DateTime.Now, DateTime.Now.AddHours(2), DbTestHelper.TestGuid3);
+                setupObject.ObserverId = DbTestHelper.TestGuid4;
+                setupObject.RecorderId = DbTestHelper.TestGuid3;
+                iba.AddToSiteVisit_ado(setupObject);
+            });
+            List<SiteVisit_ado> extraList = DbTestHelper.LoadExtraneousSiteVisits();
+
+            // Exercise the test
+            SiteVisit SiteVisit = SiteVisitMapper.Select(setupObject.SiteVisitId.Value);
+
+            validateObjectEquality(SiteVisit, setupObject);
+        }
+
+        /// <summary>
+        /// Validates selection of all SiteVisit objects in the database.
+        /// </summary>
+        [TestMethod]
+        public void t_SiteVisit_Select_SpeciesYear()
+        {
+            // Backdoor setup
+            List<SiteVisit_ado> list = DbTestHelper.LoadExtraneousSiteVisits();
+
+            // Exercise the test
+            List<SiteVisit> SiteVisitList = SiteVisitMapper.SelectAllForSpeciesAndYear(DbTestHelper.SPECIES_1_CODE, 1);
+
+            // Validate results
+            Assert.AreEqual(list.Count(), SiteVisitList.Count, "Wrong number of objects in the result list");
+            foreach (SiteVisit_ado ado in list)
+            {
+                // just check to make sure the object is there; leave specific value check for the Select_ByGuid test
+                Assert.IsTrue(SiteVisitList.Exists(x => x.Id.Equals(ado.SiteVisitId)), "SiteVisitAdo " + ado.SiteVisitId.ToString() + " is not in the results");
+            }
+        }
+
+        /// <summary>
+        /// Validates selection of all SiteVisit objects in the database.
+        /// </summary>
+        [TestMethod]
+        public void t_SiteVisit_SelectAllForSite()
+        {
+            // Backdoor setup
+            List<SiteVisit_ado> list = DbTestHelper.LoadExtraneousSiteVisits();
+
+            // Exercise the test
+            List<SiteVisit> resultList = SiteVisitMapper.SelectAllForSite(list[0].LocationId);
+
+            // Validate results
+            Assert.AreEqual(resultList.Count(), 1, "Wrong number of objects in the result list");
+            foreach (SiteVisit_ado ado in list)
+            {
+                // just check to make sure the object is there; leave specific value check for the Select_ByGuid test
+                Assert.IsTrue(resultList.Exists(x => x.Id.Equals(ado.SiteVisitId)), "SiteVisitAdo " + ado.SiteVisitId.ToString() + " is not in the results");
+            }
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private static void validateExtraSiteVisitAdos(List<SiteVisit_ado> extraList, IQueryable<SiteVisit_ado> SiteVisitQuery)
+        {
+            foreach (SiteVisit_ado extra in extraList)
+            {
+                SiteVisit_ado adoSiteVisit = SiteVisitQuery.First(x => x.SiteVisitId == extra.SiteVisitId);
+                Assert.IsNotNull(adoSiteVisit, "There is no longer an object with id " + extra.SiteVisitId.ToString());
+                Assert.AreEqual(extra.EndConditionId, adoSiteVisit.EndConditionId, "EndConditionId for id " + extra.SiteVisitId.ToString());
+                Assert.AreEqual(extra.EndTime, adoSiteVisit.EndTime, "EndTime for id " + extra.SiteVisitId.ToString());
+                Assert.AreEqual(extra.EventId, adoSiteVisit.EventId, "EventId for id " + extra.SiteVisitId.ToString());
+                Assert.AreEqual(extra.IsDataEntryComplete, adoSiteVisit.IsDataEntryComplete, "IsDataEntryComplete for id " + extra.SiteVisitId.ToString());
+                Assert.AreEqual(extra.LocationId, adoSiteVisit.LocationId, "LocationId for id " + extra.SiteVisitId.ToString());
+                Assert.AreEqual(extra.ObserverId, adoSiteVisit.ObserverId, "ObserverId for id " + extra.SiteVisitId.ToString());
+                Assert.AreEqual(extra.RecorderId, adoSiteVisit.RecorderId, "RecorderId for id " + extra.SiteVisitId.ToString());
+                Assert.AreEqual(extra.StartConditionId, adoSiteVisit.StartConditionId, "StartConditionId for id " + extra.SiteVisitId.ToString());
+                Assert.AreEqual(extra.StartTime, adoSiteVisit.StartTime, "StartTime for id " + extra.SiteVisitId.ToString());
+            }
+        }
+
+        private static void validateObjectEquality(SiteVisit siteVisit, SiteVisit_ado adoSiteVisit)
+        {
+            Assert.IsNotNull(adoSiteVisit, "There is no SiteVisit with the ID to test for");
+            Assert.AreEqual(siteVisit.EndTimeStamp.Value.TestString(), adoSiteVisit.EndTime.TestString(), "EndTimeStamp");
+            Assert.AreEqual(siteVisit.Id, adoSiteVisit.SiteVisitId, "SiteVisitId");
+            Assert.AreEqual(siteVisit.IsDataEntryComplete, adoSiteVisit.IsDataEntryComplete, "IsDataEntryComplete");
+            Assert.AreEqual(siteVisit.LocationId, adoSiteVisit.LocationId, "LocationId");
+            Assert.AreEqual(siteVisit.ObserverId, adoSiteVisit.ObserverId, "ObserverId");
+            Assert.AreEqual(siteVisit.RecorderId, adoSiteVisit.RecorderId, "RecorderId");
+            Assert.AreEqual(siteVisit.StartTimeStamp.Value.TestString(), adoSiteVisit.StartTime.TestString(), "StartTimeStamp");
+            Assert.AreEqual(siteVisit.EndConditions.Id, adoSiteVisit.EndConditionId, "EndConditions");
+            Assert.AreEqual(siteVisit.StartConditions.Id, adoSiteVisit.StartConditionId, "StartConditions");
+        }
+
+        #endregion
+
+    }
+}

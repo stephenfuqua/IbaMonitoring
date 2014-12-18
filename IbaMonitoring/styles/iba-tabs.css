@@ -1,0 +1,70 @@
+#tabs
+{
+    background-color: #737345;
+    padding: 1px 1px 1px 0px;
+    clear: both;
+    text-align: right;
+    height: 25px;
+    margin: 0;
+    position: relative;
+}
+
+#tabs ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+
+#tabs li
+{
+    display: inline;
+}
+
+#tabs ul a
+{
+    padding: 5px 15px 5px 15px;
+    background-color: #E0D799;
+    font-size: 13px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+    display: block;
+    float: left;
+    margin: 0 1px 0 0px;
+}
+
+#tabs ul a.Active, #tabs ul a:hover
+{
+    background-color: #FBF9E6;
+}
+
+#tabs form
+{
+    position: absolute;
+    right: 0;
+    top: 3px;
+    margin: 0;
+    width: 230px;
+}
+
+#tabs input[type=text]
+{
+    margin: 0;
+    border: 1px solid black;
+    font-size: .8em;
+    width: 170px;
+    top: -4px;
+    left: 0;
+    position: relative;
+    padding: 1px;
+}
+#tabs input[type=image]
+{
+    margin: 0;
+    padding: 0;
+    top: 1px;
+    position: relative;
+}

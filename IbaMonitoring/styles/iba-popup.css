@@ -1,0 +1,28 @@
+﻿.ModalPopup
+{
+    background: #FFFFFF;
+    border: 2px solid black;
+    width: 450px;
+    height: 300px;
+    padding: 5px;
+    font-family: verdana;
+    font-size: 12px;
+    line-height: 1.5em;
+    overflow-y: scroll;
+}
+
+.ModalPopupHandle
+{
+    font-weight: bold;
+    font-size: 1.1em;
+    background: #747E8C;
+    color: White;
+    cursor: move;
+    padding: 2px;
+    margin: 0;
+}
+
+.PopupClose
+{
+     text-align: center;
+}

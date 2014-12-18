@@ -1,0 +1,19 @@
+﻿CREATE PROCEDURE [dbo].[Person_Get]
+	@Id UNIQUEIDENTIFIER = null,
+	@OpenId VARCHAR(1000) = null,
+	@All BIT = null
+AS
+	SET NOCOUNT ON;
+
+	SELECT p.EmailAddress,
+		p.FirstName,
+		p.IsActive,
+		p.LastName,
+		p.OpenId,
+		p.PersonId,
+		p.PhoneNumber
+	FROM dbo.Person p
+	WHERE PersonId = @Id
+		OR OpenId = @OpenId
+		OR @All = 1;
+RETURN 0

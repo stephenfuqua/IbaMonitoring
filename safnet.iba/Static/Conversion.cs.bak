@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace safnet.iba.Static
+{
+    public static class Conversion
+    {
+        public static string GetDateForWeekNumber(int weekNumber)
+        {
+            DateTime date = new DateTime(2010, 01, 01);
+            date = date.AddDays(7 * weekNumber);
+            while (date.DayOfWeek != DayOfWeek.Sunday)
+            {
+                date = date.AddDays(-1);
+            }
+
+            // This gives us a date that is one week too far in the future
+            date = date.AddDays(-7);
+
+            return date.ToString("M/d");
+        }
+    }
+}

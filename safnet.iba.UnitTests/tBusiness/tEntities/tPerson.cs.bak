@@ -1,0 +1,144 @@
+﻿using safnet.iba.Business.Entities;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+
+namespace safnet.iba.UnitTest
+{
+    
+    
+    /// <summary>
+    ///This is a test class for tPerson and is intended
+    ///to contain all tPerson Unit Tests
+    ///</summary>
+    [TestClass()]
+    public class tPerson
+    {
+
+
+
+        /// <summary>
+        ///A test for Person Constructor
+        ///</summary>
+        [TestMethod()]
+        public void t_PersonConstructor()
+        {
+            Person target = new Person();
+            Assert.IsNotNull(target);
+        }
+
+        /// <summary>
+        ///A test for CreatePerson
+        ///</summary>
+        [TestMethod()]
+        [HostType("Moles")]
+        public void t_CreatePerson()
+        {
+            safnet.iba.Business.Entities.Moles.MSafnetBaseEntity.AllInstances.SetNewId = (SafnetBaseEntity entity) => { return entity.Id = LookupConstants.LocationTypeParent; };
+
+            Person actual = Person.CreatePerson();
+            Assert.IsNotNull(actual, "object is null");
+            Assert.AreEqual(LookupConstants.LocationTypeParent, actual.Id, "ID not assigned");
+        }
+
+        /// <summary>
+        ///A test for EmailAddress
+        ///</summary>
+        [TestMethod()]
+        public void t_EmailAddress()
+        {
+            Person target = new Person();
+            string expected = "bill.gates@microsoft.com";
+
+            string actual;
+            target.EmailAddress = expected;
+            actual = target.EmailAddress;
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        ///A test for FirstName
+        ///</summary>
+        [TestMethod()]
+        public void t_FirstName()
+        {
+            Person target = new Person();
+            string expected = "Bill";
+
+            string actual;
+            target.FirstName = expected;
+            actual = target.FirstName;
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        ///A test for FullName
+        ///</summary>
+        [TestMethod()]
+        public void t_FullName()
+        {
+            Person target = new Person() { FirstName = "Bill", LastName = "Gates" };
+
+            string actual;
+            actual = target.FullName;
+            Assert.AreEqual("Bill Gates", actual);
+        }
+
+        /// <summary>
+        ///A test for IsActive
+        ///</summary>
+        [TestMethod()]
+        public void t_IsActive()
+        {
+            Person target = new Person();
+            bool expected = true;
+
+            bool actual;
+            target.IsActive = expected;
+            actual = target.IsActive;
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        ///A test for LastName
+        ///</summary>
+        [TestMethod()]
+        public void t_LastName()
+        {
+            Person target = new Person();
+            string expected = "Gates";
+            string actual;
+            target.LastName = expected;
+            actual = target.LastName;
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        ///A test for OpenId
+        ///</summary>
+        [TestMethod()]
+        public void t_OpenId()
+        {
+            Person target = new Person();
+            string expected = "http://www.hotmail.com/bill.gates";
+
+            string actual;
+            target.OpenId = expected;
+            actual = target.OpenId;
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        ///A test for PhoneNumber
+        ///</summary>
+        [TestMethod()]
+        public void t_PhoneNumber()
+        {
+            Person target = new Person();
+            string expected = "(555) 555-5555";
+            string actual;
+            target.PhoneNumber = expected;
+            actual = target.PhoneNumber;
+            Assert.AreEqual(expected, actual);
+        }
+    }
+}

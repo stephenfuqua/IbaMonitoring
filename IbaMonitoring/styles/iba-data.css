@@ -1,0 +1,89 @@
+﻿.Bin1
+{
+    background-color: #FFFDA9;
+    text-align: center;
+}
+.Bin5
+{
+    background-color: #FFD400;
+    text-align: center;
+}
+.Bin9
+{
+    background-color: #FFA900;
+    text-align: center;
+}
+.Bin13
+{
+    background-color: #FA6D05;
+    text-align: center;
+}
+.Bin17
+{
+    background-color: #E62400;
+    text-align: center;
+}
+.Bin21
+{
+    background-color: #9B1700;
+    color: #FFFFFF;
+    text-align: center;
+}
+.Bin25
+{
+    background-color: #000000;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+table.Results
+{
+    color: #333333;
+    border-collapse: collapse;
+    padding: 4px;
+    margin: 10px 10px 20px 10px;
+    border: 1px solid silver;
+}
+
+tr.Header, tr.Footer
+{
+    color: #FFFFFF;
+    background-color: #507CD1;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+tr.Header a, tr.Footer a
+{
+    color: #FFFFFF;
+}
+
+tr.RegularRow
+{
+    background-color: #FFFFFF;
+}
+
+tr.AlternateRow
+{
+    background-color: #EFF3FB;
+}
+
+.Pager
+{
+    color: #FFFFFF;
+    background-color: #2461BF;
+    font-weight: bold;
+}
+
+tr.RegularRow td, tr.Header th, tr.AlternateRow td
+{
+    border: 1px solid silver;
+    text-align: center;
+    padding: 1px;
+}
+
+tr.RegularRow td.FirstColumn, tr.AlternateRow td.FirstColumn
+{
+    text-align: left;
+}
+
+

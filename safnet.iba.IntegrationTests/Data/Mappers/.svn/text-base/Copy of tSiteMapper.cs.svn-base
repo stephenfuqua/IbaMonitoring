@@ -1,0 +1,205 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using safnet.iba.Data.Mappers;
+using safnet.iba.Business.Entities;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace safnet.iba.NUnit.Data.Mappers
+{
+    /// <summary>
+    /// Validates the database mapping functions of the <see cref="SiteMapper"/> class.s
+    /// </summary>
+    [TestClass]
+    public class tSiteMapper
+    {
+        /// <summary>
+        /// Sets up each test.
+        /// </summary>
+        [TestInitialize]
+        public void SetUp()
+        {
+            DbTestHelper.ClearTable("Location");
+        }
+
+        /// <summary>
+        /// Validates that a new record can be saved correctly.
+        /// </summary>
+        [TestMethod]
+        public void t_Site_Save_Insert()
+        {
+            Site site = new Site()
+            {
+                CodeName = "codename",
+                GeoCoordinate = new Business.DataTypes.Coordinate()
+                {
+                    Latitude = new Business.DataTypes.Degree() { Value = 56.789M },
+                    Longitude = new Business.DataTypes.Degree() { Value = 67.281M }
+                },
+                Id = DbTestHelper.TestGuid1,
+                Name = "Site Name"
+            };
+            SiteMapper.Insert(site);
+
+
+            using (IbaUnitTestEntities iba = new IbaUnitTestEntities())
+            {
+                var siteQuery = from sites in iba.Site_Ado select sites;
+                Assert.IsNotNull(siteQuery, "Query result is null");
+                Assert.AreEqual(1, siteQuery.Count(), "Wrong number of results in query");
+                Site_Ado adoSite = siteQuery.First();
+                validateObjectEquality(site, adoSite);
+            }
+        }
+
+
+        private static void validateObjectEquality(Site site, Site_Ado adoSite)
+        {
+            Assert.IsNotNull(adoSite, "There is not Site with the ID to test for");
+            Assert.AreEqual(site.CodeName, adoSite.CodeName, "CodeName");
+            Assert.AreEqual(site.GeoCoordinate.Latitude.Value, adoSite.Latitude, "Latitude");
+            Assert.AreEqual(site.GeoCoordinate.Longitude.Value, adoSite.Longitude, "Longitude");
+            Assert.AreEqual(site.Id, adoSite.LocationId, "Id");
+            Assert.AreEqual(site.Name, adoSite.LocationName, "Name");
+        }
+
+        /// <summary>
+        /// Validates that update of an existing record works and doesn't update any other records.s
+        /// </summary>
+        [TestMethod]
+        public void t_Site_Save_Update()
+        {
+            Location_Ado location = null;
+            // backdoor data setup
+            DbTestHelper.LoadAdoObjects(delegate(IbaUnitTestEntities iba)
+            {
+                location = Location_Ado.CreateLocation_Ado(DbTestHelper.TestGuid1,
+                    "locationName", LookupConstants.LOCATION_TYPE_SITE);
+                location.CodeName = "abc";
+                location.Latitude = 89.3M;
+                location.Longitude = 90.10093M;
+                location.ParentLocationId = null;
+                iba.AddToLocation_Ado(location);
+            });
+            List<Location_Ado> extraList = DbTestHelper.LoadExtraneousLocations();
+
+            // Setup object to be saved. Change everything except the Id.
+            Site site = new Site()
+            {
+                CodeName = location.CodeName + "a",
+                GeoCoordinate = new Business.DataTypes.Coordinate()
+                {
+                    Latitude = new Business.DataTypes.Degree() { Value = location.Latitude.Value + 1M},
+                    Longitude = new Business.DataTypes.Degree() { Value = location.Longitude.Value + 1M }
+                },
+                Id = location.LocationId,
+                Name = location.LocationName + "asd"
+            };
+            
+            // Execute the test
+            SiteMapper.Update(site);
+
+            // Validate results
+            using (IbaUnitTestEntities iba = new IbaUnitTestEntities())
+            {
+                var siteQuery = from sites in iba.Site_Ado select sites;
+                Assert.IsNotNull(siteQuery, "Query result is null");
+                Assert.AreEqual(extraSites(extraList).Count() + 1, siteQuery.Count(), "Wrong number of results in query");
+                Site_Ado adoSite = siteQuery.First(x => x.LocationId == DbTestHelper.TestGuid1);
+                validateObjectEquality(site, adoSite);
+
+                // double check the other objects as well, must make sure they remain unchanged.
+                foreach (Location_Ado adoLocation in extraSites(extraList))
+                {
+                    adoSite = siteQuery.First(x => x.LocationId == adoLocation.LocationId);
+                    Assert.IsNotNull(adoSite, "There is no longer an object with id " + adoLocation.LocationId.ToString());
+                    Assert.AreEqual(adoLocation.CodeName, adoSite.CodeName, "Extra " + adoSite.LocationId.ToString() + " CodeName mismatch");
+                    Assert.AreEqual(adoLocation.Latitude, adoSite.Latitude, "Extra " + adoSite.LocationId.ToString() + " Latitude mismatch");
+                    Assert.AreEqual(adoLocation.Longitude, adoSite.Longitude, "Extra " + adoSite.LocationId.ToString() + " Longitude mismatch");
+                    Assert.AreEqual(adoSite.LocationName, adoSite.LocationName, "Extra " + adoSite.LocationId.ToString() + " Locationname mismatch");
+                }
+            }
+        }
+
+        [TestMethod]
+        public void t_Site_Select_ByGuid()
+        {
+            Location_Ado location = null;
+            // backdoor data setup
+            DbTestHelper.LoadAdoObjects(delegate(IbaUnitTestEntities iba)
+            {
+                location = Location_Ado.CreateLocation_Ado(DbTestHelper.TestGuid1,
+                    "locationName", LookupConstants.LOCATION_TYPE_SITE);
+                location.CodeName = "abc";
+                location.Latitude = 89.3M;
+                location.Longitude = 90.10093M;
+                location.ParentLocationId = null;
+                iba.AddToLocation_Ado(location);
+            });
+            DbTestHelper.LoadExtraneousLocations();
+
+            // Exercise the test
+            Site site = SiteMapper.Select(location.LocationId);
+
+            validateResults(location, site);
+        }
+
+        [TestMethod]
+        public void t_Site_Select_All()
+        {
+            // Backdoor setup
+            List<Location_Ado> list = DbTestHelper.LoadExtraneousLocations();
+            List<Location_Ado> siteAdoList = extraSites(list);
+
+            // Exercise the test
+            List<Site> siteList = SiteMapper.SelectAll();
+
+            // Validate results
+            Assert.AreEqual(siteAdoList.Count(), siteList.Count, "Wrong number of objects in the result list");
+            foreach (Location_Ado ado in siteAdoList)
+            {
+                // just check to make sure the object is there; leave specific value check for the Select_ByGuid test
+                Assert.IsTrue(siteList.Exists(x => x.Id.Equals(ado.LocationId)), "Location " + ado.LocationId.ToString() + " is not in the results");
+            }
+        }
+
+        private static List<Location_Ado> extraSites(List<Location_Ado> list)
+        {
+            List<Location_Ado> siteAdoList = list.FindAll(n => n.LocationTypeId.Equals(LookupConstants.LOCATION_TYPE_SITE));
+            return siteAdoList;
+        }
+
+        [TestMethod]
+        public void t_Site_Select_ByCodeName()
+        {
+            Location_Ado location = null;
+            // backdoor data setup
+            DbTestHelper.LoadAdoObjects(delegate(IbaUnitTestEntities iba)
+            {
+                location = Location_Ado.CreateLocation_Ado(new Guid("87606168-3ac7-402a-8ae6-4f6905555581"),
+                    "locationName", LookupConstants.LOCATION_TYPE_SITE);
+                location.CodeName = "abc";
+                location.Latitude = 89.3M;
+                location.Longitude = 90.10093M;
+                location.ParentLocationId = null;
+                iba.AddToLocation_Ado(location);
+            });
+            DbTestHelper.LoadExtraneousLocations();
+
+            // Exercise the test
+            Site site = SiteMapper.Select_ByCodeName(location.CodeName);
+
+            validateResults(location, site);
+        }
+
+        private static void validateResults(Location_Ado location, Site site)
+        {
+            Assert.AreEqual(location.CodeName, site.CodeName, "CodeName");
+            Assert.AreEqual(location.Latitude, site.GeoCoordinate.Latitude.Value, "Latitude");
+            Assert.AreEqual(location.LocationId, site.Id, "Id");
+            Assert.AreEqual(location.LocationName, site.Name, "name");
+            Assert.AreEqual(location.Longitude, site.GeoCoordinate.Longitude.Value, "Longitude");
+        }
+    }
+}

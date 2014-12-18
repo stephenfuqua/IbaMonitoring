@@ -1,0 +1,180 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/iba.master" AutoEventWireup="true" Inherits="about_methods" Codebehind="methods.aspx.cs" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="title" runat="Server">
+    About: Methods (Important Bird Area Monitoring Program)
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="subnavTitle" runat="Server">
+    About
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="subnavLinks" runat="Server">
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="contentNav" runat="Server">
+    <p>
+        <a href="../forms/TC IBA booklet final 2010.pdf">Mississippi River Twin Cities IBA Protocol
+            Booklet</a></p>
+    <h3>
+        Pre-Survey Preparation</h3>
+    <p>
+        Re-familiarize yourself with birds that commonly migrate through and breed along
+        the Twin Cities area of the Mississippi River. Practice estimating 50-meter distances
+        for the fixed radius point counts.</p>
+    <h4>
+        Scouting</h4>
+    <p>
+        In most cases, survey points in each site have been visited to verify their location
+        and accessibility and their GPS coordinates recorded. However, it is recommended
+        that each surveyor/team visit their site before data collection begins to find parking,
+        locate each point, and identify an optimal route around the site that minimizes
+        travel time.
+    </p>
+    <h4>
+        Site Access</h4>
+    <p>
+        In the event that a point becomes inaccessible, please re-locate a new point as
+        close as possible to the original point. Note the new location on the site map and
+        record the point ID number, GPS coordinates, and any other details about the new
+        location on the map and data sheets.</p>
+    <h4>
+        Equipment Checklist</h4>
+    <p>
+        Equipment to be provided by Audubon:</p>
+    <ul type="disc">
+        <li>Site maps with points marked</li>
+        <li>Datasheets</li>
+        <li>Clipboard</li>
+        <li>GPS unit (you can either use your own or borrow one from Audubon)</li>
+    </ul>
+    <p>
+        Equipment to be provided by volunteers:</p>
+    <ul type="disc">
+        <li>Binoculars</li>
+        <li>Pencils or fine-point Sharpie® marker (won’t bleed in the rain)</li>
+        <li>Watch or timer</li>
+        <li>Your favorite field guide</li>
+        <li>Water, sunscreen, snacks, etc.</li>
+        <li>If desired, a buddy, fellow birder, or helpful hand</li>
+    </ul>
+    <h3>
+        When to Survey Sites</h3>
+    <h4>
+        Dates</h4>
+    <p>
+        Point counts will be performed 6 times (once per week) during migration (mid-April
+        to the end of May) and at least 2 times (separated by at least 1 ½ weeks) during
+        the breeding season (early June-early July).
+    </p>
+    <h4>
+        Time of Day</h4>
+    <p>
+        Begin sampling at your first point as close to sunrise as possible (as early as
+        30min before sunrise). Point counts should not continue beyond 4 hours after sunrise.
+        If all points in the site cannot be completed in this time frame, finish the remaining
+        points another morning and make note of this on the datasheet with a brief explanation
+        (ex. &quot;Started raining before points A, B, and C were surveyed&quot;). It is
+        important that each site’s surveys be completed within as short a time as possible,
+        as data will be collected on a weekly basis during migration.
+    </p>
+    <h4>
+        Weather</h4>
+    <p>
+        Occasional short rain showers or bouts of light drizzle are acceptable, but point
+        counts should not be conducted in fog, steady rain or drizzle. Likewise, avoid counting
+        in conditions where the wind exceeds 12-15 mph (enough breeze to raise dust and
+        loose paper and move small tree branches).
+    </p>
+    <h3>
+        Counting Birds</h3>
+    <h4>
+        Survey Route</h4>
+    <p>
+        In order to avoid a &quot;time of day&quot; effect, alternate starting points for
+        the route. For example, if you are working through points on a loop, walk clockwise
+        one day and counter-clockwise through the points the next visit.
+    </p>
+    <h4>
+        50 meter Fixed-Radius Point Count Methodology (5 minute duration)</h4>
+    <ol>
+        <li>Navigate to each point using a hand-held GPS unit (see Appendix B).</li>
+        <li>While working in teams is encouraged, there should be only one primary observer
+            per site. Having another team member recording the data (as dictated by the observer)
+            is very helpful and can allow the observer to focus solely on identifying birds.</li>
+        <li>Wait for about a minute before beginning the 5-minute count period. This allows
+            the observer to catch their breath, get oriented, record site conditions, and prepare
+            the data sheets. Try to identify landmarks that are 50 meters from you.</li>
+        <li>What to Count?
+            <ul type="disc">
+                <li>Count all land birds seen or heard during a 5-minute period. Do not count waterfowl,
+                    wading birds, or other water/shore birds </li>
+                <li>Count all birds that flushed from the habitat upon the observer’s approach to the
+                    point. </li>
+                <li>Count birds that enter (and remain in) the habitat during the 5-minute period.</li>
+                <li>Do not count flyovers (birds merely passing through). </li>
+                <li>Count birds that are foraging aerially (flycatchers, etc.) </li>
+            </ul>
+        </li>
+        <li>On the datasheet, identify birds using their 4 letter AOU Alpha Codes. If unsure
+            of the identity of a bird, make notes on back of the data sheet with comments describing
+            its song, appearance, and where you saw it—it is ok to go back and verify a suspected
+            ID later if you feel confident you can. If you can partially identify the bird,
+            identify it as specifically as you can. (ex. &quot;unknown sparrow&quot;). Otherwise,
+            note it as UNKN.</li>
+        <li>Denote birds seen or heard within 50 meters and those heard outside the 50-meter
+            band. Record these distances as the horizontal distance from the observer to the
+            bird.</li>
+        <li>Don’t use any method of attracting or coaxing birds into view (i.e. no &quot;pishing&quot;).</li>
+    </ol>
+    <h4>
+        Temporary Noise or Interruptions</h4>
+    <p>
+        If a temporary noise (airplane overhead) or interruption (curious park patron) disrupts
+        your count at a given point, pause the clock until the interruption has passed and
+        then resume counting for the remainder of the period. The total count time for birds
+        at every point (not including interruptions) should be 5 minutes.</p>
+    <h3>
+        Filling Out the Data Form</h3>
+    <p>
+        Complete a new data sheet for each visit to the site. On particularly busy mornings,
+        more than one sheet may be needed. If no birds are observed at a given point, fill
+        out the point information and note &quot;No Birds Observed&quot; on the data sheet.
+    </p>
+    <h4>
+        Field Descriptions on Forms</h4>
+    <ul type="disc">
+        <li><strong>Site</strong>: Name of the park or area being surveyed</li>
+        <li><strong>Date</strong>: Use mm/dd/yyyy format</li>
+        <li><strong>Site Start Time</strong>: Start time of first point count on the site. Use
+            hh:mm format.</li>
+        <li><strong>Site Stop Time</strong>: End time of last point count on the site. Use hh:mm
+            format. </li>
+        <li><strong>Temperature</strong>: Record the temperature in degrees (either Fahrenheit
+            or Celsius) for the time at which the first point count was started and again at
+            the end of the day’s survey. &nbsp;You may need to fill these out after the day’s
+            surveying using <a href="http://www.weather.gov">www.weather.gov</a> or another
+            weather forecasting site.</li>
+        <li>For<strong> Sky</strong> and <strong>Wind</strong> entries, use the condition descriptions
+            to assign codes to the site at the start of the first point count and end of the
+            last count. If conditions differ substantially at subsequent points, make note of
+            this in the Comments column of the data sheet. </li>
+        <li><strong>Observer</strong>: Person actually searching for and identifying birds</li>
+        <li><strong>Recorder</strong>: May be same as observer or another team member</li>
+        <li><strong>Point ID</strong>: The full letter and number code for the sampling point</li>
+        <li><strong>Noise Code</strong>: Use the Background Noise descriptions to assign a noise
+            rating to each point prior to the point count</li>
+        <li><strong>Time</strong>: Record the start time for each point count</li>
+        <li><strong>Species Code</strong>: Use the 4 letter AOU Alpha Code for the species seen.
+            If you are unsure of the correct code while in the field, write down an abbreviation
+            you will recognise and enter the correct Alpha code later in the Comments section</li>
+        <li><strong>Tally</strong>: Use this space to tally up the number of birds seen during
+            5 min count</li>
+        <li><strong>Total</strong>: Verify the tally using a numeral</li>
+        <li><strong>Comments</strong>: Any observations of note for birds, sample point conditions,
+            or interruptions</li>
+    </ul>
+</asp:Content>
+<asp:Content ID="Content6" ContentPlaceHolderID="contentTitle" runat="Server">
+    Bird Survey Methods
+</asp:Content>
+<asp:Content ID="Content7" ContentPlaceHolderID="contentBody" runat="Server">
+</asp:Content>

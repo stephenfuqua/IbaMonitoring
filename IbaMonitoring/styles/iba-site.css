@@ -1,0 +1,37 @@
+@charset "iso-8859-1";
+@import url("iba-banner.css");
+@import url("iba-tabs.css");
+@import url("iba-subnav.css");
+@import url("iba-content.css");
+@import url("iba-footer.css");
+@import url("iba-login.css");
+@import url("iba-form.css");
+@import url("iba-popup.css");
+@import url("iba-data.css");
+
+#frame
+{
+    width: 920px;
+    margin: 10px auto auto auto;
+    border: 1px solid black;
+    background-color: #FBF9E6;
+    font-family: verdana;
+    font-size: 12px;
+}
+
+div
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+#main
+{
+    position: relative;
+    padding-top: 30px;
+}
+
+.hidden
+{
+    display: none;
+}

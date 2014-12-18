@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E3B95EFC-D624-44A5-9ACA-8CD3BEEBA9B9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IbaMonitoring</RootNamespace>
+    <AssemblyName>IbaMonitoring</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.7.1213\lib\45\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AjaxMin">
+      <HintPath>..\packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="Artem.Google">
+      <HintPath>..\packages\GoogleMapControl.6.1.12290.1016\lib\net40\Artem.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth, Version=3.4.5.10202, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.3.4.5.10202\lib\DotNetOpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\packages\DotNetZip.1.9.3\lib\net20\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage">
+      <HintPath>..\packages\WindowsAzure.Storage.2.1.0.3\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="about\aboutnav.ascx.cs">
+      <DependentUpon>aboutnav.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about\aboutnav.ascx.designer.cs">
+      <DependentUpon>aboutnav.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="about\datasheets.aspx.cs">
+      <DependentUpon>datasheets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about\datasheets.aspx.designer.cs">
+      <DependentUpon>datasheets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="about\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="about\maps.aspx.cs">
+      <DependentUpon>maps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about\maps.aspx.designer.cs">
+      <DependentUpon>maps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="about\methods.aspx.cs">
+      <DependentUpon>methods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about\methods.aspx.designer.cs">
+      <DependentUpon>methods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="about\protocols.aspx.cs">
+      <DependentUpon>protocols.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about\protocols.aspx.designer.cs">
+      <DependentUpon>protocols.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\account.aspx.cs">
+      <DependentUpon>account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\account.aspx.designer.cs">
+      <DependentUpon>account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\NonAdminLevelAccessProfile.ascx.cs">
+      <DependentUpon>NonAdminLevelAccessProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\NonAdminLevelAccessProfile.ascx.designer.cs">
+      <DependentUpon>NonAdminLevelAccessProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="account\OnlyAdminLevelAccessProfile.ascx.cs">
+      <DependentUpon>OnlyAdminLevelAccessProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\OnlyAdminLevelAccessProfile.ascx.designer.cs">
+      <DependentUpon>OnlyAdminLevelAccessProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="account\register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\IbaPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\IbaUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\Utility.cs" />
+    <Compile Include="AutoComplete.cs">
+      <DependentUpon>AutoComplete.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="BMDE.aspx.cs">
+      <DependentUpon>BMDE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BMDE.aspx.designer.cs">
+      <DependentUpon>BMDE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iba.master.cs">
+      <DependentUpon>iba.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iba.master.designer.cs">
+      <DependentUpon>iba.master</DependentUpon>
+    </Compile>
+    <Compile Include="maintenance.aspx.cs">
+      <DependentUpon>maintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="maintenance.aspx.designer.cs">
+      <DependentUpon>maintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="observations\NewRecorder.ascx.cs">
+      <DependentUpon>NewRecorder.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="observations\NewRecorder.ascx.designer.cs">
+      <DependentUpon>NewRecorder.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="observations\PointCounts.aspx.cs">
+      <DependentUpon>PointCounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="observations\PointCounts.aspx.designer.cs">
+      <DependentUpon>PointCounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="observations\Review.aspx.cs">
+      <DependentUpon>Review.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="observations\Review.aspx.designer.cs">
+      <DependentUpon>Review.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="observations\SiteConditions.aspx.cs">
+      <DependentUpon>SiteConditions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="observations\SiteConditions.aspx.designer.cs">
+      <DependentUpon>SiteConditions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="observations\Supplemental.aspx.cs">
+      <DependentUpon>Supplemental.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="observations\Supplemental.aspx.designer.cs">
+      <DependentUpon>Supplemental.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="observations\SurveySteps.ascx.cs">
+      <DependentUpon>SurveySteps.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="observations\SurveySteps.ascx.designer.cs">
+      <DependentUpon>SurveySteps.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="resources\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="resources\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Content Include="about\aboutnav.ascx" />
+    <Content Include="about\datasheets.aspx" />
+    <Content Include="about\Default.aspx" />
+    <Content Include="about\maps.aspx" />
+    <Content Include="about\methods.aspx" />
+    <Content Include="about\protocols.aspx" />
+    <Content Include="account\account.aspx" />
+    <Content Include="account\NonAdminLevelAccessProfile.ascx" />
+    <Content Include="account\OnlyAdminLevelAccessProfile.ascx" />
+    <Content Include="account\register.aspx" />
+    <Content Include="AutoComplete.asmx" />
+    <Content Include="BMDE.aspx" />
+    <Content Include="ChangeLog.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="images.large\aol.gif" />
+    <Content Include="images.large\facebook.gif" />
+    <Content Include="images.large\google.gif" />
+    <Content Include="images.large\myopenid.gif" />
+    <Content Include="images.large\openid.gif" />
+    <Content Include="images.large\verisign.gif" />
+    <Content Include="images.large\yahoo.gif" />
+    <Content Include="images\109_AllAnnotations_Error_16x16_72.png" />
+    <Content Include="images\109_AllAnnotations_Help_16x16_72.png" />
+    <Content Include="images\109_AllAnnotations_Warning_16x16_72.png" />
+    <Content Include="images\3.5_Disk_Drive.png" />
+    <Content Include="images\305_Close_16x16_72.png" />
+    <Content Include="images\arrow_bg.gif" />
+    <Content Include="images\arrow_right_blue.png" />
+    <Content Include="images\arrow_right_silver.png" />
+    <Content Include="images\audubon.jpg" />
+    <Content Include="images\base_checkmark_32.png" />
+    <Content Include="images\cc-by-nc-sa.png" />
+    <Content Include="images\check_blue.png" />
+    <Content Include="images\CommandButtons.png" />
+    <Content Include="images\delete_x.png" />
+    <Content Include="images\eraser.png" />
+    <Content Include="images\error.png" />
+    <Content Include="images\Filter.png" />
+    <Content Include="images\GC_river_view.jpg" />
+    <Content Include="images\logo-AHATS.jpg" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\ms_river_fund.jpg" />
+    <Content Include="images\ms_river_fund.png" />
+    <Content Include="images\next.png" />
+    <Content Include="images\nextpoint.png" />
+    <Content Include="images\openid-inputicon.gif" />
+    <Content Include="images\park_service.gif" />
+    <Content Include="images\pencil.png" />
+    <Content Include="images\pending_request_16x16_72.png" />
+    <Content Include="images\PlayHS.png" />
+    <Content Include="images\refresh_blue.png" />
+    <Content Include="images\save.png" />
+    <Content Include="images\search.jpg" />
+    <Content Include="images\usfws.gif" />
+    <Content Include="images\Warning.png" />
+    <Content Include="maintenance.aspx" />
+    <Content Include="observations\NewRecorder.ascx" />
+    <Content Include="observations\PointCounts.aspx" />
+    <Content Include="observations\Review.aspx" />
+    <Content Include="observations\SiteConditions.aspx" />
+    <Content Include="observations\Supplemental.aspx" />
+    <Content Include="observations\SurveySteps.ascx" />
+    <Content Include="resources\Default.aspx" />
+    <Content Include="scripts\eventHandlers.js" />
+    <Content Include="scripts\jquery-1.4.2.min.js" />
+    <Content Include="scripts\validators.js" />
+    <Content Include="styles\iba-banner.css" />
+    <Content Include="styles\iba-content.css" />
+    <Content Include="styles\iba-data.css" />
+    <Content Include="styles\iba-footer.css" />
+    <Content Include="styles\iba-form.css" />
+    <Content Include="styles\iba-login.css" />
+    <Content Include="styles\iba-popup.css" />
+    <Content Include="styles\iba-site.css" />
+    <Content Include="styles\iba-subnav.css" />
+    <Content Include="styles\iba-tabs.css" />
+    <Content Include="styles\iba-widepage.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppBrowsers\CSSFriendlyAdapters.browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\text on buttons.design" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="iba.master" />
+    <Content Include="packages.config" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="forms\" />
+    <Folder Include="maps\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\safnet.iba\safnet.iba.csproj">
+      <Project>{0efda517-37b7-4f38-b1fb-c7a983465cbe}</Project>
+      <Name>safnet.iba</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>25560</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:25560/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
