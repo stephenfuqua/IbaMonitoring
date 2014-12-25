@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="4e972548-35d4-4b56-b854-77499c25cfd3"
+  name="AjaxControlToolkit"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="db8adc29-8927-4e2b-b02a-a9ab0441138f"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAjaxControlToolkit"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="4db542e0-7ca7-495a-a651-5e1546b2a7f3"
+        name="CalendarExtender"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="8584af7d-9ea0-4ee3-8a7c-01d206e45fb4"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fpackages%2FAjaxControlToolkit.7.1213%2Flib%2F45%2FAjaxControlToolkit.dll Namespace%3DAjaxControlToolkit Type%3DCalendarExtender"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="caff005f-95fe-463e-b18f-0e8487c65476"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0f3bec61-292f-47d9-b8eb-84bc17a10614">
+                <propertyInstance
+                  Id="aaa69f9c-452a-49b8-a21d-2a2c003d45c1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2dd39257-b87a-4fc8-af3e-970e8e572927">
+                <propertyInstance
+                  Id="4eb303f8-9bd0-4253-ae8b-636f88e3dcc0"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="687965b7-91ac-4736-97f9-4b452460b0d2">
+                <propertyInstance
+                  Id="ef5a54d8-a661-4455-93b9-e464601e3db0"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9e26193a-d3c5-4556-bb4c-f9a32e661942">
+                <propertyInstance
+                  Id="01329d94-93c0-46de-8041-d17e71771e9c"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="23702ede-d449-45c3-8454-ba0dc066dc28">
+                <propertyInstance
+                  Id="81215397-fb2a-485f-a5c1-f1e9fe10c536"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

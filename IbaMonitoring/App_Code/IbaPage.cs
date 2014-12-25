@@ -31,8 +31,21 @@ namespace IbaMonitoring
             set { _userState = value; }
         }
 
-        
 
+        private IGlobalMap _globalMap;
+
+        protected IGlobalMap GlobalMap
+        {
+            get
+            {
+                if (_globalMap == null)
+                {
+                    _globalMap = new GlobalMap(new HttpApplicationStateWrapper(Application));
+                }
+                return _globalMap;
+            }
+            set { _globalMap = value; }
+        }
 
 
         /// <summary>

@@ -1,0 +1,490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="ce9de287-b2c9-4793-b9f0-c67cda7049e2"
+  name="Presenters"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="cb9676e7-25f2-4559-9957-6941d866b4f6"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3Dsafnet.iba.Presenters"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="a6e0185c-b35c-4cb3-8fc7-308cc6c93fe0"
+        name="SiteConditionsPresenter"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="f21b770f-f82f-40a0-89f4-56815db7c8fa"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="8df481fb-538a-44ba-8d4d-4cd283948bfc"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a4804f19-647c-4c76-baeb-c8a251858dd5">
+                <propertyInstance
+                  Id="e6080cd7-3de2-4019-b30d-719a5249d9b1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bd1c8c5d-172f-489a-85b2-955028bec5a1">
+                <propertyInstance
+                  Id="b5fab2d0-709b-4bd0-b8f9-d6967518f252"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0e6a1532-36ae-43e0-8538-1673b124c342">
+                <propertyInstance
+                  Id="c7f4c4ac-2720-4fad-8c24-e749e0b4f041"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4f34f937-5178-44f4-b5e9-3aaadb949d88">
+                <propertyInstance
+                  Id="2db959f9-abdb-4b04-b648-561232baee08"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f6e8cb78-2a43-4c35-a54d-5bb5f83e51a3">
+                <propertyInstance
+                  Id="538a50aa-7ede-48ea-a4bc-74dc339ec935"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="69e69cf6-f5fd-4115-af9e-99c078d9bb95">
+            <interfaceMoniker
+              Id="cecaedd6-7308-4bfb-85be-686da3da80f3"
+              LastKnownName="ISiteConditionsView"
+              LastKnownLocation="Package8_1129.uml" />
+          </dependency>
+          <dependency
+            Id="b52dd5a5-0c2c-4d80-9496-e9a81ccdbb8c">
+            <classMoniker
+              Id="34edb8c4-afdb-4fb3-a95b-67616df94b24"
+              LastKnownName="SiteMapper"
+              LastKnownLocation="Package1_1137.uml" />
+          </dependency>
+          <dependency
+            Id="b64f38cd-cc3f-4591-9181-9f3bd0fb876f">
+            <classMoniker
+              Id="24bf36b2-f824-46dc-9c17-8efb431bd5a0"
+              LastKnownName="ConditionsMapper"
+              LastKnownLocation="Package1_1137.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="a975688e-9021-4dd0-8bfa-983290a70ac4"
+            name="_globalMap"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="4841e7ac-03be-42ee-b7a9-bbac3f28cc87"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3D_globalMap"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2f5e5dc2-5f24-44b1-9f8b-632f9dfcc601"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4869f052-e0cc-4076-adb7-09c815e8e7f5">
+                    <propertyInstance
+                      Id="50a7d0d7-f369-4f7f-8f12-1f24f5836078"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="76862b6d-1197-4839-b0bf-800936d0eb66">
+                    <propertyInstance
+                      Id="fbc65001-ee81-4af2-8aa4-557709966b15"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d70711f1-fb82-4326-94a5-143d762cf88f">
+                    <propertyInstance
+                      Id="9ec64346-7317-42f2-9906-9316904ebc85"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b61a71bc-dad9-4097-9739-1bc8f7d859d3">
+                    <propertyInstance
+                      Id="f4961634-278f-41e2-9e39-73bb4a67dc0e"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d97737f-9cbc-476e-a3a2-a25f17834c5d">
+                    <propertyInstance
+                      Id="24cabc8e-0708-49dc-b637-75ace5412b0a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="bf6e483c-873a-4e46-8240-bb1372080e31"
+                LastKnownName="IGlobalMap"
+                LastKnownLocation="Package5_1129.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="21fe6afb-c77b-472f-8a8c-94af5682f643"
+            name="_userState"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6e9149a9-90dd-4d44-9506-8616d27f15ce"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3D_userState"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="30e95db8-52f2-424a-8cc1-c1746667bfe2"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f681328c-a5cb-43a0-9725-58dc7dd67f95">
+                    <propertyInstance
+                      Id="fc753b2b-a3e3-4039-8873-906f3e12ee66"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3bd4c201-460c-4daa-b62c-a8b7024275e4">
+                    <propertyInstance
+                      Id="57bf8686-25a3-475f-9dd2-09f214e4eeac"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="42d44094-7169-45eb-ab3b-8d352d691a93">
+                    <propertyInstance
+                      Id="8ecf76ef-7fa6-4740-a2a6-c7e5799750be"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="72d3f43e-ecf5-4565-8918-400950f10851">
+                    <propertyInstance
+                      Id="927ad84c-8261-40cf-9d9c-e81f5426c7fe"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5a29b511-5a48-4cda-9be1-580df13f07e1">
+                    <propertyInstance
+                      Id="6051af59-f590-4cdf-a025-5ccbb43047bf"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="84aec1e0-6639-46f0-95d1-dd3c019635b0"
+                LastKnownName="IUserStateManager"
+                LastKnownLocation="Package5_1129.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="bd963aa8-55f2-4497-ab39-a365c153d14b"
+            name="_view"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="8d028428-e202-47ce-955d-fc38d190a945"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3D_view"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="688c24f3-2a79-49d6-a03c-e2e9c0a52123"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="314804ae-c107-4634-bf5c-770d72877798">
+                    <propertyInstance
+                      Id="3e5d2491-52f0-4e8a-99c8-9831006d129c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dfd33fb8-bb0f-45d7-9a74-450dc0b3bca5">
+                    <propertyInstance
+                      Id="738af85e-1161-44be-a1d2-9ce0223db0d6"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e2d6ccbd-204b-45ce-bb44-d7bb2b3450d5">
+                    <propertyInstance
+                      Id="8258cb7a-485d-4789-85df-45465f1ef310"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9f855fc8-1ef0-46b5-a3f2-55a405edf0f7">
+                    <propertyInstance
+                      Id="85a04625-cd10-4f00-88e4-4a46357cc75c"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d593095a-22c6-4996-8f86-4ee99c20d3d7">
+                    <propertyInstance
+                      Id="306bce56-08fc-4755-8538-6ef9b7082f3b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="cecaedd6-7308-4bfb-85be-686da3da80f3"
+                LastKnownName="ISiteConditionsView"
+                LastKnownLocation="Package8_1129.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="9bbc0200-e3b7-4742-8416-9872c4d4e9b6"
+            name="SiteConditionsPresenter"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="aa7cbc74-298b-4ce0-b6e0-8c1c084007d3"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIGlobalMap)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIUserStateManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ddb2b5f8-974e-4954-a067-b06eba470702"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d3ec92b8-2b24-486b-b2b5-09b3b1c10d59">
+                    <propertyInstance
+                      Id="300816fa-e2f2-44b1-bc62-1e4e5a019d40"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="31e83de8-ee36-4d0d-8005-9f6800c6e66e">
+                    <propertyInstance
+                      Id="5e39b2ec-c6b1-4285-9d0e-18d257efad84"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4424aef3-d859-427f-8018-790b9a4a21e7">
+                    <propertyInstance
+                      Id="3b1ed876-5bd3-4b5a-adbf-29bfbe171bdd"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ad89325c-cace-452c-8381-71f1d55535fc">
+                    <propertyInstance
+                      Id="f9ab02a3-fdc0-479f-b549-69ff2539d2e2"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b93bf805-0add-4fde-9280-8cf0aa34809c">
+                    <propertyInstance
+                      Id="1e0752de-03cb-4e1f-8dff-cbf55ed101d6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d538b32a-5e67-4886-acdd-47b5f9bed588">
+                    <propertyInstance
+                      Id="44de8850-44d4-43f5-8674-dd9a457e00b3"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2a528e54-260e-44c0-9e28-fbaa8c079344"
+                  name="globalMap"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="1cce10ad-1bea-4612-9930-6f7bfdcddbaf"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIGlobalMap)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIUserStateManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView)]) ParameterIdentifier%3DglobalMap"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="bf6e483c-873a-4e46-8240-bb1372080e31"
+                      LastKnownName="IGlobalMap"
+                      LastKnownLocation="Package5_1129.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9675ba82-5b68-4d11-b3cc-982f3ede6dc8"
+                  name="userState"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="8762f83d-53ae-455c-9ee3-f93ae828376a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIGlobalMap)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIUserStateManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView)]) ParameterIdentifier%3DuserState"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="84aec1e0-6639-46f0-95d1-dd3c019635b0"
+                      LastKnownName="IUserStateManager"
+                      LastKnownLocation="Package5_1129.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="43a47782-5e14-4ed4-a790-d9f5319565de"
+                  name="view"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c9b754b8-2d03-473b-8903-56b03e1c94c8"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIGlobalMap)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIUserStateManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView)]) ParameterIdentifier%3Dview"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="cecaedd6-7308-4bfb-85be-686da3da80f3"
+                      LastKnownName="ISiteConditionsView"
+                      LastKnownLocation="Package8_1129.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="fa5719ae-583c-4214-ba46-f3df94381020"
+            name="SaveConditions"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a2582233-9775-40cd-b5ea-e91aee25415a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3DSaveConditions"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="247072d3-7fd1-4302-b8e9-671b5e612ae3"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7065b615-2aa2-4a82-8aa0-c4b408d1c735">
+                    <propertyInstance
+                      Id="76e8b78c-767f-4459-846c-fed87b15ff3a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c59cfe6-304d-45a1-8919-d098f58d5515">
+                    <propertyInstance
+                      Id="7799e125-6037-4c62-9213-1d9e9b9b980a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="82169400-da61-4454-8454-decf4b34ad2d">
+                    <propertyInstance
+                      Id="92664875-4cd4-411f-a607-4f50108a46fb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7cbf92e1-5085-478f-8258-36fc5d6b1841">
+                    <propertyInstance
+                      Id="da002c05-8dcb-49d6-bf99-e3eee481e69c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="092ff3dd-b6c6-4d2e-856b-64c0e4469edd">
+                    <propertyInstance
+                      Id="81f629cd-cdf1-4463-8fac-5e31f892619f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2bd9272a-bc3a-4ed0-9513-c518c81af263">
+                    <propertyInstance
+                      Id="f27507cf-6131-4f6d-ba4b-c8f7300429a4"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

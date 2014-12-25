@@ -15,7 +15,7 @@ namespace safnet.iba.Business.AppFacades
         {
             Observation = observation;
 
-            Species species = GlobalMap.SpeciesList.Find(x => x.AlphaCode.Equals(Observation.SpeciesCode));
+            Species species = GlobalMap.GetInstance().SpeciesList.Find(x => x.AlphaCode.Equals(Observation.SpeciesCode));
             if (species == null)
             {
                 Warning = "Unknown species code. ";

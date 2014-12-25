@@ -20,7 +20,7 @@ namespace safnet.iba.Business.AppFacades
             SamplingPointName =
                 state.PointsRemaining.Union(state.PointsCompleted).Single(x => x.Id.Equals(survey.LocationId)).Name;
 
-            Species species = GlobalMap.SpeciesList.Find(x => x.AlphaCode.Equals(entry.SpeciesCode));
+            Species species = GlobalMap.GetInstance().SpeciesList.Find(x => x.AlphaCode.Equals(entry.SpeciesCode));
             if (species == null)
             {
                 Warning = "Unknown species code. ";

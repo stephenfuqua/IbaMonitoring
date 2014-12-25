@@ -25,7 +25,7 @@ namespace IbaMonitoring
         public static string[] GetSpeciesList(string prefixText, int count, string contextKey)
         {
             List<string> arrayList = new List<string>();
-            foreach (Species s in GlobalMap.SpeciesList)
+            foreach (Species s in GlobalMap.GetInstance().SpeciesList)
             {
                 arrayList.Add(s.AlphaCode + " (" + s.CommonName + ")");
             }

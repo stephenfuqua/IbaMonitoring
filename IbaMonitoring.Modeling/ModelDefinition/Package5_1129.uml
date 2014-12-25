@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="eff2e7bb-7095-44ea-8065-6d8029146c36"
+  name="iba"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="b1688b25-15e6-434a-a1fd-d4a9566c496b"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3Dsafnet.iba"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ce9de287-b2c9-4793-b9f0-c67cda7049e2"
+        LastKnownName="Presenters"
+        LastKnownLocation="Package6_1129.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="43b46ad5-267d-4afb-8990-906fdcd5b373"
+        LastKnownName="Views"
+        LastKnownLocation="Package8_1129.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="bf6e483c-873a-4e46-8240-bb1372080e31"
+        name="IGlobalMap"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="7948a531-f68a-4f1f-8658-eb6072674355"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIGlobalMap"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="52adc448-7f0c-4367-b3d8-a045a571ec57"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e676dcba-5211-4203-90dc-522f003c41f3">
+                <propertyInstance
+                  Id="5f9bee55-1b68-4f60-aa49-782f924994e2"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8ceba7c0-30d9-4f0d-9f7d-ea014a9ebd06">
+                <propertyInstance
+                  Id="eba7a738-e9f6-41b4-b63a-d556f7fc272a"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ab7187f5-11bf-43b0-88d2-0a06b237e130">
+                <propertyInstance
+                  Id="c18fc106-f887-4a9f-bcaa-a2fe3e451421"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7cf20c5a-4475-41a1-82ad-3bf6f8ff7eb0">
+                <propertyInstance
+                  Id="afbcf6c6-3df0-464a-886e-8fee42064586"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="84aec1e0-6639-46f0-95d1-dd3c019635b0"
+        name="IUserStateManager"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="d4003347-154c-4951-abed-fe64f7258e6e"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIUserStateManager"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="638e6d45-389f-49e5-a4ca-b6d5b8d43164"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b55bc634-c952-47b8-91d8-d3f28bf3b391">
+                <propertyInstance
+                  Id="8247ee79-7015-4b97-9ff5-0df0c089f1a6"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8f44ddd2-2de2-48e5-8c08-42a680cc1250">
+                <propertyInstance
+                  Id="4a5ae4d3-7f48-47d9-a9c9-33a1fbd8df12"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="14f67a36-ad1b-46a8-a8e0-47a761ec69c6">
+                <propertyInstance
+                  Id="70094d56-6fe4-4f81-b93b-9dd69d9c5fc5"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="87b2ff04-469c-461a-945a-460d904528a2">
+                <propertyInstance
+                  Id="c234a363-2d7e-442e-9bae-a70254e80dad"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="4a6cadf3-4e07-4f77-924e-9cafa7fbf1d7"
+        LastKnownName="Data"
+        LastKnownLocation="Package_1137.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="f7a132be-bfe7-4e89-8a9d-ac75cfbb6af3"
+        LastKnownName="Business"
+        LastKnownLocation="Package2_1137.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

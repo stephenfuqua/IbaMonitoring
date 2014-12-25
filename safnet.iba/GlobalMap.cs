@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web;
 using safnet.iba.Business.AppFacades;
 using safnet.iba.Business.Entities;
@@ -6,13 +7,37 @@ using safnet.iba.Data.Mappers;
 
 namespace safnet.iba
 {
+    public interface IGlobalMap
+    {
+        /// <summary>
+        /// Gets a List of <see cref="Site"/> objects from global Application state.
+        /// </summary>
+        List<Site> SiteList { get; }
+
+        /// <summary>
+        /// Gets a List of <see cref="Person"/> objects from global Application state.
+        /// </summary>
+        List<Person> PersonList { get; }
+
+        /// <summary>
+        /// Gets a List of <see cref="Species"/> objects from global Application state.
+        /// </summary>
+        List<Species> SpeciesList { get; }
+
+        /// <summary>
+        /// Gets the available years in which SiteVisits have been conducted.
+        /// </summary>
+        /// <value>The available years.</value>
+        SortedSet<int> AvailableYears { get; }
+    }
+
     /// <summary>
     /// Singleton for retrieving data from Http Session.
     /// </summary>
-    public class GlobalMap
+    public class GlobalMap : IGlobalMap
     {
         private static GlobalMap _instance;
-        private HttpApplicationState _application;
+        private HttpApplicationStateBase _application;
         private static object _threadLocker = new object();
 
         /// <summary>
@@ -20,7 +45,21 @@ namespace safnet.iba
         /// </summary>
         protected GlobalMap()
         {
-            _application = HttpContext.Current.Application;
+            _application = new HttpApplicationStateWrapper(HttpContext.Current.Application);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GlobalMap"/> class.
+        /// </summary>
+        /// <param name="appState">An instance of <see cref="HttpApplicationStateBase"/></param>
+        public GlobalMap(HttpApplicationStateBase appState)
+        {
+            if (appState == null)
+            {
+                throw new ArgumentNullException("appState");
+            }
+
+            _application = appState;
         }
 
         /// <summary>
@@ -43,7 +82,7 @@ namespace safnet.iba
         /// Gets the HTTP application-level state container.
         /// </summary>
         /// <value>The application.</value>
-        public static HttpApplicationState Application
+        public static HttpApplicationStateBase Application
         {
             get { return GetInstance()._application; }
         }
@@ -51,11 +90,11 @@ namespace safnet.iba
         /// <summary>
         /// Gets a List of <see cref="Site"/> objects from global Application state.
         /// </summary>
-        public static List<Site> SiteList
+        public List<Site> SiteList
         {
             get
             {
-                List<Site> list = (List<Site>) Application["SiteList"];
+                List<Site> list = (List<Site>)Application["SiteList"];
                 if (list == null)
                 {
                     list = new List<Site>();
@@ -69,11 +108,11 @@ namespace safnet.iba
         /// <summary>
         /// Gets a List of <see cref="Person"/> objects from global Application state.
         /// </summary>
-        public static List<Person> PersonList
+        public List<Person> PersonList
         {
             get
             {
-                List<Person> list = (List<Person>) Application["PersonList"];
+                List<Person> list = (List<Person>)Application["PersonList"];
                 if (list == null)
                 {
                     list = new List<Person>();
@@ -88,11 +127,11 @@ namespace safnet.iba
         /// <summary>
         /// Gets a List of <see cref="Species"/> objects from global Application state.
         /// </summary>
-        public static List<Species> SpeciesList
+        public List<Species> SpeciesList
         {
             get
             {
-                List<Species> list = (List<Species>) Application["SpeciesList"];
+                List<Species> list = (List<Species>)Application["SpeciesList"];
                 if (list == null)
                 {
                     list = new List<Species>();
@@ -107,11 +146,11 @@ namespace safnet.iba
         /// Gets the available years in which SiteVisits have been conducted.
         /// </summary>
         /// <value>The available years.</value>
-        public static SortedSet<int> AvailableYears
+        public SortedSet<int> AvailableYears
         {
             get
             {
-                SortedSet<int> set = (SortedSet<int>) Application["AvailableYears"];
+                SortedSet<int> set = (SortedSet<int>)Application["AvailableYears"];
                 if (set == null)
                 {
                     set = ResultsFacade.GetAvailableYears();

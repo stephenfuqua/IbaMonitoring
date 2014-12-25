@@ -26,5 +26,68 @@ namespace safnet.iba.Static
 
             return date.ToString("M/d");
         }
+
+
+        public static bool IsEmptyGuid(this Guid input)
+        {
+            return input == Guid.Empty;
+        }
+
+        public static bool IsEmptyGuid(this string input)
+        {
+            return input == Guid.Empty.ToString();
+        }
+
+        public static Guid ToGuid(this string input)
+        {
+            Guid output;
+            if (Guid.TryParse(input, out output))
+            {
+                return output;
+            }
+            else
+            {
+                throw new ArgumentException("input is not a valid Guid", "input");
+            }
+        }
+
+        public static int ToInt(this string input)
+        {
+            int output;
+            if (int.TryParse(input, out output))
+            {
+                return output;
+            }
+            else
+            {
+                throw new ArgumentException("input is not a valid Guid", "input");
+            }
+        }
+
+        public static Byte ToByte(this string input)
+        {
+            Byte output;
+            if (Byte.TryParse(input, out output))
+            {
+                return output;
+            }
+            else
+            {
+                throw new ArgumentException("input is not a valid Guid", "input");
+            }
+        }
+
+        public static DateTime ToDateTime(this string date, string time = "")
+        {
+            DateTime output;
+            if (DateTime.TryParse(date + " " + time, out output))
+            {
+                return output;
+            }
+            else
+            {
+                throw new ArgumentException("input is not a valid DateTime", "date");
+            }
+        }
     }
 }

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="da47b155-6705-4d34-8669-bd62bd93c537"
+  name="Entities"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="3727641b-5a9e-4a43-932c-b60cc634ed39"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3Dsafnet.iba.Business.Entities"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="e5394739-e580-427b-bc54-9909f02edb22"
+        name="Site"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="cf9710ef-605a-4111-8a80-b70c89e42fc7"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Business.Entities Type%3DSite"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="085fc139-5cdf-49b9-9d36-663d90b72d1c"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8e73421c-ed76-4731-99fb-c8b134c0d5ea">
+                <propertyInstance
+                  Id="28131481-fa3d-4a7e-a9d6-4b107b7e0665"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1be0e8ff-ce7b-4dbf-9ef5-8a0b2d77ae8c">
+                <propertyInstance
+                  Id="fdf2efe7-37d8-48ba-9ca6-8827d6a64941"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="26a7da5b-125c-4c92-889e-8ad25e9068fb">
+                <propertyInstance
+                  Id="197142ec-e36d-4df2-8cce-e3478d0d774f"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="47946214-aa21-4e7e-8106-497e9157002a">
+                <propertyInstance
+                  Id="8738e4f1-4e88-420f-a88e-26013e14ff85"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d9084f07-2832-4cd3-bcea-f6759833a833">
+                <propertyInstance
+                  Id="a6197478-5f9a-4e71-afd4-94b295a07b3b"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7f0b9090-bc9f-47f5-ad45-f8c8eb94a520"
+        name="SiteCondition"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="726a5e4c-02ac-4900-b262-ff73144f577d"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Business.Entities Type%3DSiteCondition"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="0d447e44-43b1-46de-8197-6f5343dc5bb9"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c0d7469e-21ae-410c-82cf-451667068b6a">
+                <propertyInstance
+                  Id="98eaa092-3637-4874-a60d-a44a98ee2ccf"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="91af0b05-8df5-437d-957f-a92cf8594de6">
+                <propertyInstance
+                  Id="28eee0b6-ef27-4ccc-a255-b3a1ad97dd84"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6228dcfd-38e3-49a5-8566-ee677a48a1bf">
+                <propertyInstance
+                  Id="b2bcc5be-6e95-4635-afd1-5923213e0752"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="98a8fe39-8170-4d5b-9476-b563553eb4b0">
+                <propertyInstance
+                  Id="625f5e31-81ce-4282-a953-cfebe5815657"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0955fb04-9d4c-4257-9ca6-058c2194874f">
+                <propertyInstance
+                  Id="9e19280a-f239-4952-9160-982f847447fb"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
