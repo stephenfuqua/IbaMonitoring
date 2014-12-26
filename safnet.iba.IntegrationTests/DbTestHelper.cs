@@ -13,7 +13,6 @@ namespace safnet.iba.IntegrationTests
     {
 
 
-
         #region Delegates
 
         public delegate void LoadAdoMethod(IbaUnitTestEntities iba);
@@ -90,7 +89,7 @@ namespace safnet.iba.IntegrationTests
             List<Location_ado> locationList = new List<Location_ado>();
 
             Location_ado extra1 = null;
-            LoadAdoObjects(delegate(IbaUnitTestEntities iba)
+            LoadAdoObjects(delegate (IbaUnitTestEntities iba)
             {
                 extra1 = Location_ado.CreateLocation_ado(TestHelper.TestGuid2,
                     "locationName", LookupConstants.LocationTypeSite);
@@ -103,7 +102,7 @@ namespace safnet.iba.IntegrationTests
             locationList.Add(extra1);
 
             Location_ado extra2 = null;
-            LoadAdoObjects(delegate(IbaUnitTestEntities iba)
+            LoadAdoObjects(delegate (IbaUnitTestEntities iba)
             {
                 extra2 = Location_ado.CreateLocation_ado(TestHelper.TestGuid3,
                      "locationName", LookupConstants.LocationTypeSite);
@@ -116,7 +115,7 @@ namespace safnet.iba.IntegrationTests
             locationList.Add(extra2);
 
             Location_ado extra3 = null;
-            LoadAdoObjects(delegate(IbaUnitTestEntities iba)
+            LoadAdoObjects(delegate (IbaUnitTestEntities iba)
             {
                 extra3 = Location_ado.CreateLocation_ado(TestHelper.TestGuid4,
                     "locationName", LookupConstants.LocationTypePoint);
@@ -415,7 +414,7 @@ namespace safnet.iba.IntegrationTests
 
         public static Location_ado LoadSamplingPoint(Guid pointId, Guid siteId)
         {
-            Location_ado point1= null;
+            Location_ado point1 = null;
             LoadAdoObjects((IbaUnitTestEntities iba) =>
             {
                 point1 = Location_ado.CreateLocation_ado(pointId, "Point " + pointId.ToString().Substring(0, 5),

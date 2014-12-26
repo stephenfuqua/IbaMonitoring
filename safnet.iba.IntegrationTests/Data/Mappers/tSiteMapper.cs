@@ -12,7 +12,7 @@ namespace safnet.iba.IntegrationTests.Data.Mappers
     /// Validates the database mapping functions of the <see cref="SiteMapper"/> class.s
     /// </summary>
     [TestClass]
-    public class tSiteMapper
+    public class tSiteMapper : DbTest
     {
         /// <summary>
         /// Sets up each test.

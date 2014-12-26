@@ -13,7 +13,7 @@ namespace safnet.iba.IntegrationTests.Data.Mappers.ResultsMapperTests
     /// Unit tests for <see cref="ResultsMapper"/>'s GetSiteList method.
     /// </summary>
     [TestClass]
-    public class tGetSiteList
+    public class tGetSiteList : DbTest
     {
         [TestInitialize]
         public void TestInitialize()

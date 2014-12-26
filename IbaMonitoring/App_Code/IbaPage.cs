@@ -2,6 +2,7 @@
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using safnet.iba;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace IbaMonitoring
 {
@@ -10,6 +11,22 @@ namespace IbaMonitoring
     /// </summary>
     public class IbaPage : Page
     {
+        private static DatabaseProviderFactory _databaseProviderFactory;
+
+        public static DatabaseProviderFactory DatabaseProviderFactory
+        {
+            get
+            {
+                if (_databaseProviderFactory == null)
+                {
+                    _databaseProviderFactory = new DatabaseProviderFactory();
+                    DatabaseFactory.SetDatabaseProviderFactory(_databaseProviderFactory);
+                }
+                return _databaseProviderFactory;
+            }
+        }
+
+
 
         private IUserStateManager _userState;
 

@@ -1,8 +1,11 @@
 ﻿<%@ Application Language="C#" %>
+
 <script RunAt="server">
+
 
     void Application_Start(object sender, EventArgs e)
     {
+        Microsoft.Practices.EnterpriseLibrary.Data.DatabaseFactory.SetDatabaseProviderFactory(new Microsoft.Practices.EnterpriseLibrary.Data.DatabaseProviderFactory());
     }
 
     void Application_End(object sender, EventArgs e)
@@ -31,5 +34,5 @@
         // or SQLServer, the event is not raised.
 
     }
-       
+
 </script>

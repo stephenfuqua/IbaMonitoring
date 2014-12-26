@@ -11,7 +11,7 @@ namespace safnet.iba.IntegrationTests.Data.Mappers
     /// Validates the database mapping functions of the <see cref="ConditionsMapper"/> class.s
     /// </summary>
     [TestClass]
-    public class tConditionsMapper
+    public class tConditionsMapper : DbTest
     {
         /// <summary>
         /// Sets up each test.

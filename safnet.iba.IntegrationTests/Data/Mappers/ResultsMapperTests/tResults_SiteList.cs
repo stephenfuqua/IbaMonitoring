@@ -12,7 +12,7 @@ namespace safnet.iba.IntegrationTests.Data.Mappers.ResultsMapperTests
     /// </summary>
     [TestClass]
     [Ignore]
-    public class tResults_SiteList
+    public class tResults_SiteList : DbTest
     {
         private const string OAKWOOD = "OAKWOOD";
         private const string SPRUCES = "SPRUCES";

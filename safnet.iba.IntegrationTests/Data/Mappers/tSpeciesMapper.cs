@@ -9,7 +9,7 @@ using safnet.iba.UnitTests;
 namespace safnet.iba.IntegrationTests.Data.Mappers
 {
     [TestClass]
-    public class tSpeciesMapper
+    public class tSpeciesMapper : DbTest
     {
         /// <summary>
         /// Sets up each test.

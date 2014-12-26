@@ -8,7 +8,7 @@ using safnet.iba.UnitTests;
 namespace safnet.iba.IntegrationTests.Data.Mappers.ResultsMapperTests
 {
     [TestClass]
-    public class tGetSiteBySpecies
+    public class tGetSiteBySpecies : DbTest
     {
         private List<Location_ado> _siteList;
 

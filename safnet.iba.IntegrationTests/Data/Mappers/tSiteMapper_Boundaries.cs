@@ -11,7 +11,7 @@ namespace safnet.iba.IntegrationTests.Data.Mappers
     /// Validates the function for retrieving Site boundaries from the database
     /// </summary>
     [TestClass]
-    public class tSiteMapper_Boundaries
+    public class tSiteMapper_Boundaries : DbTest
     {
         /// <summary>
         /// Sets up each test.

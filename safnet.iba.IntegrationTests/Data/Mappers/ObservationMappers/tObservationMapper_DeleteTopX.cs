@@ -10,7 +10,7 @@ namespace safnet.iba.IntegrationTests.Data.Mappers.ObservationMappers
     /// Validates the database mapping functions of the <see cref="PointCountBeyond50Mapper"/> class.s
     /// </summary>
     [TestClass]
-    public class tObservationMapper_DeleteTopX
+    public class tObservationMapper_DeleteTopX : DbTest
     {
 
 

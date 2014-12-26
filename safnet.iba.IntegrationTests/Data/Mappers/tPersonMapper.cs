@@ -12,7 +12,7 @@ namespace safnet.iba.IntegrationTests.Data.Mappers
     /// Validates the database mapping functions of the <see cref="PersonMapper"/> class.
     /// </summary>
     [TestClass]
-    public class tPersonMapper
+    public class tPersonMapper : DbTest
     {
         /// <summary>
         /// Sets up each test.

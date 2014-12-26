@@ -11,7 +11,7 @@ namespace safnet.iba.IntegrationTests.Data.Mappers
     /// Validates the database mapping functions of the <see cref="SamplingPointMapper"/> class.
     /// </summary>
     [TestClass]
-    public class tSamplingPointMapper
+    public class tSamplingPointMapper : DbTest
     {
         /// <summary>
         /// Sets up each test.

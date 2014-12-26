@@ -12,7 +12,7 @@ namespace safnet.iba.IntegrationTests.Data.Mappers.ObservationMappers
     /// Validates the database mapping functions of the <see cref="PointCountLess50Mapper"/> class.
     /// </summary>
     [TestClass]
-    public class tObservationMapper_PointCountLess50
+    public class tObservationMapper_PointCountLess50 : DbTest
     {
         #region Fields
 

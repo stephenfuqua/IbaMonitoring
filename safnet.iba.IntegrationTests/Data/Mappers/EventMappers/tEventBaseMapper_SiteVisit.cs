@@ -13,7 +13,7 @@ namespace safnet.iba.IntegrationTests.Data.Mappers.EventMappers
     /// Tests for the <see cref="EventBaseMapper"/> static class.
     /// </summary>
     [TestClass]
-    public class tEventBaseMapper_SiteVisit
+    public class tEventBaseMapper_SiteVisit : DbTest
     {
         /// <summary>
         /// Validates than appropriate exception is thrown for a <see cref="SiteVisit"/> with null EndTimeStamp.

@@ -12,7 +12,7 @@ namespace safnet.iba.IntegrationTests.Data.Mappers.EventMappers
     /// Validates the database mapping functions of the <see cref="PointSurveyMapper"/> class.
     /// </summary>
     [TestClass]
-    public class tPointSurveyMapper
+    public class tPointSurveyMapper : DbTest
     {
         #region Public Methods
 

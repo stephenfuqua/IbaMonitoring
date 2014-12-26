@@ -125,5 +125,9 @@
     <Build Include="Security\iba_web_2.sql" />
     <Build Include="Security\Permissions.sql" />
     <Build Include="Security\iba_admin_1.sql" />
+    <Build Include="dbo\Stored Procedures\Site_Get_Boundaries.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IbaMonitoring.SQL.publish.xml" />
   </ItemGroup>
 </Project>

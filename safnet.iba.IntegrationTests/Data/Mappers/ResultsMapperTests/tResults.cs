@@ -7,7 +7,7 @@ using safnet.iba.UnitTests;
 namespace safnet.iba.IntegrationTests.Data.Mappers.ResultsMapperTests
 {
     [TestClass]
-    public class tResults
+    public class tResults : DbTest
     {
 
         [TestInitialize]
