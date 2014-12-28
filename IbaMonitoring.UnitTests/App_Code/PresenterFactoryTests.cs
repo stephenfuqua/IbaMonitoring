@@ -2,10 +2,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using safnet.iba.Adapters;
-using safnet.iba.Presenters;
+using IbaMonitoring.Presenters;
 using System.Linq;
 using safnet.iba.TestHelpers;
-using safnet.iba.Views;
+using IbaMonitoring.Views;
 using System;
 
 namespace IbaMonitoring.UnitTests.App_Code

@@ -74,6 +74,7 @@
     <Compile Include="Observations\SiteConditionsPageTests.cs">
       <SubType>aspxcodebehind</SubType>
     </Compile>
+    <Compile Include="Presenters\SiteConditionsPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

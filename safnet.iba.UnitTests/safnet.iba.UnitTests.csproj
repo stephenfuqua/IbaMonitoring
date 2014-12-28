@@ -137,7 +137,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presenters\SiteConditionsPresenter.cs" />
     <Compile Include="TestHelper.cs" />
     <Compile Include="Static\t_Conversion.cs" />
     <Compile Include="tBusiness\tEntities\tAdjustedCountBySite.cs" />

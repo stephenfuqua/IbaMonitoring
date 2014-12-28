@@ -4,7 +4,7 @@ using safnet.iba.TestHelpers;
 using System;
 using Moq;
 using System.Web;
-using safnet.iba.Presenters;
+using IbaMonitoring.Presenters;
 
 namespace IbaMonitoring.UnitTests.Observations
 {

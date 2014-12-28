@@ -3,10 +3,10 @@ using safnet.iba.Business.AppFacades;
 using safnet.iba.Business.DataTypes;
 using safnet.iba.Business.Entities;
 using safnet.iba.Static;
-using safnet.iba.Views;
+using IbaMonitoring.Views;
 using safnet.iba.Adapters;
 
-namespace safnet.iba.Presenters
+namespace IbaMonitoring.Presenters
 {
     public class SiteConditionsPresenter : ISiteConditionsPresenter
     {

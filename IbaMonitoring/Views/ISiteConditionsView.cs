@@ -1,5 +1,5 @@
 ﻿
-namespace safnet.iba.Views
+namespace IbaMonitoring.Views
 {
     public interface ISiteConditionsView
     {

@@ -3,11 +3,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using safnet.iba.Business.AppFacades;
 using safnet.iba.Business.Entities;
-using safnet.iba.Presenters;
-using safnet.iba.Views;
+using IbaMonitoring.Presenters;
+using IbaMonitoring.Views;
 using safnet.iba.TestHelpers;
+using safnet.iba.Business.DataTypes;
 
-namespace safnet.iba.UnitTests.Presenters
+namespace IbaMonitoring.UnitTests.Presenters
 {
     [TestClass]
     public class SiteConditionsPresenterTests : BaseMocker
@@ -178,7 +179,7 @@ namespace safnet.iba.UnitTests.Presenters
                     Id = endConditionId, 
                     SiteVisitId = siteVisitId,
                     Sky = endSky,
-                    Temperature = new Business.DataTypes.Temperature {Units = endTempUnit, Value = endTemp},
+                    Temperature = new Temperature {Units = endTempUnit, Value = endTemp},
                     Wind = endWind
                 },
                 EndTimeStamp = endDateTime,
@@ -192,7 +193,7 @@ namespace safnet.iba.UnitTests.Presenters
                     Id = startConditionId,
                     SiteVisitId = siteVisitId,
                     Sky = startSky,
-                    Temperature = new Business.DataTypes.Temperature {Units = startTempUnit, Value = startTemp}
+                    Temperature = new Temperature {Units = startTempUnit, Value = startTemp}
                 }
             };
 

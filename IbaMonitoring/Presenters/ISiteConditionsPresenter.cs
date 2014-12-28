@@ -1,4 +1,4 @@
-﻿namespace safnet.iba.Presenters
+﻿namespace IbaMonitoring.Presenters
 {
     public interface ISiteConditionsPresenter
     {

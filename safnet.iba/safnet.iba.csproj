@@ -270,8 +270,6 @@
     <Compile Include="Data\Mappers\SupplementalObservationMapper.cs" />
     <Compile Include="IbaArgumentException.cs" />
     <Compile Include="IdentityMap.cs" />
-    <Compile Include="Presenters\ISiteConditionsPresenter.cs" />
-    <Compile Include="Presenters\SiteConditionsPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -281,7 +279,6 @@
     <Compile Include="Static\Conversion.cs" />
     <Compile Include="Static\CustomValidator.cs" />
     <Compile Include="Static\Extensions\IDataReaderExtensions.cs" />
-    <Compile Include="Views\ISiteConditionsView.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

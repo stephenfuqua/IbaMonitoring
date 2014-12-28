@@ -4114,7 +4114,7 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="385d41f5-20fb-444e-a357-150f13e07559" name="SiteConditionsPresenter" isAbstract="false" isLeaf="false" isActiveClass="false">
         <referencesInternal>
-          <reference Id="54b1ca7c-a444-40ac-a0cb-8689cba5597a" handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter" tag="ViewCode">
+          <reference Id="54b1ca7c-a444-40ac-a0cb-8689cba5597a" handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Presenters Type%3DSiteConditionsPresenter" tag="ViewCode">
             <elementDefinition Id="f21b770f-f82f-40a0-89f4-56815db7c8fa" />
           </reference>
         </referencesInternal>
@@ -4173,7 +4173,7 @@
         <ownedAttributesInternal>
           <property Id="1d6e8017-339c-42b4-971a-4a851495ce5d" name="_globalMap" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="b2ef0c34-6be0-4459-9057-d7bb349463e4" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3D_globalMap" tag="ViewCode">
+              <reference Id="b2ef0c34-6be0-4459-9057-d7bb349463e4" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Presenters Type%3DSiteConditionsPresenter Member%3D_globalMap" tag="ViewCode">
                 <elementDefinition Id="4841e7ac-03be-42ee-b7a9-bbac3f28cc87" />
               </reference>
             </referencesInternal>
@@ -4221,7 +4221,7 @@
           </property>
           <property Id="1cbe03f9-19a2-46f9-9bf6-626d7e2741fc" name="_userState" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="721bb52d-c719-434f-9639-4c0749793d09" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3D_userState" tag="ViewCode">
+              <reference Id="721bb52d-c719-434f-9639-4c0749793d09" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Presenters Type%3DSiteConditionsPresenter Member%3D_userState" tag="ViewCode">
                 <elementDefinition Id="6e9149a9-90dd-4d44-9506-8616d27f15ce" />
               </reference>
             </referencesInternal>
@@ -4269,7 +4269,7 @@
           </property>
           <property Id="4771e1db-5355-4ff3-8145-d918229b02bb" name="_view" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="4871b3be-d30d-41ef-b7a0-99fd77bbf8ea" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3D_view" tag="ViewCode">
+              <reference Id="4871b3be-d30d-41ef-b7a0-99fd77bbf8ea" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Presenters Type%3DSiteConditionsPresenter Member%3D_view" tag="ViewCode">
                 <elementDefinition Id="8d028428-e202-47ce-955d-fc38d190a945" />
               </reference>
             </referencesInternal>
@@ -4319,7 +4319,7 @@
         <ownedOperationsInternal>
           <operation Id="8ffe205a-05ec-4a77-b8bc-ef2a9c4c7768" name="SiteConditionsPresenter" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <referencesInternal>
-              <reference Id="5dcd2f69-bce1-498b-b283-1ba8a48208e3" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIGlobalMap)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIUserStateManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView)])" tag="ViewCode">
+              <reference Id="5dcd2f69-bce1-498b-b283-1ba8a48208e3" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Presenters Type%3DSiteConditionsPresenter Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIGlobalMap)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIUserStateManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView)])" tag="ViewCode">
                 <elementDefinition Id="aa7cbc74-298b-4ce0-b6e0-8c1c084007d3" />
               </reference>
             </referencesInternal>
@@ -4371,7 +4371,7 @@
               <operationHasOwnedParameters>
                 <parameter Id="8b56b2ef-74ce-433b-949c-de043ea91478" name="globalMap" direction="In">
                   <referencesInternal>
-                    <reference Id="7bff8dfb-ecc5-414d-85db-743ae68a4c09" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIGlobalMap)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIUserStateManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView)]) ParameterIdentifier%3DglobalMap" tag="ViewCode">
+                    <reference Id="7bff8dfb-ecc5-414d-85db-743ae68a4c09" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Presenters Type%3DSiteConditionsPresenter Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIGlobalMap)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIUserStateManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView)]) ParameterIdentifier%3DglobalMap" tag="ViewCode">
                       <elementDefinition Id="1cce10ad-1bea-4612-9930-6f7bfdcddbaf" />
                     </reference>
                   </referencesInternal>
@@ -4384,7 +4384,7 @@
               <operationHasOwnedParameters>
                 <parameter Id="db3e5aed-4ba9-491a-862f-07c1a2034d1f" name="userState" direction="In">
                   <referencesInternal>
-                    <reference Id="8190a407-a07f-4242-8fc0-d02308e8b12e" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIGlobalMap)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIUserStateManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView)]) ParameterIdentifier%3DuserState" tag="ViewCode">
+                    <reference Id="8190a407-a07f-4242-8fc0-d02308e8b12e" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Presenters Type%3DSiteConditionsPresenter Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIGlobalMap)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIUserStateManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView)]) ParameterIdentifier%3DuserState" tag="ViewCode">
                       <elementDefinition Id="8762f83d-53ae-455c-9ee3-f93ae828376a" />
                     </reference>
                   </referencesInternal>
@@ -4397,7 +4397,7 @@
               <operationHasOwnedParameters>
                 <parameter Id="f624d413-151e-4ef3-9973-9061987aac6c" name="view" direction="In">
                   <referencesInternal>
-                    <reference Id="c5699654-b079-4607-bbbf-38119e127892" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIGlobalMap)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIUserStateManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView)]) ParameterIdentifier%3Dview" tag="ViewCode">
+                    <reference Id="c5699654-b079-4607-bbbf-38119e127892" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Presenters Type%3DSiteConditionsPresenter Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIGlobalMap)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba Type%3DIUserStateManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView)]) ParameterIdentifier%3Dview" tag="ViewCode">
                       <elementDefinition Id="c9b754b8-2d03-473b-8903-56b03e1c94c8" />
                     </reference>
                   </referencesInternal>
@@ -4411,7 +4411,7 @@
           </operation>
           <operation Id="a672a483-eaf0-4287-a10d-e72c0869db1a" name="SaveConditions" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <referencesInternal>
-              <reference Id="65f176b4-0400-4094-8be0-74da8956271f" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Presenters Type%3DSiteConditionsPresenter Member%3DSaveConditions" tag="ViewCode">
+              <reference Id="65f176b4-0400-4094-8be0-74da8956271f" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Presenters Type%3DSiteConditionsPresenter Member%3DSaveConditions" tag="ViewCode">
                 <elementDefinition Id="a2582233-9775-40cd-b5ea-e91aee25415a" />
               </reference>
             </referencesInternal>
@@ -4481,7 +4481,7 @@
     <logicalClassDesignerModelHasTypes>
       <Interface Id="afc113ac-5a20-47a0-a63a-685e9eff4f99" name="ISiteConditionsView" isAbstract="false" isLeaf="false">
         <referencesInternal>
-          <reference Id="119acde7-77e0-4a04-9e5b-bcd83eeb4ee1" handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView" tag="ViewCode">
+          <reference Id="119acde7-77e0-4a04-9e5b-bcd83eeb4ee1" handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView" tag="ViewCode">
             <elementDefinition Id="cfd675eb-a9f7-440c-a321-bd402ebacdb0" />
           </reference>
         </referencesInternal>
@@ -4520,7 +4520,7 @@
         <ownedAttributes>
           <property Id="5fb1a108-a83b-42e4-9b50-285cae4acb3f" name="SiteVisitObserverAccessor" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="999202e2-e356-4c12-9aa0-861959f1184f" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView Member%3DSiteVisitObserverAccessor" tag="ViewCode">
+              <reference Id="999202e2-e356-4c12-9aa0-861959f1184f" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView Member%3DSiteVisitObserverAccessor" tag="ViewCode">
                 <elementDefinition Id="02ad5aaf-0eb0-48b3-82b7-81cb79590604" />
               </reference>
             </referencesInternal>
@@ -4580,7 +4580,7 @@
           </property>
           <property Id="c07207a1-5a9f-454b-8ccf-9094ec160111" name="SiteVisitRecorderAccessor" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="9ff1c69d-4082-4e70-82b7-ae9ef957a8bd" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView Member%3DSiteVisitRecorderAccessor" tag="ViewCode">
+              <reference Id="9ff1c69d-4082-4e70-82b7-ae9ef957a8bd" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView Member%3DSiteVisitRecorderAccessor" tag="ViewCode">
                 <elementDefinition Id="8da0ab9e-d678-4f78-8177-f3af5a38bf0e" />
               </reference>
             </referencesInternal>
@@ -4640,7 +4640,7 @@
           </property>
           <property Id="6754137f-f2ba-4a86-9a42-391474e7e31d" name="SiteVisitedAccessor" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="ba1548ab-ff0e-4370-9b6e-0873ec05f2f7" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView Member%3DSiteVisitedAccessor" tag="ViewCode">
+              <reference Id="ba1548ab-ff0e-4370-9b6e-0873ec05f2f7" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView Member%3DSiteVisitedAccessor" tag="ViewCode">
                 <elementDefinition Id="c0cd85f7-2c0d-40aa-8d11-c2470f129a36" />
               </reference>
             </referencesInternal>
@@ -4700,7 +4700,7 @@
           </property>
           <property Id="d6c8c7f5-35c7-438b-b5ac-f4bd4010f713" name="StartSkyAccessor" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="f0de3119-7a19-43c8-8c92-d1b8b81ea140" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView Member%3DStartSkyAccessor" tag="ViewCode">
+              <reference Id="f0de3119-7a19-43c8-8c92-d1b8b81ea140" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView Member%3DStartSkyAccessor" tag="ViewCode">
                 <elementDefinition Id="fb7d6d0a-fcae-4aff-a940-9fc99e4b8eb7" />
               </reference>
             </referencesInternal>
@@ -4760,7 +4760,7 @@
           </property>
           <property Id="d1acb6d8-e094-4598-9619-68b1bc51882f" name="StartTempUnitsAccessor" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="34214950-9441-4d87-9f8e-15548bdc6768" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView Member%3DStartTempUnitsAccessor" tag="ViewCode">
+              <reference Id="34214950-9441-4d87-9f8e-15548bdc6768" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView Member%3DStartTempUnitsAccessor" tag="ViewCode">
                 <elementDefinition Id="267cc9ec-cdbb-40e9-8754-cc247e7dd405" />
               </reference>
             </referencesInternal>
@@ -4820,7 +4820,7 @@
           </property>
           <property Id="902874cf-9884-49ae-8c14-c0d49daa4074" name="StartTempAccessor" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="4bc85ce7-7529-49ce-8006-7830ac0df1ef" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView Member%3DStartTempAccessor" tag="ViewCode">
+              <reference Id="4bc85ce7-7529-49ce-8006-7830ac0df1ef" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView Member%3DStartTempAccessor" tag="ViewCode">
                 <elementDefinition Id="5be3ce42-fb65-42b9-a1a3-81de4115f296" />
               </reference>
             </referencesInternal>
@@ -4880,7 +4880,7 @@
           </property>
           <property Id="a0a3bc6f-80de-482f-a91f-040620c0d949" name="StartWindAccessor" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="993280ce-90fc-40a0-91ee-ebfff9196b8e" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView Member%3DStartWindAccessor" tag="ViewCode">
+              <reference Id="993280ce-90fc-40a0-91ee-ebfff9196b8e" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView Member%3DStartWindAccessor" tag="ViewCode">
                 <elementDefinition Id="f5525dff-4527-4114-b3a0-b3825982191c" />
               </reference>
             </referencesInternal>
@@ -4940,7 +4940,7 @@
           </property>
           <property Id="90a2f88b-2f98-4cd7-97c3-8a3f551d7884" name="StartTimeAccessor" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="dc25fffe-d5a4-4d17-853e-19c474b95d41" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView Member%3DStartTimeAccessor" tag="ViewCode">
+              <reference Id="dc25fffe-d5a4-4d17-853e-19c474b95d41" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView Member%3DStartTimeAccessor" tag="ViewCode">
                 <elementDefinition Id="1b53967b-4716-463e-8024-45a3ac954197" />
               </reference>
             </referencesInternal>
@@ -5000,7 +5000,7 @@
           </property>
           <property Id="3ab4e4ad-153c-4826-9e68-cb7fdda50f21" name="EndSkyAccessor" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="3bb61af3-85ae-4829-bb45-d386d9d156db" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView Member%3DEndSkyAccessor" tag="ViewCode">
+              <reference Id="3bb61af3-85ae-4829-bb45-d386d9d156db" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView Member%3DEndSkyAccessor" tag="ViewCode">
                 <elementDefinition Id="5d9cdf43-e14b-4248-bdca-5850d537f7ce" />
               </reference>
             </referencesInternal>
@@ -5060,7 +5060,7 @@
           </property>
           <property Id="0eeb7fdc-dcd8-46f1-b16f-c36e058d8390" name="EndTempUnitsAccessor" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="c8a92887-7858-4939-ae57-7e21a7ab5d40" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView Member%3DEndTempUnitsAccessor" tag="ViewCode">
+              <reference Id="c8a92887-7858-4939-ae57-7e21a7ab5d40" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView Member%3DEndTempUnitsAccessor" tag="ViewCode">
                 <elementDefinition Id="70591d12-fb71-422a-90bb-23011a9eca8b" />
               </reference>
             </referencesInternal>
@@ -5120,7 +5120,7 @@
           </property>
           <property Id="168a5ba6-bb24-4317-94f0-1ca30a005b73" name="EndTempAccessor" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="ade4cafb-996c-4322-85ea-d228e5c2ab1b" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView Member%3DEndTempAccessor" tag="ViewCode">
+              <reference Id="ade4cafb-996c-4322-85ea-d228e5c2ab1b" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView Member%3DEndTempAccessor" tag="ViewCode">
                 <elementDefinition Id="52ff88b7-fc26-42c4-8f29-c8b5c554e2ba" />
               </reference>
             </referencesInternal>
@@ -5180,7 +5180,7 @@
           </property>
           <property Id="2b9279e0-88d3-4b36-be9f-64bb9c4dfe90" name="EndWindAccessor" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="2e8550bf-82c1-46cd-aa45-c2ae8a42b928" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView Member%3DEndWindAccessor" tag="ViewCode">
+              <reference Id="2e8550bf-82c1-46cd-aa45-c2ae8a42b928" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView Member%3DEndWindAccessor" tag="ViewCode">
                 <elementDefinition Id="21bb219e-959a-42e7-9aa7-f680b548c0dc" />
               </reference>
             </referencesInternal>
@@ -5240,7 +5240,7 @@
           </property>
           <property Id="32a24b97-4e36-4fe5-a2dd-2e61c7a88a8e" name="EndTimeAccessor" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="e31456f4-b2dd-4cfb-8076-f003b6e3001e" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView Member%3DEndTimeAccessor" tag="ViewCode">
+              <reference Id="e31456f4-b2dd-4cfb-8076-f003b6e3001e" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView Member%3DEndTimeAccessor" tag="ViewCode">
                 <elementDefinition Id="e0f491a8-7c76-4509-84bc-b12a0077711c" />
               </reference>
             </referencesInternal>
@@ -5300,7 +5300,7 @@
           </property>
           <property Id="be3bd55c-7160-49ab-894f-399e20ec9183" name="VisitDateAccessor" isLeaf="false" isStatic="false" isReadOnly="true" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="9c40ede9-d255-44d0-b070-41d93423d1da" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Views Type%3DISiteConditionsView Member%3DVisitDateAccessor" tag="ViewCode">
+              <reference Id="9c40ede9-d255-44d0-b070-41d93423d1da" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3DIbaMonitoring.Views Type%3DISiteConditionsView Member%3DVisitDateAccessor" tag="ViewCode">
                 <elementDefinition Id="30058f49-2672-4988-972d-506421cd20fe" />
               </reference>
             </referencesInternal>

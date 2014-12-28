@@ -11,9 +11,9 @@ using safnet.iba.Business.DataTypes;
 using safnet.iba.Business.Entities;
 using safnet.iba.Business.Entities.Observations;
 using safnet.iba.Data.Mappers;
-using safnet.iba.Presenters;
+using IbaMonitoring.Presenters;
 using safnet.iba.Static;
-using safnet.iba.Views;
+using IbaMonitoring.Views;
 using IbaMonitoring.App_Code;
 
 public partial class SiteConditionsPage : IbaPage, ISiteConditionsView

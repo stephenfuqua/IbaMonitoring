@@ -379,6 +379,8 @@
     <Compile Include="observations\SurveySteps.ascx.designer.cs">
       <DependentUpon>SurveySteps.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presenters\ISiteConditionsPresenter.cs" />
+    <Compile Include="Presenters\SiteConditionsPresenter.cs" />
     <Compile Include="resources\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -388,6 +390,7 @@
     <Compile Include="resources\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\ISiteConditionsView.cs" />
     <Content Include="about\aboutnav.ascx" />
     <Content Include="about\datasheets.aspx" />
     <Content Include="about\Default.aspx" />
