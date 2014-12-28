@@ -7,6 +7,8 @@ using IbaMonitoring;
 using safnet.iba;
 using safnet.iba.Business.AppFacades;
 using safnet.iba.Business.Entities;
+using safnet.iba.Adapters;
+using IbaMonitoring.App_Code;
 
 public partial class IbaMasterPage : MasterPage
 {

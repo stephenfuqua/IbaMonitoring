@@ -6,6 +6,7 @@ using safnet.iba.Business.Entities;
 using safnet.iba.Business.Entities.Observations;
 using safnet.iba.Business.Factories;
 using safnet.iba.Data.Mappers;
+using safnet.iba.Adapters;
 
 namespace safnet.iba.Business.AppFacades
 {
@@ -24,6 +25,7 @@ namespace safnet.iba.Business.AppFacades
         /// <param name="_state">The _state.</param>
         public FiftyMeterDataEntryFacade(IUserStateManager state)
         {
+            // TODO: use of state should be moved to a presenter class
             _state = state;
         }
 

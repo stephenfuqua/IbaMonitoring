@@ -137,7 +137,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseMocker.cs" />
     <Compile Include="Presenters\SiteConditionsPresenter.cs" />
     <Compile Include="TestHelper.cs" />
     <Compile Include="Static\t_Conversion.cs" />
@@ -153,13 +152,15 @@
     <Compile Include="tBusiness\tDataTypes\tDegree.cs" />
     <Compile Include="TestSpecificSubclasses\FiftyMeterDataEntryTss.cs" />
     <Compile Include="Static\Extensions\tIDataReaderExtensions.cs" />
-    <Compile Include="TestSpecificSubclasses\SessionTss.cs" />
     <Compile Include="tIbaArgumentException.cs" />
     <Compile Include="tBusiness\tDataTypes\tIntegerQuantity.cs" />
     <Compile Include="tBusiness\tDataTypes\tTemperature.cs" />
-    <Compile Include="UserStateTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\safnet.iba.TestHelpers\safnet.iba.TestHelpers.csproj">
+      <Project>{91216a15-cd06-4769-b9c7-68f4beb0eba3}</Project>
+      <Name>safnet.iba.TestHelpers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\safnet.iba\safnet.iba.csproj">
       <Project>{0EFDA517-37B7-4F38-B1FB-C7A983465CBE}</Project>
       <Name>safnet.iba</Name>

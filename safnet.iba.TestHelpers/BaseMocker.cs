@@ -1,8 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using safnet.iba.Adapters;
 
-namespace safnet.iba.UnitTests
+namespace safnet.iba.TestHelpers
 {
     public abstract class BaseMocker
     {
@@ -16,8 +17,12 @@ namespace safnet.iba.UnitTests
 
         protected MockRepository MoqRepository = new MockRepository(MockBehavior.Strict);
         protected Mock<IUserStateManager> UserStateMock;
+        protected Mock<IGlobalMap> GlobalMapMock;
 
-        protected abstract void TestInitialize();
+        protected virtual void TestInitialize()
+        {
+
+        }
 
 
         protected BaseMocker() { }
@@ -28,6 +33,7 @@ namespace safnet.iba.UnitTests
         {
 
             UserStateMock = MoqRepository.Create<IUserStateManager>();
+            GlobalMapMock = MoqRepository.Create<IGlobalMap>();
 
             TestInitialize();
         }

@@ -14,19 +14,24 @@ using safnet.iba.Data.Mappers;
 using safnet.iba.Presenters;
 using safnet.iba.Static;
 using safnet.iba.Views;
-
-
+using IbaMonitoring.App_Code;
 
 public partial class SiteConditionsPage : IbaPage, ISiteConditionsView
 {
+    
+    private readonly IPresenterFactory _factory;
 
-    private readonly SiteConditionsPresenter _presenter;
-
-
-    public SiteConditionsPage()
+    public SiteConditionsPage(IPresenterFactory factory)
     {
-        _presenter = new SiteConditionsPresenter(this.UserState, this, new SiteConditionsFacade());
+        if (factory == null)
+        {
+            throw new ArgumentNullException("factory");
+        }
+       
+        _factory = factory;
     }
+
+
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -152,11 +157,12 @@ public partial class SiteConditionsPage : IbaPage, ISiteConditionsView
     {
         IbaMasterPage.ExceptionHandler(Master, () =>
         {
-
-            if (Page.IsValid)
+            if (PageAdapter.IsValid)
             {
-                _presenter.SaveConditions();
-                Response.Redirect("PointCounts.aspx", true);
+                _factory.BuildSiteConditionsPresenter(this)
+                        .SaveConditions();
+                    
+                HttpResponse.Redirect("PointCounts.aspx", true);
             }
         });
     }

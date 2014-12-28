@@ -4,10 +4,11 @@ using safnet.iba.Business.DataTypes;
 using safnet.iba.Business.Entities;
 using safnet.iba.Static;
 using safnet.iba.Views;
+using safnet.iba.Adapters;
 
 namespace safnet.iba.Presenters
 {
-    public class SiteConditionsPresenter
+    public class SiteConditionsPresenter : ISiteConditionsPresenter
     {
         private readonly IUserStateManager _userState;
         private readonly ISiteConditionsView _view;
@@ -17,6 +18,7 @@ namespace safnet.iba.Presenters
         public SiteConditionsPresenter(IUserStateManager userState, 
             ISiteConditionsView view, ISiteConditionsFacade facade)
         {
+            // TODO: use of state should be moved to a presenter class
             if (userState == null)
             {
                 throw new ArgumentNullException("userState");

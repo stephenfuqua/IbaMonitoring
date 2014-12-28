@@ -1,7 +1,8 @@
 ﻿
 using System.Web;
 using System.Web.UI;
-using safnet.iba;
+using IbaMonitoring.App_Code;
+using safnet.iba.Adapters;
 
 namespace IbaMonitoring
 {

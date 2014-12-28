@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web;
 
-namespace safnet.iba.UnitTests.TestSpecificSubclasses
+namespace safnet.iba.TestHelpers
 {
     public class SessionTss : HttpSessionStateBase
     {

@@ -3,6 +3,7 @@ using System.Linq;
 using safnet.iba.Business.Entities;
 using safnet.iba.Business.Entities.Observations;
 using safnet.iba.Business.Factories;
+using safnet.iba.Adapters;
 
 namespace safnet.iba.Business.AppFacades
 {
@@ -12,7 +13,7 @@ namespace safnet.iba.Business.AppFacades
 
         #region Constructors
 
-        public ReviewObservation(FiftyMeterPointSurvey survey, FiftyMeterDataEntry entry, IUserStateManager state)
+        public ReviewObservation(FiftyMeterPointSurvey survey, FiftyMeterDataEntry entry, IUserStateManager state, IGlobalMap globalMap)
         {
             State = state;
             DataEntry = entry;
@@ -20,7 +21,7 @@ namespace safnet.iba.Business.AppFacades
             SamplingPointName =
                 state.PointsRemaining.Union(state.PointsCompleted).Single(x => x.Id.Equals(survey.LocationId)).Name;
 
-            Species species = GlobalMap.GetInstance().SpeciesList.Find(x => x.AlphaCode.Equals(entry.SpeciesCode));
+            Species species = globalMap.SpeciesList.Find(x => x.AlphaCode.Equals(entry.SpeciesCode));
             if (species == null)
             {
                 Warning = "Unknown species code. ";
@@ -119,8 +120,9 @@ namespace safnet.iba.Business.AppFacades
         /// Factory method to build and retrieve all observation information for a particular site visit, for use on the review page.
         /// </summary>
         /// <returns></returns>
-        public static List<ReviewObservation> GetReviewList(IUserStateManager state)
+        public static List<ReviewObservation> GetReviewList(IUserStateManager state, IGlobalMap globalMap)
         {
+            // TODO: use of state should be moved to a presenter class
             List<ReviewObservation> reviewList = new List<ReviewObservation>();
             state.SiteVisit.PointSurveys.OrderBy(x => x.StartTimeStamp).ToList().ForEach(x =>
             {
@@ -132,7 +134,7 @@ namespace safnet.iba.Business.AppFacades
 
                 entryList.ForEach(y =>
                 {
-                    reviewList.Add(new ReviewObservation(x, y, state));
+                    reviewList.Add(new ReviewObservation(x, y, state, globalMap));
                 });
             });
 

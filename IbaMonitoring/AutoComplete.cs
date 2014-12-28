@@ -5,6 +5,7 @@ using System.Web.Services;
 using safnet.iba;
 using safnet.iba.Business.Entities;
 using safnet.iba.Data.Mappers;
+using IbaMonitoring.App_Code;
 
 namespace IbaMonitoring
 {

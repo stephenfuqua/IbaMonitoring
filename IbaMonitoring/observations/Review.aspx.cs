@@ -151,10 +151,10 @@ public partial class Review : IbaPage
         this.PointSurveyList.DataSource = siteVisit.PointSurveys.OrderBy(x => x.StartTimeStamp);
         this.PointSurveyList.DataBind();
 
-        this.PointSurveyObservationList.DataSource = ReviewObservation.GetReviewList(this.UserState);
+        this.PointSurveyObservationList.DataSource = ReviewObservation.GetReviewList(this.UserState, this.GlobalMap);
         this.PointSurveyObservationList.DataBind();
 
-        this.SupplementalList.DataSource = ReviewSupplemental.GetReviewSupplementalList(this.UserState);
+        this.SupplementalList.DataSource = ReviewSupplemental.GetReviewSupplementalList(this.UserState, this.GlobalMap);
         this.SupplementalList.DataBind();
     }
 

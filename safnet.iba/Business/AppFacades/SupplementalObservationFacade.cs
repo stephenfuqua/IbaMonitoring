@@ -4,6 +4,7 @@ using System.ComponentModel;
 using safnet.iba.Business.Entities;
 using safnet.iba.Business.Entities.Observations;
 using safnet.iba.Data.Mappers;
+using safnet.iba.Adapters;
 
 namespace safnet.iba.Business.AppFacades
 {
@@ -19,6 +20,7 @@ namespace safnet.iba.Business.AppFacades
         /// <param name="state">The state.</param>
         public SupplementalObservationFacade(IUserStateManager state)
         {
+            // TODO: use of state should be moved to a presenter class
             _state = state;
         }
 

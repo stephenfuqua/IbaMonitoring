@@ -1,8 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using safnet.iba.Business.Entities;
-using safnet.iba.UnitTests.TestSpecificSubclasses;
+using safnet.iba.TestHelpers;
+using IbaMonitoring.App_Code;
 
-namespace safnet.iba.UnitTests
+namespace IbaMonitoring.UnitTests.App_Code
 {
     [TestClass]
     public class UserStateTests

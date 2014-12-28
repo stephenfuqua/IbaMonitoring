@@ -41,7 +41,20 @@
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
       <HintPath>..\..\..\..\..\..\..\Source\iba\2014\packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1409.1722\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -56,12 +69,25 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\PresenterFactoryTests.cs" />
+    <Compile Include="App_Code\UserStateTests.cs" />
+    <Compile Include="Observations\SiteConditionsPageTests.cs">
+      <SubType>aspxcodebehind</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IbaMonitoring\IbaMonitoring.csproj">
       <Project>{E3B95EFC-D624-44A5-9ACA-8CD3BEEBA9B9}</Project>
       <Name>IbaMonitoring</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\safnet.iba.TestHelpers\safnet.iba.TestHelpers.csproj">
+      <Project>{91216a15-cd06-4769-b9c7-68f4beb0eba3}</Project>
+      <Name>safnet.iba.TestHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\safnet.iba\safnet.iba.csproj">
+      <Project>{0efda517-37b7-4f38-b1fb-c7a983465cbe}</Project>
+      <Name>safnet.iba</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

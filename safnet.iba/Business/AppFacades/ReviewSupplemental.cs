@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using safnet.iba.Business.Entities;
 using safnet.iba.Business.Entities.Observations;
+using safnet.iba.Adapters;
 
 namespace safnet.iba.Business.AppFacades
 {
@@ -11,11 +12,11 @@ namespace safnet.iba.Business.AppFacades
     {
         #region Constructors
 
-        public ReviewSupplemental(SupplementalObservation observation)
+        public ReviewSupplemental(SupplementalObservation observation, IGlobalMap globalMap)
         {
             Observation = observation;
 
-            Species species = GlobalMap.GetInstance().SpeciesList.Find(x => x.AlphaCode.Equals(Observation.SpeciesCode));
+            Species species = globalMap.SpeciesList.Find(x => x.AlphaCode.Equals(Observation.SpeciesCode));
             if (species == null)
             {
                 Warning = "Unknown species code. ";
@@ -50,13 +51,14 @@ namespace safnet.iba.Business.AppFacades
 
         #region Public Methods
 
-        public static List<ReviewSupplemental> GetReviewSupplementalList(IUserStateManager state)
+        public static List<ReviewSupplemental> GetReviewSupplementalList(IUserStateManager state, IGlobalMap globalMap)
         {
+            // TODO: use of state should be moved to a presenter class
 
             List<ReviewSupplemental> reviewList = new List<ReviewSupplemental>();
             state.SiteVisit.SupplementalObservations.ForEach(x =>
             {
-                reviewList.Add(new ReviewSupplemental(x));
+                reviewList.Add(new ReviewSupplemental(x, globalMap));
             });
 
             return reviewList;

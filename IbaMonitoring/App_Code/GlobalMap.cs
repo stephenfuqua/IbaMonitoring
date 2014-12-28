@@ -4,33 +4,10 @@ using System.Web;
 using safnet.iba.Business.AppFacades;
 using safnet.iba.Business.Entities;
 using safnet.iba.Data.Mappers;
+using safnet.iba.Adapters;
 
-namespace safnet.iba
+namespace IbaMonitoring.App_Code
 {
-    public interface IGlobalMap
-    {
-        /// <summary>
-        /// Gets a List of <see cref="Site"/> objects from global Application state.
-        /// </summary>
-        List<Site> SiteList { get; }
-
-        /// <summary>
-        /// Gets a List of <see cref="Person"/> objects from global Application state.
-        /// </summary>
-        List<Person> PersonList { get; }
-
-        /// <summary>
-        /// Gets a List of <see cref="Species"/> objects from global Application state.
-        /// </summary>
-        List<Species> SpeciesList { get; }
-
-        /// <summary>
-        /// Gets the available years in which SiteVisits have been conducted.
-        /// </summary>
-        /// <value>The available years.</value>
-        SortedSet<int> AvailableYears { get; }
-    }
-
     /// <summary>
     /// Singleton for retrieving data from Http Session.
     /// </summary>

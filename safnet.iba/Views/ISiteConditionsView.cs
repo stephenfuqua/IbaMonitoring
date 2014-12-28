@@ -17,5 +17,6 @@ namespace safnet.iba.Views
         string EndWindAccessor { get; }
         string EndTimeAccessor { get; }
         string VisitDateAccessor { get; }
+        bool IsValid { get; }
     }
 }
