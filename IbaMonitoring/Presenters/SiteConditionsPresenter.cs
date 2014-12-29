@@ -1,71 +1,61 @@
-﻿using IbaMonitoring.Views;
-using safnet.iba.Adapters;
+﻿using System;
+using IbaMonitoring.Views;
 using safnet.iba.Business.AppFacades;
 using safnet.iba.Business.DataTypes;
 using safnet.iba.Business.Entities;
 using safnet.iba.Static;
-using System;
 
 namespace IbaMonitoring.Presenters
 {
-    public class SiteConditionsPresenter : ISiteConditionsPresenter
+    public class SiteConditionsPresenter : PresenterBase, ISiteConditionsPresenter
     {
-        private readonly IUserStateManager _userState;
-        private readonly ISiteConditionsView _view;
         private readonly ISiteConditionsFacade _facade;
 
-
-        public SiteConditionsPresenter(IUserStateManager userState, 
-            ISiteConditionsView view, ISiteConditionsFacade facade)
+        public SiteConditionsPresenter(ISiteConditionsFacade facade)
         {
-            if (userState == null)
-            {
-                throw new ArgumentNullException("userState");
-            }
-            if (view == null)
-            {
-                throw new ArgumentNullException("view");
-            }
             if (facade == null)
             {
                 throw new ArgumentNullException("facade");
             }
 
-            _userState = userState;
-            _view = view;
             _facade = facade;
         }
 
-        public void SaveConditions()
+        public void SaveConditions(ISiteConditionsView view)
         {
-            SiteVisit visit = _userState.SiteVisit;
-
-            visit.LocationId = _view.SiteVisitedAccessor.ToGuid();
-
-            visit.ObserverId = _view.SiteVisitObserverAccessor.ToGuid();
-            visit.RecorderId = _view.SiteVisitRecorderAccessor.ToGuid();
-
-            visit.EndConditions.Sky = _view.EndSkyAccessor.ToByte();
-            visit.EndConditions.Temperature = new Temperature()
+            if (view.IsValid)
             {
-                Units = _view.EndTempUnitsAccessor,
-                Value = _view.EndTempAccessor.ToInt()
-            };
-            visit.EndConditions.Wind = _view.EndWindAccessor.ToByte();
-            visit.EndTimeStamp = _view.VisitDateAccessor.ToDateTime(_view.EndTimeAccessor);
+                SiteVisit visit = UserState.SiteVisit;
+
+                visit.LocationId = view.SiteVisitedAccessor.ToGuid();
+
+                visit.ObserverId = view.SiteVisitObserverAccessor.ToGuid();
+                visit.RecorderId = view.SiteVisitRecorderAccessor.ToGuid();
+
+                visit.EndConditions.Sky = view.EndSkyAccessor.ToByte();
+                visit.EndConditions.Temperature = new Temperature()
+                {
+                    Units = view.EndTempUnitsAccessor,
+                    Value = view.EndTempAccessor.ToInt()
+                };
+                visit.EndConditions.Wind = view.EndWindAccessor.ToByte();
+                visit.EndTimeStamp = view.VisitDateAccessor.ToDateTime(view.EndTimeAccessor);
 
 
-            visit.StartConditions.Sky = _view.StartSkyAccessor.ToByte();
-            visit.StartConditions.Temperature = new Temperature()
-            {
-                Units = _view.StartTempUnitsAccessor,
-                Value = _view.StartTempAccessor.ToInt()
-            };
-            visit.StartConditions.Wind = _view.StartWindAccessor.ToByte();
-            visit.StartTimeStamp = _view.VisitDateAccessor.ToDateTime(_view.StartTimeAccessor);
+                visit.StartConditions.Sky = view.StartSkyAccessor.ToByte();
+                visit.StartConditions.Temperature = new Temperature()
+                {
+                    Units = view.StartTempUnitsAccessor,
+                    Value = view.StartTempAccessor.ToInt()
+                };
+                visit.StartConditions.Wind = view.StartWindAccessor.ToByte();
+                visit.StartTimeStamp = view.VisitDateAccessor.ToDateTime(view.StartTimeAccessor);
 
 
-            _userState.SiteVisit = _facade.SaveSiteConditions(visit);
+                UserState.SiteVisit = _facade.SaveSiteConditions(visit);
+
+                HttpResponse.Redirect("PointCounts.aspx", true);
+            }
         }
     }
 

@@ -7,21 +7,60 @@ using safnet.iba.Business.DataTypes;
 using safnet.iba.Business.Entities;
 using safnet.iba.TestHelpers;
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Web;
+using safnet.iba.Adapters;
 
 namespace IbaMonitoring.UnitTests.Presenters
 {
+    [ExcludeFromCodeCoverage]
+    public class SiteConditionsPresenterTss : SiteConditionsPresenter
+    {
+        public SiteConditionsPresenterTss(ISiteConditionsFacade facade)
+            : base(facade)
+        {
+        }
+
+        public SiteConditionsPresenterTss SetUserState(IUserStateManager userState)
+        {
+            base.UserState = userState;
+            return this;
+        }
+
+
+        public SiteConditionsPresenterTss SetGlobalMap(IGlobalMap globalMap)
+        {
+            base.GlobalMap = globalMap;
+            return this;
+        }
+
+        public SiteConditionsPresenterTss SetHttpResponse(HttpResponseBase httpResponse)
+        {
+            base.HttpResponse = httpResponse;
+            return this;
+        }
+
+        public SiteConditionsPresenterTss SetHttpRequest(HttpRequestBase httpRequest)
+        {
+            base.HttpRequest = httpRequest;
+            return this;
+        }
+    }
+
     [TestClass]
+    [ExcludeFromCodeCoverage]
     public class SiteConditionsPresenterTests : BaseMocker
     {
-
-        
         private Mock<ISiteConditionsView> _viewMock;
         private Mock<ISiteConditionsFacade> _facadeMock;
+        private Mock<HttpResponseBase> _mockResponse;
+
 
         protected override void TestInitialize()
         {
             _viewMock = MoqRepository.Create<ISiteConditionsView>();
             _facadeMock = MoqRepository.Create<ISiteConditionsFacade>();
+            _mockResponse = MoqRepository.Create<HttpResponseBase>();
         }
 
         [TestMethod]
@@ -32,24 +71,10 @@ namespace IbaMonitoring.UnitTests.Presenters
         }
 
         [TestMethod]
-        [ExpectedException(typeof (ArgumentNullException))]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorRejectsNullArgumentOne()
         {
-            new SiteConditionsPresenter(null, _viewMock.Object, _facadeMock.Object);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void ConstructorRejectsNullArgumentTwo()
-        {
-            new SiteConditionsPresenter(UserStateMock.Object, null, _facadeMock.Object);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void ConstructorRejectsNullArgumentThree()
-        {
-            new SiteConditionsPresenter(UserStateMock.Object, _viewMock.Object, null);
+            new SiteConditionsPresenter(null);
         }
 
 
@@ -59,15 +84,15 @@ namespace IbaMonitoring.UnitTests.Presenters
             var locationid = Guid.Empty;
             var observerId = Guid.Empty;
             var recorderId = Guid.Empty;
-            var startSky = (byte) 0;
+            var startSky = (byte)0;
             var startTempUnit = "";
             var startTemp = 0;
-            var startWind = (byte) 0;
+            var startWind = (byte)0;
             var startDateTime = DateTime.MinValue;
-            var endSky = (byte) 0;
+            var endSky = (byte)0;
             var endTempUnit = "";
             var endTemp = 0;
-            var endWind = (byte) 0;
+            var endWind = (byte)0;
             var endDateTime = DateTime.MinValue.AddMilliseconds(234);
             var siteVisitId = Guid.Empty;
             var startConditionId = Guid.Empty;
@@ -82,7 +107,7 @@ namespace IbaMonitoring.UnitTests.Presenters
             var expectedStartTempUnit = "F";
             var expectedStartTemp = 23;
             var expectedStartWind = (byte)1;
-            var expectedStartDateTime = new DateTime(2014,12,25,5,30,0);
+            var expectedStartDateTime = new DateTime(2014, 12, 25, 5, 30, 0);
             var expectedEndSky = (byte)2;
             var expectedEndTempUnit = "C";
             var expectedEndTemp = -5;
@@ -96,9 +121,35 @@ namespace IbaMonitoring.UnitTests.Presenters
             ExpectToSendTheseConditionsToTheSiteConditionsFacade(expectedLocationid, expectedEndSky, expectedEndTemp, expectedEndTempUnit, expectedEndDateTime, expectedEndWind, expectedObserverId, expectedRecorderId, expectedStartSky, expectedStartTemp, expectedStartTempUnit, expectedStartDateTime, expectedStartWind, modifiedSiteVisit);
             ExpectToSaveSiteVisitBackIntoSession(modifiedSiteVisit);
 
+            var expectedPage = "PointCounts.aspx";
+            ExpectToBeRedirectedTo(expectedPage);
+
+            GivenTheDataAreValid(true);
+
             WhenTheUserSavesTheSiteVisitConditions();
 
             ThenThereIsNothingToValidate();
+        }
+
+
+        [TestMethod]
+        public void StayOnThePageWhenThereAreValidationErrors()
+        {
+            GivenTheDataAreValid(false);
+
+            WhenTheUserSavesTheSiteVisitConditions();
+
+            ThenThereIsNothingToValidate();
+        }
+
+        private void GivenTheDataAreValid(bool b)
+        {
+            _viewMock.SetupGet(x => x.IsValid).Returns(b);
+        }
+
+        private void ExpectToBeRedirectedTo(string expectedPage)
+        {
+            _mockResponse.Setup(x => x.Redirect(It.Is<string>(y => y == expectedPage), It.Is<bool>(y => y == true)));
         }
 
         private void ExpectToSaveSiteVisitBackIntoSession(SiteVisit modifiedSiteVisit)
@@ -118,7 +169,7 @@ namespace IbaMonitoring.UnitTests.Presenters
                     Assert.AreEqual(Guid.Empty, actual.EndConditions.Id, "EndConditions.Id");
                     Assert.AreEqual(endTempUnit, actual.EndConditions.Temperature.Units, "EndConditions.Temperature.Units");
                     Assert.AreEqual(endTemp, actual.EndConditions.Temperature.Value, "EndConditions.Temperature.Value");
-                    Assert.AreEqual(endDateTime , actual.EndTimeStamp, "EndTimeStamp");
+                    Assert.AreEqual(endDateTime, actual.EndTimeStamp, "EndTimeStamp");
                     Assert.AreEqual(0, actual.FlattenedDataEntryList.Count, "FlattenedDataEntryList");
                     Assert.AreEqual(Guid.Empty, actual.Id, "Id");
                     Assert.IsFalse(actual.IsDataEntryComplete, "IsDataEntryComplete");
@@ -141,7 +192,7 @@ namespace IbaMonitoring.UnitTests.Presenters
 
         private void WhenTheUserSavesTheSiteVisitConditions()
         {
-            GivenTheSystemUnderTest().SaveConditions();
+            GivenTheSystemUnderTest().SaveConditions(_viewMock.Object);
         }
 
         private void GivenUserFormSubmission(string expectedEndSky, string expectedEndTemp, string expectedEndTempUnit,
@@ -173,10 +224,10 @@ namespace IbaMonitoring.UnitTests.Presenters
             {
                 EndConditions = new SiteCondition
                 {
-                    Id = endConditionId, 
+                    Id = endConditionId,
                     SiteVisitId = siteVisitId,
                     Sky = endSky,
-                    Temperature = new Temperature {Units = endTempUnit, Value = endTemp},
+                    Temperature = new Temperature { Units = endTempUnit, Value = endTemp },
                     Wind = endWind
                 },
                 EndTimeStamp = endDateTime,
@@ -190,7 +241,7 @@ namespace IbaMonitoring.UnitTests.Presenters
                     Id = startConditionId,
                     SiteVisitId = siteVisitId,
                     Sky = startSky,
-                    Temperature = new Temperature {Units = startTempUnit, Value = startTemp}
+                    Temperature = new Temperature { Units = startTempUnit, Value = startTemp }
                 }
             };
 
@@ -198,9 +249,11 @@ namespace IbaMonitoring.UnitTests.Presenters
         }
 
 
-        private SiteConditionsPresenter GivenTheSystemUnderTest()
+        private SiteConditionsPresenterTss GivenTheSystemUnderTest()
         {
-            return new SiteConditionsPresenter(UserStateMock.Object, _viewMock.Object, _facadeMock.Object);
+            return new SiteConditionsPresenterTss(_facadeMock.Object)
+                .SetHttpResponse(_mockResponse.Object)
+                .SetUserState(UserStateMock.Object);
         }
     }
 }

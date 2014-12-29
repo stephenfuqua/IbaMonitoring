@@ -68,43 +68,6 @@ namespace IbaMonitoring
 
 
 
-        private HttpResponseBase _responseBase;
-
-        protected HttpResponseBase HttpResponse
-        {
-            get
-            {
-                if (_responseBase == null)
-                {
-                    _responseBase = new HttpResponseWrapper(Response);
-                }
-                return _responseBase;
-            }
-            set
-            {
-                _responseBase = value;
-            }
-        }
-
-        private IPageAdapter _pageAdapter;
-
-        protected IPageAdapter PageAdapter
-        {
-            get
-            {
-                if (_pageAdapter == null)
-                {
-                    _pageAdapter = new PageAdapter(this);
-                }
-                return _pageAdapter;
-            }
-            set
-            {
-                _pageAdapter = value;
-            }
-        }
-
-
         /// <summary>
         /// Assigns the color of the table cell based on the value in the cell.
         /// </summary>

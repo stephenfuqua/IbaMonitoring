@@ -1,7 +1,9 @@
-﻿namespace IbaMonitoring.Presenters
+﻿using IbaMonitoring.Views;
+
+namespace IbaMonitoring.Presenters
 {
     public interface ISiteConditionsPresenter
     {
-        void SaveConditions();
+        void SaveConditions(ISiteConditionsView view);
     }
 }

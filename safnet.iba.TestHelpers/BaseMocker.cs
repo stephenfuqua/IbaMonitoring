@@ -21,7 +21,10 @@ namespace safnet.iba.TestHelpers
 
         protected virtual void TestInitialize()
         {
+        }
 
+        protected virtual void TestCleanup()
+        {
         }
 
 
@@ -36,6 +39,12 @@ namespace safnet.iba.TestHelpers
             GlobalMapMock = MoqRepository.Create<IGlobalMap>();
 
             TestInitialize();
+        }
+
+        [TestCleanup]
+        public void BaseTestCleanup()
+        {
+            MoqRepository.VerifyAll();
         }
 
         protected void ThenThereIsNothingToValidate()

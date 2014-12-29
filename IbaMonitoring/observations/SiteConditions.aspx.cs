@@ -13,7 +13,7 @@ using System.Web.UI.WebControls;
 
 public partial class SiteConditionsPage : IbaPage, ISiteConditionsView
 {
-    
+
     private readonly IPresenterFactory _factory;
 
     public SiteConditionsPage(IPresenterFactory factory)
@@ -22,7 +22,7 @@ public partial class SiteConditionsPage : IbaPage, ISiteConditionsView
         {
             throw new ArgumentNullException("factory");
         }
-       
+
         _factory = factory;
     }
 
@@ -152,13 +152,8 @@ public partial class SiteConditionsPage : IbaPage, ISiteConditionsView
     {
         IbaMasterPage.ExceptionHandler(Master, () =>
         {
-            if (PageAdapter.IsValid)
-            {
-                _factory.BuildSiteConditionsPresenter(this)
-                        .SaveConditions();
-                    
-                HttpResponse.Redirect("PointCounts.aspx", true);
-            }
+            _factory.BuildSiteConditionsPresenter(this)
+                    .SaveConditions(this);
         });
     }
 

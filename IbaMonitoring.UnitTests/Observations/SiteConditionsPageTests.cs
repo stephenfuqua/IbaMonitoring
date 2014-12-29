@@ -5,6 +5,7 @@ using Moq;
 using safnet.iba.TestHelpers;
 using System;
 using System.Web;
+using IbaMonitoring.Views;
 
 namespace IbaMonitoring.UnitTests.Observations
 {
@@ -13,18 +14,6 @@ namespace IbaMonitoring.UnitTests.Observations
         public SiteConditionsPageTss(IPresenterFactory factory) : base(factory)
         {
 
-        }
-
-        public SiteConditionsPageTss SetHttpResponse(HttpResponseBase response)
-        {
-            base.HttpResponse = response;
-            return this;
-        }
-
-        public SiteConditionsPageTss SetPageAdapter(IPageAdapter adapter)
-        {
-            base.PageAdapter = adapter;
-            return this;
         }
 
         public void SubmitSiteConditions_Click(object sender, EventArgs e)
@@ -38,14 +27,10 @@ namespace IbaMonitoring.UnitTests.Observations
     {
         private Mock<IPresenterFactory> _mockFactory;
         private Mock<ISiteConditionsPresenter> _mockPresenter;
-        private Mock<HttpResponseBase> _mockResponse;
-        private Mock<IPageAdapter> _mockPageAdapter;
 
         protected override void TestInitialize()
         {
             _mockFactory = MoqRepository.Create<IPresenterFactory>();
-            _mockResponse = MoqRepository.Create<HttpResponseBase>();
-            _mockPageAdapter = MoqRepository.Create<IPageAdapter>();
             _mockPresenter = MoqRepository.Create<ISiteConditionsPresenter>();
 
             base.TestInitialize();
@@ -65,72 +50,42 @@ namespace IbaMonitoring.UnitTests.Observations
         }
 
         [TestMethod]
-        public void RedirectToPointCountsPageWhenSubmittingValidForm()
+        public void SubmitValidFormData()
         {
-            GivenTheFormSubmissionIsValid();
-
-            var expectedPage = "PointCounts.aspx";
-            ExpectToRedirectTo(expectedPage);
-
+            
             var system = GivenTheSystemUnderTest();
-            ExpectToSendTheFormToThePresenter();
+            ExpectToSendTheFormToThePresenter(system);
             ExpectToCreateThePresenterUsingTheFactory(system);
 
-            WhenTheFormIsSubitted(system);
+            WhenTheFormIsSubmited(system);
 
             ThenThereIsNothingToValidate();
         }
 
-        [TestMethod]
-        public void DoNothingWhenSubmittingInvalidForm()
-        {
-            GivenTheFormSubmissionIsNotValid();
+   
+        // TODO: exception handling
 
-            var system = GivenTheSystemUnderTest();
 
-            WhenTheFormIsSubitted(system);
-
-            ThenThereIsNothingToValidate();
-        }
-
-        private void GivenTheFormSubmissionIsNotValid()
-        {
-            _mockPageAdapter.SetupGet(x => x.IsValid)
-                .Returns(false);
-        }
-
-        private static void WhenTheFormIsSubitted(SiteConditionsPageTss system)
+        private static void WhenTheFormIsSubmited(SiteConditionsPageTss system)
         {
             system.SubmitSiteConditions_Click(null, null);
         }
 
-        private void ExpectToSendTheFormToThePresenter()
+        private void ExpectToSendTheFormToThePresenter(ISiteConditionsView view)
         {
-            _mockPresenter.Setup(x => x.SaveConditions());
+            _mockPresenter.Setup(x => x.SaveConditions(view));
         }
 
         private void ExpectToCreateThePresenterUsingTheFactory(SiteConditionsPage page)
         {
-            _mockFactory.Setup(x => x.BuildSiteConditionsPresenter(It.Is<SiteConditionsPage>(y => object.ReferenceEquals(y, page))))
-                            .Returns(_mockPresenter.Object);
-        }
-
-        private void GivenTheFormSubmissionIsValid()
-        {
-            _mockPageAdapter.SetupGet(x => x.IsValid)
-                            .Returns(true);
-        }
-
-        private void ExpectToRedirectTo(string expectedPage)
-        {
-            _mockResponse.Setup(x => x.Redirect(It.Is<string>(y => y == expectedPage), It.Is<bool>(y => y)));
+            _mockFactory.Setup(
+                x => x.BuildSiteConditionsPresenter(It.Is<SiteConditionsPage>(y => object.ReferenceEquals(y, page))))
+                .Returns(_mockPresenter.Object);
         }
 
         private SiteConditionsPageTss GivenTheSystemUnderTest()
         {
-            return new SiteConditionsPageTss(_mockFactory.Object)
-                .SetHttpResponse(_mockResponse.Object)
-                .SetPageAdapter(_mockPageAdapter.Object);
+            return new SiteConditionsPageTss(_mockFactory.Object);
         }
 
 

@@ -381,6 +381,7 @@
       <DependentUpon>SurveySteps.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presenters\ISiteConditionsPresenter.cs" />
+    <Compile Include="Presenters\PresenterBase.cs" />
     <Compile Include="Presenters\SiteConditionsPresenter.cs" />
     <Compile Include="resources\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
