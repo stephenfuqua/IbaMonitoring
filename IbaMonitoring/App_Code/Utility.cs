@@ -1,6 +1,6 @@
-﻿using System;
+﻿using safnet.iba.Business.Components;
+using System;
 using System.ComponentModel;
-using safnet.iba.Business.Components;
 
 namespace IbaMonitoring
 {

@@ -1,10 +1,10 @@
-﻿using System;
+﻿using IbaMonitoring.Views;
+using safnet.iba.Adapters;
 using safnet.iba.Business.AppFacades;
 using safnet.iba.Business.DataTypes;
 using safnet.iba.Business.Entities;
 using safnet.iba.Static;
-using IbaMonitoring.Views;
-using safnet.iba.Adapters;
+using System;
 
 namespace IbaMonitoring.Presenters
 {
@@ -18,7 +18,6 @@ namespace IbaMonitoring.Presenters
         public SiteConditionsPresenter(IUserStateManager userState, 
             ISiteConditionsView view, ISiteConditionsFacade facade)
         {
-            // TODO: use of state should be moved to a presenter class
             if (userState == null)
             {
                 throw new ArgumentNullException("userState");
@@ -40,19 +39,6 @@ namespace IbaMonitoring.Presenters
         public void SaveConditions()
         {
             SiteVisit visit = _userState.SiteVisit;
-
-            if (visit.Id.IsEmptyGuid())
-            {
-                visit.SetNewId();
-            }
-            if (visit.StartConditions.Id.IsEmptyGuid())
-            {
-                visit.StartConditions = SiteCondition.CreateNewConditions(visit.Id);
-            }
-            if (visit.EndConditions.Id.IsEmptyGuid())
-            {
-                visit.EndConditions = SiteCondition.CreateNewConditions(visit.Id);
-            }
 
             visit.LocationId = _view.SiteVisitedAccessor.ToGuid();
 

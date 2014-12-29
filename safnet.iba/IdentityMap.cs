@@ -1,6 +1,6 @@
-﻿using System;
+﻿using safnet.iba.Business.Entities;
+using System;
 using System.Collections.Generic;
-using safnet.iba.Business.Entities;
 
 namespace safnet.iba
 {

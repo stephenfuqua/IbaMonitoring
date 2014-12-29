@@ -1,11 +1,10 @@
-﻿using Microsoft.Practices.Unity;
+﻿using IbaMonitoring.Presenters;
+using IbaMonitoring.Views;
+using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using safnet.iba.Adapters;
-using IbaMonitoring.Presenters;
-using System.Linq;
 using safnet.iba.TestHelpers;
-using IbaMonitoring.Views;
 using System;
 
 namespace IbaMonitoring.UnitTests.App_Code

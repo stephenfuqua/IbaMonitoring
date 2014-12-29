@@ -1,7 +1,7 @@
-﻿using System;
-using System.Data;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using safnet.iba.Static.Extensions;
+using System;
+using System.Data;
 
 namespace safnet.iba.UnitTests
 {

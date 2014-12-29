@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Microsoft.Practices.EnterpriseLibrary.Data;
+using safnet.iba.Business.Entities;
+using safnet.iba.Static.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Xml;
-using Microsoft.Practices.EnterpriseLibrary.Data;
-using safnet.iba.Business.Entities;
-using safnet.iba.Static.Extensions;
 
 namespace safnet.iba.Data.Mappers
 {

@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using IbaMonitoring.App_Code;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using safnet.iba.Business.Entities;
 using safnet.iba.TestHelpers;
-using IbaMonitoring.App_Code;
 
 namespace IbaMonitoring.UnitTests.App_Code
 {

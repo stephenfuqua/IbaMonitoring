@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using safnet.iba.Business.Entities.Observations;
 using safnet.iba.UnitTests.TestSpecificSubclasses;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace safnet.iba.UnitTests.tBusiness.tEntities
 {

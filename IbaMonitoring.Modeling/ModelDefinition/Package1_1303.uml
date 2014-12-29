@@ -1,85 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
-  Id="4fe9c6a1-9519-473a-b8dd-4bc44b579635"
-  name="IbaMonitoring"
+  Id="d6f1ec0d-a958-42f1-b103-3f0898a7b8ca"
+  name="Adapters"
   visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <referencesInternal>
     <reference
-      Id="9e2b1e72-0ddf-490f-a2bf-59a050b43b2d"
-      handle="viewcode://./CodeSchema_Namespace?Namespace%3DIbaMonitoring"
+      Id="0298c3c6-acd5-412a-ac46-23f26f752298"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3Dsafnet.iba.Adapters"
       tag="ViewCode" />
   </referencesInternal>
   <packagedElements>
     <packageHasNamedElement>
-      <class
-        Id="e0c9f1a5-2309-4c6d-9471-cf92bd8d3306"
-        name="IbaPage"
+      <Interface
+        Id="e15f0403-513a-4c6e-9bde-067cad7ce785"
+        name="IUserStateManager"
         isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
+        isLeaf="false">
         <referencesInternal>
           <reference
-            Id="b1b55072-cb91-4561-a817-7f2f2c8348b8"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2FIbaMonitoring%2Fbin%2FIbaMonitoring.dll Namespace%3DIbaMonitoring Type%3DIbaPage"
+            Id="3f4e627e-404c-49a8-91cf-956a41d64ebf"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FSource%2Fiba%2FIbaMonitoring.org%2Fsafnet.iba%2Fbin%2FDebug%2Fsafnet.iba.dll Namespace%3Dsafnet.iba.Adapters Type%3DIUserStateManager"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
           <stereotypeInstance
-            Id="02595ea7-16bb-421a-ba01-3d22e1c780a3"
-            name="class"
+            Id="0ce5cd67-6fac-41ef-bdd9-e928d7908389"
+            name="interface"
             profile="CSharpProfile">
             <propertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="b92ee5fd-4b4b-4297-8869-16ad62b98f49">
+                Id="84da5aec-9707-485d-9b52-fa7e2b183c78">
                 <propertyInstance
-                  Id="0a4e2544-fd29-472f-aa45-ce4ccc7fbfe1"
+                  Id="f8914538-2676-43bf-85c3-a638e4e7459f"
                   name="ClrAttributes" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="96eaecec-4ae9-419a-b8e9-d9b2c22c911a">
+                Id="5c699689-f9cc-4ec9-bdc9-bf3df0b48f11">
                 <propertyInstance
-                  Id="15cc348d-89e4-4edd-8bc9-7aec1f4b479c"
+                  Id="8efc1a7b-cd21-4d59-931b-a64437b8f48d"
                   name="IsPartial"
                   value="false" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="6c173053-dd58-425c-b35b-8a985c305fc9">
+                Id="e2f48135-7ae7-4fb9-b0d3-a78ac7c0148e">
                 <propertyInstance
-                  Id="752a64cc-431c-42f1-88c6-94e948a7a2b4"
-                  name="IsStatic"
-                  value="False" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="b30d08f9-6185-48df-87d9-e4e9ef0b96ab">
-                <propertyInstance
-                  Id="446128e4-23c3-4d04-adc2-77c92e561591"
+                  Id="c2253dff-3cd5-43f3-ae99-630cd93692aa"
                   name="IsUnsafe"
                   value="false" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="78450cfc-bb50-43d6-82ff-f0535bc0db78">
+                Id="e8befd6b-6613-4f31-8498-2b8626a3864e">
                 <propertyInstance
-                  Id="0e3140e5-0c38-41ac-81eb-cc7e393271ab"
+                  Id="28f2c929-f8bc-46e3-9628-5f8dab8c2e2f"
                   name="PackageVisibility"
                   value="internal" />
               </stereotypeInstanceHasPropertyInstances>
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <packageMoniker
-        Id="731a83f8-4b38-40be-854e-d68215223001"
-        LastKnownName="Presenters"
-        LastKnownLocation="Package_1303.uml" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <packageMoniker
-        Id="19c9d4e9-5e3f-4314-883b-03400bd1bdaa"
-        LastKnownName="Views"
-        LastKnownLocation="Package2_1303.uml" />
+      </Interface>
     </packageHasNamedElement>
   </packagedElements>
 </package>

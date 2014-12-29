@@ -1,17 +1,16 @@
-﻿using System;
+﻿using IbaMonitoring;
+using safnet.iba.Business.AppFacades;
+using safnet.iba.Business.Entities;
+using safnet.iba.Business.Entities.Observations;
+using safnet.iba.Data.Mappers;
+using safnet.iba.Static;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Script.Services;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using IbaMonitoring;
-using safnet.iba;
-using safnet.iba.Business.AppFacades;
-using safnet.iba.Business.Entities;
-using safnet.iba.Business.Entities.Observations;
-using safnet.iba.Data.Mappers;
-using safnet.iba.Static;
 
 public partial class PointCounts : IbaPage
     {

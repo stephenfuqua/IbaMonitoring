@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using safnet.iba.Business.Dictionaries;
+﻿using safnet.iba.Business.Dictionaries;
 using safnet.iba.Business.Entities.Observations;
+using System;
+using System.Collections.Generic;
 
 namespace safnet.iba.Business.Entities
 {

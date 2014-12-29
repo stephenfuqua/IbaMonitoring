@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Data;
-using safnet.iba.Business.DataTransferObjects;
+﻿using safnet.iba.Business.DataTransferObjects;
 using safnet.iba.Business.Entities;
+using System.Collections.Generic;
+using System.Data;
 
 namespace safnet.iba.Adapters
 {

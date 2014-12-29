@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using safnet.iba.Adapters;
 using safnet.iba.Business.Entities;
 using safnet.iba.Business.Entities.Observations;
-using safnet.iba.Adapters;
+using System.Collections.Generic;
 
 namespace safnet.iba.Business.AppFacades
 {

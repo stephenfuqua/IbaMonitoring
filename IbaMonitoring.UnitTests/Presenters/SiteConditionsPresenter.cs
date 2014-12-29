@@ -1,12 +1,12 @@
-﻿using System;
+﻿using IbaMonitoring.Presenters;
+using IbaMonitoring.Views;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using safnet.iba.Business.AppFacades;
-using safnet.iba.Business.Entities;
-using IbaMonitoring.Presenters;
-using IbaMonitoring.Views;
-using safnet.iba.TestHelpers;
 using safnet.iba.Business.DataTypes;
+using safnet.iba.Business.Entities;
+using safnet.iba.TestHelpers;
+using System;
 
 namespace IbaMonitoring.UnitTests.Presenters
 {
@@ -88,9 +88,6 @@ namespace IbaMonitoring.UnitTests.Presenters
             var expectedEndTemp = -5;
             var expectedEndWind = (byte)3;
             var expectedEndDateTime = new DateTime(2014, 12, 25, 7, 30, 0);
-            //var expectedSiteVisitId = BaseMocker.TEST_GUID_4;
-            //var expectedStartConditionId = BaseMocker.TEST_GUID_5;
-            //var expectedEndConditionId = BaseMocker.TEST_GUID_6;
 
             GivenUserFormSubmission(expectedEndSky.ToString(), expectedEndTemp.ToString(), expectedEndTempUnit.ToString(), expectedEndDateTime.ToString("hh:mm:ss"), expectedEndWind.ToString(), expectedLocationid.ToString(), expectedObserverId.ToString(), expectedRecorderId.ToString(), expectedStartSky.ToString(), expectedStartTemp.ToString(), expectedStartTempUnit.ToString(), expectedStartDateTime.ToString("hh:mm:ss"), expectedStartDateTime.ToString("yyyy-MM-dd"), expectedStartWind.ToString());
 
@@ -118,20 +115,20 @@ namespace IbaMonitoring.UnitTests.Presenters
                     Assert.IsNull(actual.Comments, "Comments");
                     Assert.AreEqual(actual.Id, actual.EndConditions.SiteVisitId, "EndConditions.SiteVisitId");
                     Assert.AreEqual(endSky, actual.EndConditions.Sky, "EndConditions.Sky");
-                    Assert.AreNotEqual(Guid.Empty, actual.EndConditions.Id, "EndConditions.Id");
+                    Assert.AreEqual(Guid.Empty, actual.EndConditions.Id, "EndConditions.Id");
                     Assert.AreEqual(endTempUnit, actual.EndConditions.Temperature.Units, "EndConditions.Temperature.Units");
                     Assert.AreEqual(endTemp, actual.EndConditions.Temperature.Value, "EndConditions.Temperature.Value");
                     Assert.AreEqual(endDateTime , actual.EndTimeStamp, "EndTimeStamp");
                     Assert.AreEqual(0, actual.FlattenedDataEntryList.Count, "FlattenedDataEntryList");
-                    Assert.AreNotEqual(Guid.Empty, actual.Id, "Id");
+                    Assert.AreEqual(Guid.Empty, actual.Id, "Id");
                     Assert.IsFalse(actual.IsDataEntryComplete, "IsDataEntryComplete");
                     Assert.AreEqual(locationid, actual.LocationId, "LocationId");
-                    Assert.IsTrue(actual.NeedsDatabaseRefresh, "NeedsDatabaseRefresh");
+                    Assert.IsFalse(actual.NeedsDatabaseRefresh, "NeedsDatabaseRefresh");
                     Assert.AreEqual(observerId, actual.ObserverId, "ObserverId");
                     Assert.AreEqual(0, actual.PointSurveys.Count, "PointSurveys");
                     Assert.AreEqual(recorderId, actual.RecorderId, "RecorderId");
                     Assert.AreEqual(actual.Id, actual.StartConditions.SiteVisitId, "StartConditions.SiteVisitId");
-                    Assert.AreNotEqual(Guid.Empty, actual.StartConditions.Id, "StartConditions.Id");
+                    Assert.AreEqual(Guid.Empty, actual.StartConditions.Id, "StartConditions.Id");
                     Assert.AreEqual(startSky, actual.StartConditions.Sky, "StartConditions.Sky");
                     Assert.AreEqual(startTempUnit, actual.StartConditions.Temperature.Units, "StartConditions.Temperature.Units");
                     Assert.AreEqual(startTemp, actual.StartConditions.Temperature.Value, "StartConditions.Temperature.Value");

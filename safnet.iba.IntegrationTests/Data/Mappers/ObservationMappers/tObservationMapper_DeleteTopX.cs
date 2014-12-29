@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using safnet.iba.Data.Mappers;
 using safnet.iba.UnitTests;
+using System;
+using System.Linq;
 
 namespace safnet.iba.IntegrationTests.Data.Mappers.ObservationMappers
 {

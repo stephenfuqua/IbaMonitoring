@@ -1,7 +1,7 @@
-﻿using System.Data;
-using safnet.iba.Business.DataTypes;
+﻿using safnet.iba.Business.DataTypes;
 using safnet.iba.Business.Entities;
 using safnet.iba.Static.Extensions;
+using System.Data;
 
 namespace safnet.iba.Data.Mappers
 {

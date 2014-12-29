@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using safnet.iba.Business.Entities.Observations;
+﻿using safnet.iba.Business.Entities.Observations;
+using System.Collections.Generic;
 
 namespace safnet.iba.UnitTests.TestSpecificSubclasses
 {

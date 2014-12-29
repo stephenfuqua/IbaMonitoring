@@ -1,8 +1,8 @@
-﻿using System;
+﻿using safnet.iba.Business.Components;
+using safnet.iba.Properties;
+using System;
 using System.ComponentModel;
 using System.Net.Mail;
-using safnet.iba.Business.Components;
-using safnet.iba.Properties;
 
 namespace safnet.iba.Business.Entities
 {

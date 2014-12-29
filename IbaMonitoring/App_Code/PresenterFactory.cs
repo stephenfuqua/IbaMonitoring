@@ -1,8 +1,7 @@
-﻿using Microsoft.Practices.Unity;
-using safnet.iba;
-using safnet.iba.Adapters;
-using IbaMonitoring.Presenters;
+﻿using IbaMonitoring.Presenters;
 using IbaMonitoring.Views;
+using Microsoft.Practices.Unity;
+using safnet.iba.Adapters;
 using System;
 using System.Collections.Generic;
 using System.Web;

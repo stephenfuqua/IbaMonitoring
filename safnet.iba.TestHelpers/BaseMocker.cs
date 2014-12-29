@@ -1,7 +1,7 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using safnet.iba.Adapters;
+using System;
 
 namespace safnet.iba.TestHelpers
 {

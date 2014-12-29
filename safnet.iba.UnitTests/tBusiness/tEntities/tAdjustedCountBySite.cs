@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using safnet.iba.Business.Entities;
+using System;
 
 namespace safnet.iba.UnitTests
 {

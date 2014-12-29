@@ -1,6 +1,6 @@
-﻿using System;
-using safnet.iba.Business.DataTypes;
+﻿using safnet.iba.Business.DataTypes;
 using safnet.iba.Business.Dictionaries;
+using System;
 
 namespace safnet.iba.Business.Entities
 {

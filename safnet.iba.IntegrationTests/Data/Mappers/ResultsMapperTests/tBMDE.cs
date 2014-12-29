@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using safnet.iba.Business.Entities.Observations;
+using safnet.iba.Data.Mappers;
+using safnet.iba.UnitTests;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using safnet.iba.Business.Entities.Observations;
-using safnet.iba.Data.Mappers;
-using safnet.iba.UnitTests;
 
 namespace safnet.iba.IntegrationTests.Data.Mappers.ResultsMapperTests
 {

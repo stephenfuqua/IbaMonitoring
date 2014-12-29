@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using safnet.iba.Business.Entities;
 using safnet.iba.Data.Mappers;
 using safnet.iba.UnitTests;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 
 namespace safnet.iba.IntegrationTests.Data.Mappers.EventMappers
 {

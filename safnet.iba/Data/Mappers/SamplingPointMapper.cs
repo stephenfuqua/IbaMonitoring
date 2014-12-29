@@ -1,9 +1,9 @@
-﻿using System;
+﻿using safnet.iba.Business.Entities;
+using safnet.iba.Static.Extensions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using safnet.iba.Business.Entities;
-using safnet.iba.Static.Extensions;
 
 namespace safnet.iba.Data.Mappers
 {

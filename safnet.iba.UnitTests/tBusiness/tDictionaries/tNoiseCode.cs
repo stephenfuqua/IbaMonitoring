@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using safnet.iba.Business.Dictionaries;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace safnet.iba.UnitTests.tBusiness.tDictionaries
 {

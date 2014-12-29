@@ -1,10 +1,10 @@
-﻿using System;
+﻿using safnet.iba.Adapters;
+using safnet.iba.Business.DataTransferObjects;
+using safnet.iba.Business.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Web;
-using safnet.iba.Business.DataTransferObjects;
-using safnet.iba.Business.Entities;
-using safnet.iba.Adapters;
 
 namespace IbaMonitoring.App_Code
 {

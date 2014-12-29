@@ -1,8 +1,8 @@
-﻿using System;
+﻿using safnet.iba.Business.Entities;
+using safnet.iba.Data.Mappers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using safnet.iba.Business.Entities;
-using safnet.iba.Data.Mappers;
 
 namespace safnet.iba.Business.AppFacades
 {

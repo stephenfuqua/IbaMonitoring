@@ -1,8 +1,8 @@
-﻿using System;
+﻿using safnet.iba.Business.Entities;
+using safnet.iba.Business.Entities.Observations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using safnet.iba.Business.Entities;
-using safnet.iba.Business.Entities.Observations;
 
 namespace safnet.iba.Data.Mappers
 {

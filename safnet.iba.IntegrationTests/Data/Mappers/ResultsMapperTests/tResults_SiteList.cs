@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using safnet.iba.UnitTests;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using safnet.iba.UnitTests;
 
 namespace safnet.iba.IntegrationTests.Data.Mappers.ResultsMapperTests
 {

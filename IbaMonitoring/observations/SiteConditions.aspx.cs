@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using IbaMonitoring;
-using safnet.iba;
-using safnet.iba.Business.AppFacades;
-using safnet.iba.Business.DataTypes;
+﻿using IbaMonitoring;
+using IbaMonitoring.App_Code;
+using IbaMonitoring.Views;
 using safnet.iba.Business.Entities;
 using safnet.iba.Business.Entities.Observations;
 using safnet.iba.Data.Mappers;
-using IbaMonitoring.Presenters;
 using safnet.iba.Static;
-using IbaMonitoring.Views;
-using IbaMonitoring.App_Code;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 public partial class SiteConditionsPage : IbaPage, ISiteConditionsView
 {

@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using safnet.iba.Business.DataTypes;
+﻿using safnet.iba.Business.DataTypes;
+using System.Collections.Generic;
 
 namespace safnet.iba.Business.Entities
 {
