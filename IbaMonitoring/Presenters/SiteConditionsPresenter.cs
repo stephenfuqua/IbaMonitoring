@@ -25,37 +25,43 @@ namespace IbaMonitoring.Presenters
         {
             if (view.IsValid)
             {
-                SiteVisit visit = UserState.SiteVisit;
+                var visit = MapViewModelToBusinessObject(view);
 
-                visit.LocationId = view.SiteVisitedAccessor.ToGuid();
-
-                visit.ObserverId = view.SiteVisitObserverAccessor.ToGuid();
-                visit.RecorderId = view.SiteVisitRecorderAccessor.ToGuid();
-
-                visit.EndConditions.Sky = view.EndSkyAccessor.ToByte();
-                visit.EndConditions.Temperature = new Temperature()
-                {
-                    Units = view.EndTempUnitsAccessor,
-                    Value = view.EndTempAccessor.ToInt()
-                };
-                visit.EndConditions.Wind = view.EndWindAccessor.ToByte();
-                visit.EndTimeStamp = view.VisitDateAccessor.ToDateTime(view.EndTimeAccessor);
-
-
-                visit.StartConditions.Sky = view.StartSkyAccessor.ToByte();
-                visit.StartConditions.Temperature = new Temperature()
-                {
-                    Units = view.StartTempUnitsAccessor,
-                    Value = view.StartTempAccessor.ToInt()
-                };
-                visit.StartConditions.Wind = view.StartWindAccessor.ToByte();
-                visit.StartTimeStamp = view.VisitDateAccessor.ToDateTime(view.StartTimeAccessor);
-
-
-                UserState.SiteVisit = _facade.SaveSiteConditions(visit);
+                UserState.SiteVisit = visit;
+                _facade.SaveSiteConditions(visit);
 
                 HttpResponse.Redirect("PointCounts.aspx", true);
             }
+        }
+
+        private SiteVisit MapViewModelToBusinessObject(ISiteConditionsView view)
+        {
+            var visit = UserState.SiteVisit ?? SiteVisit.CreateNewSiteVisit(view.SiteVisited.ToGuid());
+
+            visit.ObserverId = view.Observer.ToGuid();
+            visit.RecorderId = view.Recorder.ToGuid();
+
+            visit.EndConditions.Sky = view.EndSky.ToByte();
+            visit.EndConditions.Temperature = new Temperature()
+            {
+                Units = view.EndUnit,
+                Value = view.EndTemp.ToInt()
+            };
+            visit.EndConditions.Wind = view.EndWind.ToByte();
+            visit.EndTimeStamp = view.VisitDate.ToDateTime(view.EndTime);
+            //visit.EndConditions.SiteVisitId;
+
+
+            visit.StartConditions.Sky = view.StartSky.ToByte();
+            visit.StartConditions.Temperature = new Temperature()
+            {
+                Units = view.StartUnit,
+                Value = view.StartTemp.ToInt()
+            };
+            visit.StartConditions.Wind = view.StartWind.ToByte();
+            visit.StartTimeStamp = view.VisitDate.ToDateTime(view.StartTime);
+
+            return visit;
         }
     }
 

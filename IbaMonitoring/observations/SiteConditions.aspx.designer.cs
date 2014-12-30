@@ -8,8 +8,6 @@
 //------------------------------------------------------------------------------
 
 
-using AjaxControlToolkit;
-using System.Web.UI.WebControls;
 
 public partial class SiteConditionsPage {
     
@@ -20,7 +18,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected LinkButton StartNewSession;
+    protected global::System.Web.UI.WebControls.LinkButton StartNewSession;
     
     /// <summary>
     /// ValidationSummary1 control.
@@ -29,7 +27,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected ValidationSummary ValidationSummary1;
+    protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
     
     /// <summary>
     /// SiteVisitPanel control.
@@ -38,7 +36,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Panel SiteVisitPanel;
+    protected global::System.Web.UI.WebControls.Panel SiteVisitPanel;
     
     /// <summary>
     /// SiteVisitSiteLabel control.
@@ -47,16 +45,16 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label SiteVisitSiteLabel;
+    protected global::System.Web.UI.WebControls.Label SiteVisitSiteLabel;
     
     /// <summary>
-    /// SiteVisited control.
+    /// SiteVisitedInput control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected DropDownList SiteVisited;
+    protected global::System.Web.UI.WebControls.DropDownList SiteVisitedInput;
     
     /// <summary>
     /// SiteVisitDateLabel control.
@@ -65,7 +63,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label SiteVisitDateLabel;
+    protected global::System.Web.UI.WebControls.Label SiteVisitDateLabel;
     
     /// <summary>
     /// SiteVisitDateRequired control.
@@ -74,16 +72,16 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected RequiredFieldValidator SiteVisitDateRequired;
+    protected global::System.Web.UI.WebControls.RequiredFieldValidator SiteVisitDateRequired;
     
     /// <summary>
-    /// VisitDate control.
+    /// VisitDateInput control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected TextBox VisitDate;
+    protected global::System.Web.UI.WebControls.TextBox VisitDateInput;
     
     /// <summary>
     /// SiteVisitDateCalExt control.
@@ -92,7 +90,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected CalendarExtender SiteVisitDateCalExt;
+    protected global::AjaxControlToolkit.CalendarExtender SiteVisitDateCalExt;
     
     /// <summary>
     /// SiteVisitDateValidator control.
@@ -101,7 +99,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected CompareValidator SiteVisitDateValidator;
+    protected global::System.Web.UI.WebControls.CompareValidator SiteVisitDateValidator;
     
     /// <summary>
     /// RetrieveIncomplete control.
@@ -110,7 +108,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected LinkButton RetrieveIncomplete;
+    protected global::System.Web.UI.WebControls.LinkButton RetrieveIncomplete;
     
     /// <summary>
     /// SiteVisitObserverLabel control.
@@ -119,16 +117,16 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label SiteVisitObserverLabel;
+    protected global::System.Web.UI.WebControls.Label SiteVisitObserverLabel;
     
     /// <summary>
-    /// SiteVisitObserver control.
+    /// ObserverInput control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected DropDownList SiteVisitObserver;
+    protected global::System.Web.UI.WebControls.DropDownList ObserverInput;
     
     /// <summary>
     /// SiteVisitRecorderLabel control.
@@ -137,16 +135,16 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label SiteVisitRecorderLabel;
+    protected global::System.Web.UI.WebControls.Label SiteVisitRecorderLabel;
     
     /// <summary>
-    /// SiteVisitRecorder control.
+    /// RecorderInput control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected DropDownList SiteVisitRecorder;
+    protected global::System.Web.UI.WebControls.DropDownList RecorderInput;
     
     /// <summary>
     /// StartConditions control.
@@ -155,7 +153,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Panel StartConditions;
+    protected global::System.Web.UI.WebControls.Panel StartConditions;
     
     /// <summary>
     /// StartTimeLabel control.
@@ -164,7 +162,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label StartTimeLabel;
+    protected global::System.Web.UI.WebControls.Label StartTimeLabel;
     
     /// <summary>
     /// StartTimeRequired control.
@@ -173,16 +171,16 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected RequiredFieldValidator StartTimeRequired;
+    protected global::System.Web.UI.WebControls.RequiredFieldValidator StartTimeRequired;
     
     /// <summary>
-    /// StartTime control.
+    /// StartTimeInput control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected TextBox StartTime;
+    protected global::System.Web.UI.WebControls.TextBox StartTimeInput;
     
     /// <summary>
     /// StartTimeValidator control.
@@ -191,7 +189,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected CustomValidator StartTimeValidator;
+    protected global::System.Web.UI.WebControls.CustomValidator StartTimeValidator;
     
     /// <summary>
     /// StartSkyLabel control.
@@ -200,16 +198,16 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label StartSkyLabel;
+    protected global::System.Web.UI.WebControls.Label StartSkyLabel;
     
     /// <summary>
-    /// StartSky control.
+    /// StartSkyInput control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected DropDownList StartSky;
+    protected global::System.Web.UI.WebControls.DropDownList StartSkyInput;
     
     /// <summary>
     /// StartWindLabel control.
@@ -218,16 +216,16 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label StartWindLabel;
+    protected global::System.Web.UI.WebControls.Label StartWindLabel;
     
     /// <summary>
-    /// StartWind control.
+    /// StartWindInput control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected DropDownList StartWind;
+    protected global::System.Web.UI.WebControls.DropDownList StartWindInput;
     
     /// <summary>
     /// StartTempLabel control.
@@ -236,7 +234,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label StartTempLabel;
+    protected global::System.Web.UI.WebControls.Label StartTempLabel;
     
     /// <summary>
     /// StartTemperatureRequired control.
@@ -245,16 +243,16 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected RequiredFieldValidator StartTemperatureRequired;
+    protected global::System.Web.UI.WebControls.RequiredFieldValidator StartTemperatureRequired;
     
     /// <summary>
-    /// StartTemperature control.
+    /// StartTemperatureInput control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected TextBox StartTemperature;
+    protected global::System.Web.UI.WebControls.TextBox StartTemperatureInput;
     
     /// <summary>
     /// StartTemp_Radio control.
@@ -263,7 +261,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected RadioButtonList StartTemp_Radio;
+    protected global::System.Web.UI.WebControls.RadioButtonList StartTemp_Radio;
     
     /// <summary>
     /// StartTemperatureValidator control.
@@ -272,7 +270,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected CustomValidator StartTemperatureValidator;
+    protected global::System.Web.UI.WebControls.CustomValidator StartTemperatureValidator;
     
     /// <summary>
     /// EndConditions control.
@@ -281,7 +279,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Panel EndConditions;
+    protected global::System.Web.UI.WebControls.Panel EndConditions;
     
     /// <summary>
     /// EndTimeLabel control.
@@ -290,7 +288,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label EndTimeLabel;
+    protected global::System.Web.UI.WebControls.Label EndTimeLabel;
     
     /// <summary>
     /// EndTimeRequired control.
@@ -299,16 +297,16 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected RequiredFieldValidator EndTimeRequired;
+    protected global::System.Web.UI.WebControls.RequiredFieldValidator EndTimeRequired;
     
     /// <summary>
-    /// EndTime control.
+    /// EndTimeInput control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected TextBox EndTime;
+    protected global::System.Web.UI.WebControls.TextBox EndTimeInput;
     
     /// <summary>
     /// EndTimeValidator control.
@@ -317,7 +315,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected CustomValidator EndTimeValidator;
+    protected global::System.Web.UI.WebControls.CustomValidator EndTimeValidator;
     
     /// <summary>
     /// EndSkyLabel control.
@@ -326,16 +324,16 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label EndSkyLabel;
+    protected global::System.Web.UI.WebControls.Label EndSkyLabel;
     
     /// <summary>
-    /// EndSky control.
+    /// EndSkyInput control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected DropDownList EndSky;
+    protected global::System.Web.UI.WebControls.DropDownList EndSkyInput;
     
     /// <summary>
     /// EndWindLabel control.
@@ -344,16 +342,16 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label EndWindLabel;
+    protected global::System.Web.UI.WebControls.Label EndWindLabel;
     
     /// <summary>
-    /// EndWind control.
+    /// EndWindInput control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected DropDownList EndWind;
+    protected global::System.Web.UI.WebControls.DropDownList EndWindInput;
     
     /// <summary>
     /// EndTempLabel control.
@@ -362,7 +360,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label EndTempLabel;
+    protected global::System.Web.UI.WebControls.Label EndTempLabel;
     
     /// <summary>
     /// EndTemperatureRequired control.
@@ -371,16 +369,16 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected RequiredFieldValidator EndTemperatureRequired;
+    protected global::System.Web.UI.WebControls.RequiredFieldValidator EndTemperatureRequired;
     
     /// <summary>
-    /// EndTemperature control.
+    /// EndTemperatureInput control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected TextBox EndTemperature;
+    protected global::System.Web.UI.WebControls.TextBox EndTemperatureInput;
     
     /// <summary>
     /// EndTemp_Radio control.
@@ -389,7 +387,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected RadioButtonList EndTemp_Radio;
+    protected global::System.Web.UI.WebControls.RadioButtonList EndTemp_Radio;
     
     /// <summary>
     /// EndTemperatureValidator control.
@@ -398,7 +396,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected CustomValidator EndTemperatureValidator;
+    protected global::System.Web.UI.WebControls.CustomValidator EndTemperatureValidator;
     
     /// <summary>
     /// SubmitSiteConditions control.
@@ -407,7 +405,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected ImageButton SubmitSiteConditions;
+    protected global::System.Web.UI.WebControls.ImageButton SubmitSiteConditions;
     
     /// <summary>
     /// SkyCodeDataSource control.
@@ -416,7 +414,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected ObjectDataSource SkyCodeDataSource;
+    protected global::System.Web.UI.WebControls.ObjectDataSource SkyCodeDataSource;
     
     /// <summary>
     /// WindCodeDataSource control.
@@ -425,7 +423,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected ObjectDataSource WindCodeDataSource;
+    protected global::System.Web.UI.WebControls.ObjectDataSource WindCodeDataSource;
     
     /// <summary>
     /// SiteVisitStepsControl1 control.
@@ -434,7 +432,7 @@ public partial class SiteConditionsPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected SurveySteps SiteVisitStepsControl1;
+    protected global::SurveySteps SiteVisitStepsControl1;
     
     /// <summary>
     /// Master property.

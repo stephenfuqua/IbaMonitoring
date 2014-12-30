@@ -6,28 +6,10 @@ using Moq;
 using safnet.iba.Adapters;
 using safnet.iba.TestHelpers;
 using System;
+using IbaMonitoring.App_Code;
 
 namespace IbaMonitoring.UnitTests.App_Code
 {
-
-    public class PresenterFactoryTss : IbaMonitoring.App_Code.PresenterFactory
-    {
-        public PresenterFactoryTss(IUnityContainer iocContainer) : base(iocContainer)
-        {
-        }
-
-        public PresenterFactoryTss SetUserStateManager(IUserStateManager manager)
-        {
-            base.UserState = manager;
-            return this;
-        }
-
-        public PresenterFactoryTss SetGlobalMap(IGlobalMap map)
-        {
-            base.GlobalMap = map;
-            return this;
-        }
-    }
 
     [TestClass]
     public class PresenterFactoryTests : BaseMocker
@@ -53,7 +35,7 @@ namespace IbaMonitoring.UnitTests.App_Code
         [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructorRejectsNullArgument()
         {
-            new PresenterFactoryTss(null);
+            new PresenterFactory(null);
         }
 
         [TestMethod]
@@ -64,24 +46,20 @@ namespace IbaMonitoring.UnitTests.App_Code
                                             It.IsAny<ResolverOverride[]>()))
                 .Callback((Type t, string name, ResolverOverride[] overrides) =>
                 {
-                    Assert.AreEqual(3, overrides.Length, "overrides length");
-                    // Ought to validate the three overrides, but that is non-trivial, low risk,
-                    // and not worth the time in this situation. 
+                    Assert.AreEqual(0, overrides.Length, "overrides length");
                 })
                 .Returns(_mockPresenter.Object);
 
             var system = GivenTheSystemUnderTest();
 
-            var actual = system.BuildSiteConditionsPresenter(_siteConditionsViewMock.Object);
+            var actual = system.BuildSiteConditionsPresenter();
 
             Assert.AreSame(_mockPresenter.Object, actual, "return value");
         }
 
-        private PresenterFactoryTss GivenTheSystemUnderTest()
+        private PresenterFactory GivenTheSystemUnderTest()
         {
-            return new PresenterFactoryTss(_unityMock.Object)
-                .SetGlobalMap(GlobalMapMock.Object)
-                .SetUserStateManager(UserStateMock.Object);
+            return new PresenterFactory(_unityMock.Object);
         }
 
     }

@@ -81,24 +81,8 @@ namespace IbaMonitoring.UnitTests.Presenters
         [TestMethod]
         public void InitialSaveOfConditionsWhenAllParametersSetCorrectly()
         {
-            var locationid = Guid.Empty;
-            var observerId = Guid.Empty;
-            var recorderId = Guid.Empty;
-            var startSky = (byte)0;
-            var startTempUnit = "";
-            var startTemp = 0;
-            var startWind = (byte)0;
-            var startDateTime = DateTime.MinValue;
-            var endSky = (byte)0;
-            var endTempUnit = "";
-            var endTemp = 0;
-            var endWind = (byte)0;
-            var endDateTime = DateTime.MinValue.AddMilliseconds(234);
-            var siteVisitId = Guid.Empty;
-            var startConditionId = Guid.Empty;
-            var endConditionId = Guid.Empty;
 
-            GivenSiteVisitStoredInUserSession(endConditionId, siteVisitId, endSky, endTempUnit, endTemp, endWind, endDateTime, locationid, observerId, recorderId, startDateTime, startConditionId, startSky, startTempUnit, startTemp);
+            GivenThereIsNoSiteVisitInSession();
 
             var expectedLocationid = BaseMocker.TEST_GUID_1;
             var expectedObserverId = BaseMocker.TEST_GUID_2;
@@ -117,9 +101,8 @@ namespace IbaMonitoring.UnitTests.Presenters
             GivenUserFormSubmission(expectedEndSky.ToString(), expectedEndTemp.ToString(), expectedEndTempUnit.ToString(), expectedEndDateTime.ToString("hh:mm:ss"), expectedEndWind.ToString(), expectedLocationid.ToString(), expectedObserverId.ToString(), expectedRecorderId.ToString(), expectedStartSky.ToString(), expectedStartTemp.ToString(), expectedStartTempUnit.ToString(), expectedStartDateTime.ToString("hh:mm:ss"), expectedStartDateTime.ToString("yyyy-MM-dd"), expectedStartWind.ToString());
 
 
-            var modifiedSiteVisit = new SiteVisit();
-            ExpectToSendTheseConditionsToTheSiteConditionsFacade(expectedLocationid, expectedEndSky, expectedEndTemp, expectedEndTempUnit, expectedEndDateTime, expectedEndWind, expectedObserverId, expectedRecorderId, expectedStartSky, expectedStartTemp, expectedStartTempUnit, expectedStartDateTime, expectedStartWind, modifiedSiteVisit);
-            ExpectToSaveSiteVisitBackIntoSession(modifiedSiteVisit);
+            ExpectToSendTheseConditionsToTheSiteConditionsFacade(expectedLocationid, expectedEndSky, expectedEndTemp, expectedEndTempUnit, expectedEndDateTime, expectedEndWind, expectedObserverId, expectedRecorderId, expectedStartSky, expectedStartTemp, expectedStartTempUnit, expectedStartDateTime, expectedStartWind);
+            ExpectToSaveSiteVisitBackIntoSession();
 
             var expectedPage = "PointCounts.aspx";
             ExpectToBeRedirectedTo(expectedPage);
@@ -129,6 +112,12 @@ namespace IbaMonitoring.UnitTests.Presenters
             WhenTheUserSavesTheSiteVisitConditions();
 
             ThenThereIsNothingToValidate();
+        }
+
+        private void GivenThereIsNoSiteVisitInSession()
+        {
+            UserStateMock.SetupGet(x => x.SiteVisit)
+                .Returns(null as SiteVisit);
         }
 
 
@@ -152,13 +141,14 @@ namespace IbaMonitoring.UnitTests.Presenters
             _mockResponse.Setup(x => x.Redirect(It.Is<string>(y => y == expectedPage), It.Is<bool>(y => y == true)));
         }
 
-        private void ExpectToSaveSiteVisitBackIntoSession(SiteVisit modifiedSiteVisit)
+        private void ExpectToSaveSiteVisitBackIntoSession()
         {
             UserStateMock.SetupSet(
-                x => x.SiteVisit = It.Is<SiteVisit>(y => object.ReferenceEquals(y, modifiedSiteVisit)));
+                x => x.SiteVisit = It.IsAny<SiteVisit>());
         }
 
-        private void ExpectToSendTheseConditionsToTheSiteConditionsFacade(Guid locationid, byte endSky, int endTemp, string endTempUnit, DateTime endDateTime, byte endWind, Guid observerId, Guid recorderId, byte startSky, int startTemp, string startTempUnit, DateTime startDateTime, byte startWind, SiteVisit returnValue)
+        private void ExpectToSendTheseConditionsToTheSiteConditionsFacade(Guid locationid, byte endSky, int endTemp, string endTempUnit, DateTime endDateTime, byte endWind, 
+            Guid observerId, Guid recorderId, byte startSky, int startTemp, string startTempUnit, DateTime startDateTime, byte startWind)
         {
             _facadeMock.Setup(x => x.SaveSiteConditions(It.IsAny<SiteVisit>()))
                 .Callback((SiteVisit actual) =>
@@ -166,28 +156,32 @@ namespace IbaMonitoring.UnitTests.Presenters
                     Assert.IsNull(actual.Comments, "Comments");
                     Assert.AreEqual(actual.Id, actual.EndConditions.SiteVisitId, "EndConditions.SiteVisitId");
                     Assert.AreEqual(endSky, actual.EndConditions.Sky, "EndConditions.Sky");
-                    Assert.AreEqual(Guid.Empty, actual.EndConditions.Id, "EndConditions.Id");
-                    Assert.AreEqual(endTempUnit, actual.EndConditions.Temperature.Units, "EndConditions.Temperature.Units");
+                    Assert.AreNotEqual(Guid.Empty, actual.EndConditions.Id, "EndConditions.Id");
+                    Assert.AreEqual(endWind, actual.EndConditions.Wind, "EndConditions.Wind");
+                    Assert.AreEqual(endTempUnit, actual.EndConditions.Temperature.Units,
+                        "EndConditions.Temperature.Units");
                     Assert.AreEqual(endTemp, actual.EndConditions.Temperature.Value, "EndConditions.Temperature.Value");
                     Assert.AreEqual(endDateTime, actual.EndTimeStamp, "EndTimeStamp");
                     Assert.AreEqual(0, actual.FlattenedDataEntryList.Count, "FlattenedDataEntryList");
-                    Assert.AreEqual(Guid.Empty, actual.Id, "Id");
+                    Assert.AreNotEqual(Guid.Empty, actual.Id, "Id");
                     Assert.IsFalse(actual.IsDataEntryComplete, "IsDataEntryComplete");
                     Assert.AreEqual(locationid, actual.LocationId, "LocationId");
-                    Assert.IsFalse(actual.NeedsDatabaseRefresh, "NeedsDatabaseRefresh");
+                    Assert.IsTrue(actual.NeedsDatabaseRefresh, "NeedsDatabaseRefresh");
                     Assert.AreEqual(observerId, actual.ObserverId, "ObserverId");
                     Assert.AreEqual(0, actual.PointSurveys.Count, "PointSurveys");
                     Assert.AreEqual(recorderId, actual.RecorderId, "RecorderId");
                     Assert.AreEqual(actual.Id, actual.StartConditions.SiteVisitId, "StartConditions.SiteVisitId");
-                    Assert.AreEqual(Guid.Empty, actual.StartConditions.Id, "StartConditions.Id");
+                    Assert.AreNotEqual(Guid.Empty, actual.StartConditions.Id, "StartConditions.Id");
                     Assert.AreEqual(startSky, actual.StartConditions.Sky, "StartConditions.Sky");
-                    Assert.AreEqual(startTempUnit, actual.StartConditions.Temperature.Units, "StartConditions.Temperature.Units");
-                    Assert.AreEqual(startTemp, actual.StartConditions.Temperature.Value, "StartConditions.Temperature.Value");
+                    Assert.AreEqual(startWind, actual.StartConditions.Wind, "StartConditions.Wind");
+                    Assert.AreEqual(startTempUnit, actual.StartConditions.Temperature.Units,
+                        "StartConditions.Temperature.Units");
+                    Assert.AreEqual(startTemp, actual.StartConditions.Temperature.Value,
+                        "StartConditions.Temperature.Value");
                     Assert.AreEqual(startDateTime, actual.StartTimeStamp, "StartTimeStamp");
                     Assert.AreEqual(0, actual.SupplementalObservations.Count, "SupplementalObservations");
                     Assert.AreEqual(52, actual.WeekNumber, "WeekNumber");
-                })
-                .Returns(returnValue);
+                });
         }
 
         private void WhenTheUserSavesTheSiteVisitConditions()
@@ -200,20 +194,20 @@ namespace IbaMonitoring.UnitTests.Presenters
             string expectedRecorderId, string expectedStartSky, string expectedStartTemp, string expectedStartTempUnit,
             string expectedStartTime, string expectedStartDate, string expectedStartWind)
         {
-            _viewMock.SetupGet(x => x.EndSkyAccessor).Returns(expectedEndSky);
-            _viewMock.SetupGet(x => x.EndTempAccessor).Returns(expectedEndTemp);
-            _viewMock.SetupGet(x => x.EndTempUnitsAccessor).Returns(expectedEndTempUnit);
-            _viewMock.SetupGet(x => x.EndTimeAccessor).Returns(expectedEndDateTime);
-            _viewMock.SetupGet(x => x.EndWindAccessor).Returns(expectedEndWind);
-            _viewMock.SetupGet(x => x.SiteVisitedAccessor).Returns(expectedLocationid);
-            _viewMock.SetupGet(x => x.SiteVisitObserverAccessor).Returns(expectedObserverId);
-            _viewMock.SetupGet(x => x.SiteVisitRecorderAccessor).Returns(expectedRecorderId);
-            _viewMock.SetupGet(x => x.StartSkyAccessor).Returns(expectedStartSky);
-            _viewMock.SetupGet(x => x.StartTempAccessor).Returns(expectedStartTemp);
-            _viewMock.SetupGet(x => x.StartTempUnitsAccessor).Returns(expectedStartTempUnit);
-            _viewMock.SetupGet(x => x.StartTimeAccessor).Returns(expectedStartTime);
-            _viewMock.SetupGet(x => x.StartWindAccessor).Returns(expectedStartWind);
-            _viewMock.SetupGet(x => x.VisitDateAccessor).Returns(expectedStartDate);
+            _viewMock.SetupGet(x => x.EndSky).Returns(expectedEndSky);
+            _viewMock.SetupGet(x => x.EndTemp).Returns(expectedEndTemp);
+            _viewMock.SetupGet(x => x.EndUnit).Returns(expectedEndTempUnit);
+            _viewMock.SetupGet(x => x.EndTime).Returns(expectedEndDateTime);
+            _viewMock.SetupGet(x => x.EndWind).Returns(expectedEndWind);
+            _viewMock.SetupGet(x => x.SiteVisited).Returns(expectedLocationid);
+            _viewMock.SetupGet(x => x.Observer).Returns(expectedObserverId);
+            _viewMock.SetupGet(x => x.Recorder).Returns(expectedRecorderId);
+            _viewMock.SetupGet(x => x.StartSky).Returns(expectedStartSky);
+            _viewMock.SetupGet(x => x.StartTemp).Returns(expectedStartTemp);
+            _viewMock.SetupGet(x => x.StartUnit).Returns(expectedStartTempUnit);
+            _viewMock.SetupGet(x => x.StartTime).Returns(expectedStartTime);
+            _viewMock.SetupGet(x => x.StartWind).Returns(expectedStartWind);
+            _viewMock.SetupGet(x => x.VisitDate).Returns(expectedStartDate);
         }
 
         private void GivenSiteVisitStoredInUserSession(Guid endConditionId, Guid siteVisitId, byte endSky, string endTempUnit,

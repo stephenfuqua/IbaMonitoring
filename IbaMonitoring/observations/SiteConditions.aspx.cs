@@ -51,59 +51,59 @@ public partial class SiteConditionsPage : IbaPage, ISiteConditionsView
         if (!this.UserState.SiteVisit.Id.Equals(Guid.Empty))
         {
 
-            this.SiteVisited.Items.FindByValue(this.UserState.SiteVisit.LocationId.ToString()).Selected = true;
-            this.VisitDate.Text = this.UserState.SiteVisit.StartTimeStamp.Value.ToShortDateString();
-            this.SiteVisitObserver.Items.FindByValue(this.UserState.SiteVisit.ObserverId.ToString()).Selected = true;
-            this.SiteVisitRecorder.Items.FindByValue(this.UserState.SiteVisit.RecorderId.ToString()).Selected = true;
+            this.SiteVisitedInput.Items.FindByValue(this.UserState.SiteVisit.LocationId.ToString()).Selected = true;
+            this.VisitDateInput.Text = this.UserState.SiteVisit.StartTimeStamp.Value.ToShortDateString();
+            this.ObserverInput.Items.FindByValue(this.UserState.SiteVisit.ObserverId.ToString()).Selected = true;
+            this.RecorderInput.Items.FindByValue(this.UserState.SiteVisit.RecorderId.ToString()).Selected = true;
 
-            this.StartSky.Items.FindByValue(this.UserState.SiteVisit.StartConditions.Sky.ToString()).Selected = true;
+            this.StartSkyInput.Items.FindByValue(this.UserState.SiteVisit.StartConditions.Sky.ToString()).Selected = true;
             if (this.UserState.SiteVisit.StartConditions.Temperature != null)
             {
                 this.StartTemp_Radio.Items.FindByValue(this.UserState.SiteVisit.StartConditions.Temperature.Units)
                     .Selected = true;
-                this.StartTemperature.Text = this.UserState.SiteVisit.StartConditions.Temperature.Value.ToString();
+                this.StartTemperatureInput.Text = this.UserState.SiteVisit.StartConditions.Temperature.Value.ToString();
             }
-            this.StartTime.Text = this.UserState.SiteVisit.StartTimeStamp.Value.ToString("H:mm");
-            this.StartWind.Items.FindByValue(this.UserState.SiteVisit.StartConditions.Wind.ToString()).Selected = true;
+            this.StartTimeInput.Text = this.UserState.SiteVisit.StartTimeStamp.Value.ToString("H:mm");
+            this.StartWindInput.Items.FindByValue(this.UserState.SiteVisit.StartConditions.Wind.ToString()).Selected = true;
 
-            this.EndSky.Items.FindByValue(this.UserState.SiteVisit.EndConditions.Sky.ToString()).Selected = true;
-            this.EndWind.Items.FindByValue(this.UserState.SiteVisit.EndConditions.Wind.ToString()).Selected = true;
+            this.EndSkyInput.Items.FindByValue(this.UserState.SiteVisit.EndConditions.Sky.ToString()).Selected = true;
+            this.EndWindInput.Items.FindByValue(this.UserState.SiteVisit.EndConditions.Wind.ToString()).Selected = true;
             if (this.UserState.SiteVisit.EndConditions.Temperature != null)
             {
                 this.EndTemp_Radio.Items.FindByValue(this.UserState.SiteVisit.EndConditions.Temperature.Units).Selected
                     = true;
-                this.EndTemperature.Text = this.UserState.SiteVisit.EndConditions.Temperature.Value.ToString();
+                this.EndTemperatureInput.Text = this.UserState.SiteVisit.EndConditions.Temperature.Value.ToString();
             }
-            this.EndTime.Text = this.UserState.SiteVisit.EndTimeStamp.Value.ToString("H:mm");
+            this.EndTimeInput.Text = this.UserState.SiteVisit.EndTimeStamp.Value.ToString("H:mm");
         }
     }
 
 
     private void bindDropDownLists()
     {
-        this.SiteVisited.Items.Clear();
-        this.SiteVisited.DataSource = GlobalMap.SiteList;
-        this.SiteVisited.DataTextField = "Name";
-        this.SiteVisited.DataValueField = "Id";
-        this.SiteVisited.DataBind();
+        this.SiteVisitedInput.Items.Clear();
+        this.SiteVisitedInput.DataSource = GlobalMap.SiteList;
+        this.SiteVisitedInput.DataTextField = "Name";
+        this.SiteVisitedInput.DataValueField = "Id";
+        this.SiteVisitedInput.DataBind();
 
-        this.SiteVisitObserver.Items.Clear();
-        this.SiteVisitObserver.DataSource = GlobalMap.PersonList;
-        this.SiteVisitObserver.DataTextField = "FullName";
-        this.SiteVisitObserver.DataValueField = "Id";
-        this.SiteVisitObserver.DataBind();
+        this.ObserverInput.Items.Clear();
+        this.ObserverInput.DataSource = GlobalMap.PersonList;
+        this.ObserverInput.DataTextField = "FullName";
+        this.ObserverInput.DataValueField = "Id";
+        this.ObserverInput.DataBind();
 
-        this.SiteVisitRecorder.Items.Clear();
-        this.SiteVisitRecorder.DataSource = GlobalMap.PersonList;
-        this.SiteVisitRecorder.DataTextField = "FullName";
-        this.SiteVisitRecorder.DataValueField = "Id";
-        this.SiteVisitRecorder.DataBind();
+        this.RecorderInput.Items.Clear();
+        this.RecorderInput.DataSource = GlobalMap.PersonList;
+        this.RecorderInput.DataTextField = "FullName";
+        this.RecorderInput.DataValueField = "Id";
+        this.RecorderInput.DataBind();
 
 
-        this.StartSky.DataBind();
-        this.EndSky.DataBind();
-        this.StartWind.DataBind();
-        this.EndWind.DataBind();
+        this.StartSkyInput.DataBind();
+        this.EndSkyInput.DataBind();
+        this.StartWindInput.DataBind();
+        this.EndWindInput.DataBind();
 
         this.StartTemp_Radio.DataSource = this.EndTemp_Radio.DataSource = new List<ListItem>()
             {
@@ -130,29 +130,29 @@ public partial class SiteConditionsPage : IbaPage, ISiteConditionsView
     private void clearAllFields()
     {
 
-        this.SiteVisited.ClearSelection();
-        this.VisitDate.Text = string.Empty;
-        this.SiteVisitObserver.ClearSelection();
-        this.SiteVisitRecorder.ClearSelection();
+        this.SiteVisitedInput.ClearSelection();
+        this.VisitDateInput.Text = string.Empty;
+        this.ObserverInput.ClearSelection();
+        this.RecorderInput.ClearSelection();
 
-        this.StartSky.ClearSelection();
+        this.StartSkyInput.ClearSelection();
         this.StartTemp_Radio.ClearSelection();
-        this.StartTemperature.Text = string.Empty;
-        this.StartTime.Text = string.Empty;
-        this.StartWind.ClearSelection();
+        this.StartTemperatureInput.Text = string.Empty;
+        this.StartTimeInput.Text = string.Empty;
+        this.StartWindInput.ClearSelection();
 
-        this.EndSky.ClearSelection();
-        this.EndWind.ClearSelection();
+        this.EndSkyInput.ClearSelection();
+        this.EndWindInput.ClearSelection();
         this.EndTemp_Radio.ClearSelection();
-        this.EndTemperature.Text = string.Empty;
-        this.EndTime.Text = string.Empty;
+        this.EndTemperatureInput.Text = string.Empty;
+        this.EndTimeInput.Text = string.Empty;
     }
 
     protected void submitSiteConditions_Click(object sender, EventArgs e)
     {
         IbaMasterPage.ExceptionHandler(Master, () =>
         {
-            _factory.BuildSiteConditionsPresenter(this)
+            _factory.BuildSiteConditionsPresenter()
                     .SaveConditions(this);
         });
     }
@@ -191,73 +191,73 @@ public partial class SiteConditionsPage : IbaPage, ISiteConditionsView
         }
     }
 
-    public string SiteVisitObserverAccessor
+    public string Observer
     {
-        get { return this.SiteVisitObserver.SelectedValue; }
+        get { return this.ObserverInput.SelectedValue; }
     }
 
-    public string SiteVisitRecorderAccessor
+    public string Recorder
     {
-        get { return this.SiteVisitRecorder.SelectedValue; }
+        get { return this.RecorderInput.SelectedValue; }
     }
 
-    public string SiteVisitedAccessor
+    public string SiteVisited
     {
-        get { return this.SiteVisited.SelectedValue; }
+        get { return this.SiteVisitedInput.SelectedValue; }
     }
 
-    public string StartSkyAccessor
+    public string StartSky
     {
-        get { return this.StartSky.SelectedValue; }
+        get { return this.StartSkyInput.SelectedValue; }
     }
 
-    public string StartTempUnitsAccessor
+    public string StartUnit
     {
         get { return this.StartTemp_Radio.SelectedValue; }
     }
 
-    public string StartTempAccessor
+    public string StartTemp
     {
-        get { return this.StartTemperature.Text; }
+        get { return this.StartTemperatureInput.Text; }
     }
 
-    public string StartWindAccessor
+    public string StartWind
     {
-        get { return this.StartWind.SelectedValue; }
+        get { return this.StartWindInput.SelectedValue; }
     }
 
-    public string StartTimeAccessor
+    public string StartTime
     {
-        get { return this.StartTime.Text; }
+        get { return this.StartTimeInput.Text; }
     }
 
-    public string EndSkyAccessor
+    public string EndSky
     {
-        get { return this.EndSky.SelectedValue; }
+        get { return this.EndSkyInput.SelectedValue; }
     }
 
-    public string EndTempUnitsAccessor
+    public string EndUnit
     {
         get { return this.EndTemp_Radio.SelectedValue; }
     }
 
-    public string EndTempAccessor
+    public string EndTemp
     {
-        get { return this.EndTemperature.Text; }
+        get { return this.EndTemperatureInput.Text; }
     }
-    public string EndWindAccessor
+    public string EndWind
     {
-        get { return this.EndWind.SelectedValue; }
-    }
-
-    public string EndTimeAccessor
-    {
-        get { return this.EndTime.Text; }
+        get { return this.EndWindInput.SelectedValue; }
     }
 
-    public string VisitDateAccessor
+    public string EndTime
     {
-        get { return this.VisitDate.Text; }
+        get { return this.EndTimeInput.Text; }
+    }
+
+    public string VisitDate
+    {
+        get { return this.VisitDateInput.Text; }
     }
 
 
@@ -271,14 +271,14 @@ public partial class SiteConditionsPage : IbaPage, ISiteConditionsView
 
     protected void RetrieveIncomplete_Click(object sender, EventArgs e)
     {
-        if (this.SiteVisited.SelectedIndex > -1 && !string.IsNullOrEmpty(this.VisitDate.Text))
+        if (this.SiteVisitedInput.SelectedIndex > -1 && !string.IsNullOrEmpty(this.VisitDateInput.Text))
         {
-            List<SiteVisit> visitList = SiteVisitMapper.SelectAllForSite(Guid.Parse(this.SiteVisited.SelectedValue));
+            List<SiteVisit> visitList = SiteVisitMapper.SelectAllForSite(Guid.Parse(this.SiteVisitedInput.SelectedValue));
             SiteVisit theVisit = visitList.Find(x => !x.IsDataEntryComplete
                                                      &&
                                                      x.StartTimeStamp.Value.ToShortDateString()
                                                          .Equals(
-                                                             DateTime.Parse(this.VisitDate.Text).ToShortDateString()));
+                                                             DateTime.Parse(this.VisitDateInput.Text).ToShortDateString()));
             if (theVisit != null)
             {
                 resetSession();

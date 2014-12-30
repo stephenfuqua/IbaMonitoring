@@ -63,7 +63,6 @@ namespace IbaMonitoring.UnitTests.Observations
         }
 
    
-        // TODO: exception handling
 
 
         private static void WhenTheFormIsSubmited(SiteConditionsPageTss system)
@@ -79,7 +78,7 @@ namespace IbaMonitoring.UnitTests.Observations
         private void ExpectToCreateThePresenterUsingTheFactory(SiteConditionsPage page)
         {
             _mockFactory.Setup(
-                x => x.BuildSiteConditionsPresenter(It.Is<SiteConditionsPage>(y => object.ReferenceEquals(y, page))))
+                x => x.BuildSiteConditionsPresenter())
                 .Returns(_mockPresenter.Object);
         }
 

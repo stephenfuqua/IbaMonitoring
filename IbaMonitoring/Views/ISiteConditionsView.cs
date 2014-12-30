@@ -3,20 +3,20 @@ namespace IbaMonitoring.Views
 {
     public interface ISiteConditionsView
     {
-        string SiteVisitObserverAccessor { get; }
-        string SiteVisitRecorderAccessor { get; }
-        string SiteVisitedAccessor { get; }
-        string StartSkyAccessor { get; }
-        string StartTempUnitsAccessor { get; }
-        string StartTempAccessor { get; }
-        string StartWindAccessor { get; }
-        string StartTimeAccessor { get; }
-        string EndSkyAccessor { get; }
-        string EndTempUnitsAccessor { get; }
-        string EndTempAccessor { get; }
-        string EndWindAccessor { get; }
-        string EndTimeAccessor { get; }
-        string VisitDateAccessor { get; }
+        string Observer { get; }
+        string Recorder { get; }
+        string SiteVisited { get; }
+        string StartSky { get; }
+        string StartUnit { get; }
+        string StartTemp { get; }
+        string StartWind { get; }
+        string StartTime { get; }
+        string EndSky { get; }
+        string EndUnit { get; }
+        string EndTemp { get; }
+        string EndWind { get; }
+        string EndTime { get; }
+        string VisitDate { get; }
         bool IsValid { get; }
     }
 }

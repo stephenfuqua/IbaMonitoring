@@ -124,6 +124,9 @@ namespace safnet.iba.Business.Entities
             };
             s.SetNewId();
 
+            s.StartConditions = SiteCondition.CreateNewConditions(s.Id);
+            s.EndConditions = SiteCondition.CreateNewConditions(s.Id);
+
             return s;
         }
 
