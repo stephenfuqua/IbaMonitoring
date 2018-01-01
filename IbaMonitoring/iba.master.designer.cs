@@ -8,10 +8,6 @@
 //------------------------------------------------------------------------------
 
 
-using AjaxControlToolkit;
-using DotNetOpenAuth.OpenId.RelyingParty;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
 
 public partial class IbaMasterPage {
     
@@ -22,7 +18,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected ContentPlaceHolder title;
+    protected global::System.Web.UI.WebControls.ContentPlaceHolder title;
     
     /// <summary>
     /// head control.
@@ -31,7 +27,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected ContentPlaceHolder head;
+    protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
     
     /// <summary>
     /// form1 control.
@@ -40,7 +36,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected HtmlForm form1;
+    protected global::System.Web.UI.HtmlControls.HtmlForm form1;
     
     /// <summary>
     /// ToolkitScriptManager1 control.
@@ -49,7 +45,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected ToolkitScriptManager ToolkitScriptManager1;
+    protected global::AjaxControlToolkit.ToolkitScriptManager ToolkitScriptManager1;
     
     /// <summary>
     /// HomeLink control.
@@ -58,7 +54,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected HyperLink HomeLink;
+    protected global::System.Web.UI.WebControls.HyperLink HomeLink;
     
     /// <summary>
     /// AboutLink control.
@@ -67,7 +63,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected HyperLink AboutLink;
+    protected global::System.Web.UI.WebControls.HyperLink AboutLink;
     
     /// <summary>
     /// SubmitObservationsLink control.
@@ -76,7 +72,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected HyperLink SubmitObservationsLink;
+    protected global::System.Web.UI.WebControls.HyperLink SubmitObservationsLink;
     
     /// <summary>
     /// ViewLink control.
@@ -85,7 +81,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected HyperLink ViewLink;
+    protected global::System.Web.UI.WebControls.HyperLink ViewLink;
     
     /// <summary>
     /// ResourcesLink control.
@@ -94,7 +90,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected HyperLink ResourcesLink;
+    protected global::System.Web.UI.WebControls.HyperLink ResourcesLink;
     
     /// <summary>
     /// login control.
@@ -103,7 +99,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected HtmlGenericControl login;
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl login;
     
     /// <summary>
     /// loginAuthenticated control.
@@ -112,7 +108,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected HtmlGenericControl loginAuthenticated;
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginAuthenticated;
     
     /// <summary>
     /// UserNameLabel control.
@@ -121,7 +117,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label UserNameLabel;
+    protected global::System.Web.UI.WebControls.Label UserNameLabel;
     
     /// <summary>
     /// UpdateAccountInformationLinkButton control.
@@ -130,7 +126,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected LinkButton UpdateAccountInformationLinkButton;
+    protected global::System.Web.UI.WebControls.LinkButton UpdateAccountInformationLinkButton;
     
     /// <summary>
     /// LogoutButton control.
@@ -139,7 +135,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Button LogoutButton;
+    protected global::System.Web.UI.WebControls.Button LogoutButton;
     
     /// <summary>
     /// loginForm control.
@@ -148,7 +144,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected HtmlGenericControl loginForm;
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginForm;
     
     /// <summary>
     /// OpenIdButtons control.
@@ -157,7 +153,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected HtmlGenericControl OpenIdButtons;
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl OpenIdButtons;
     
     /// <summary>
     /// OpenIdTextBox1 control.
@@ -166,7 +162,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected OpenIdTextBox OpenIdTextBox1;
+    protected global::DotNetOpenAuth.OpenId.RelyingParty.OpenIdTextBox OpenIdTextBox1;
     
     /// <summary>
     /// OpenIdLogin control.
@@ -175,7 +171,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Button OpenIdLogin;
+    protected global::System.Web.UI.WebControls.Button OpenIdLogin;
     
     /// <summary>
     /// loginFailedLabel control.
@@ -184,7 +180,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label loginFailedLabel;
+    protected global::System.Web.UI.WebControls.Label loginFailedLabel;
     
     /// <summary>
     /// loginCanceledLabel control.
@@ -193,7 +189,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected Label loginCanceledLabel;
+    protected global::System.Web.UI.WebControls.Label loginCanceledLabel;
     
     /// <summary>
     /// DemoSite control.
@@ -202,7 +198,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected HtmlGenericControl DemoSite;
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl DemoSite;
     
     /// <summary>
     /// subnavTitle control.
@@ -211,7 +207,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected ContentPlaceHolder subnavTitle;
+    protected global::System.Web.UI.WebControls.ContentPlaceHolder subnavTitle;
     
     /// <summary>
     /// subnavLinks control.
@@ -220,7 +216,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected ContentPlaceHolder subnavLinks;
+    protected global::System.Web.UI.WebControls.ContentPlaceHolder subnavLinks;
     
     /// <summary>
     /// contentNav control.
@@ -229,7 +225,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected ContentPlaceHolder contentNav;
+    protected global::System.Web.UI.WebControls.ContentPlaceHolder contentNav;
     
     /// <summary>
     /// contentTitle control.
@@ -238,7 +234,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected ContentPlaceHolder contentTitle;
+    protected global::System.Web.UI.WebControls.ContentPlaceHolder contentTitle;
     
     /// <summary>
     /// ErrorMessage control.
@@ -247,7 +243,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected HtmlGenericControl ErrorMessage;
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl ErrorMessage;
     
     /// <summary>
     /// SuccessMessage control.
@@ -256,7 +252,7 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected HtmlGenericControl SuccessMessage;
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl SuccessMessage;
     
     /// <summary>
     /// contentBody control.
@@ -265,5 +261,5 @@ public partial class IbaMasterPage {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected ContentPlaceHolder contentBody;
+    protected global::System.Web.UI.WebControls.ContentPlaceHolder contentBody;
 }

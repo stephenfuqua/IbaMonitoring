@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="IbaMasterPage" Codebehind="iba.master.cs" %>
 
-<%@ Register Assembly="DotNetOpenAuth" Namespace="DotNetOpenAuth.OpenId.RelyingParty"
+<%@ Register Assembly="DotNetOpenAuth.OpenId.RelyingParty.UI" Namespace="DotNetOpenAuth.OpenId.RelyingParty"
     TagPrefix="rp" %>
 <%@ Register Assembly="AjaxControlToolkit"
     Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
